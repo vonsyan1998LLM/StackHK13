@@ -1,112 +1,76 @@
-# StackHK Template Management System
+# StackHK（airecmark.com）— 全新后端版
 
-This system implements the template injection architecture described in `stackhk-template-architecture.md`. It uses Cloudflare Workers to inject header and footer templates at runtime, so you only need to maintain one copy of each.
+前端沿用原站静态页面（零改动迁移），后端为全新开发的 Cloudflare Pages Functions + KV，后台为全新 `/admin/` 单页应用。**不包含旧系统的任何文件**（`_worker.js`、旧 `functions/`、`notepage/` 均未带入）。
 
-## Architecture
+> 历史注记：旧版 `_worker.js` 为 Advanced Mode，会让**每一次页面访问都消耗一次 Workers 调用**，在免费版每日 10 万次配额下被爬虫流量耗尽，导致全账号 Functions 停止执行——这是旧后台"无法修复"的根因（2026-08-29 确认）。本仓库不使用 `_worker.js`，只保留 `functions/`（仅 `/api/*`、`/assets/*` 路径产生调用），若走 Workers 部署路径则由 `wrangler-workers.jsonc` 的 `run_worker_first` 限定调用范围。
+
+## 架构
 
 ```
-User Request → Cloudflare Worker → KV (Templates) → Assembled HTML → User
+前端（静态，未改） ──GET /api/data──┐
+                                   ▼
+/js/tp-main.js         Cloudflare Pages Functions（functions/，唯一后端机制）
+                                   │
+后台 /admin/（SPA）────读写─────────┼── KV（stackhk-data 命名空间，绑定名 STACKHK）
+                                   │     site:data / site:meta / backup:site:*
+submit.html ──POST /api/submissions┘     data:submissions:* / img:* / rl:*
 ```
 
-## Files Created
+- 数据以 KV `site:data` 为准；KV 为空时自动回落仓库内置 `api-seed.json`，前台永不白屏。
+- 前台缓存 60 秒：后台保存后 ≤1 分钟前台生效。
 
-- `templates/header.html` - Unified header/nav template
-- `templates/footer.html` - Unified footer template  
-- `pages/index.html` - Index page skeleton (without header/footer)
-- `src/index.js` - Cloudflare Worker code
-- `wrangler.toml` - Worker configuration
-- `package.json` - Dependencies
-- `scripts/populate-kv.js` - Script to populate KV with templates
-- `notepage/templates.html` - Admin template management page
+## 目录
 
-## Setup Instructions
+| 路径 | 说明 |
+|---|---|
+| `functions/_lib/` | 工具库：响应/常量比较、PBKDF2+HMAC、会话、限流、校验、KV 存取 |
+| `functions/api/` | health、auth（login/logout/session）、data、submissions、backups（列表/恢复）、upload、meta |
+| `functions/assets/[id].js` | 上传图片输出（immutable 缓存） |
+| `admin/` | 后台 SPA（原生 JS，无构建、无第三方依赖） |
+| `worker/` + `wrangler-workers.jsonc` | Workers 静态资产部署预案（Pages Functions 不可用时启用） |
+| `wrangler.toml` | Pages 项目配置：KV 绑定 + 非密钥变量 |
 
-### 1. Install Wrangler CLI
+## 部署（Direct Upload 方式）
 
 ```bash
-npm install -g wrangler
+npm i -g wrangler
+set CLOUDFLARE_API_TOKEN=<具有 Pages 编辑权限的 Token>
+set CLOUDFLARE_ACCOUNT_ID=f3c243d01277c2479426f92c3e40e4c8
+
+wrangler pages deploy --branch master
 ```
 
-### 2. Login to Cloudflare
+Secrets（仅首次或轮换时设置，值不进仓库）：
 
 ```bash
-wrangler login
+echo <salt_hex> | wrangler pages secret put ADMIN_PASSWORD_SALT --project-name stackhk13
+echo <hash_hex> | wrangler pages secret put ADMIN_PASSWORD_HASH --project-name stackhk13
+echo <secret_hex> | wrangler pages secret put ADMIN_SESSION_SECRET --project-name stackhk13
 ```
 
-### 3. Create KV Namespace
+- 密码哈希 = PBKDF2-SHA256（10,000 轮，32 字节；受免费版 CPU 限制未用更高轮数）。生成：
+  `node -e "const c=require('crypto');const salt=c.randomBytes(16).toString('hex');console.log(salt, c.pbkdf2Sync('<新密码>',salt,10000,32,'sha256').toString('hex'))"`
+- `ADMIN_USERNAME` / `SITE_VERSION` 在 wrangler.toml 的 `[vars]` 里，改完重新 deploy。
+
+> Workers 部署路径：`wrangler deploy -c wrangler-workers.jsonc`，secrets 用 `wrangler secret put`（不带 --project-name）。
+
+## 部署后 30 秒冒烟（每次必做）
 
 ```bash
-wrangler kv:namespace create STACKHK
+curl -s https://<部署域名>/api/health   # 必须返回 JSON；返回 HTML = Functions 未执行，先查当日调用配额
+curl -s https://<部署域名>/api/data | head -c 200
+curl -s -o NUL -w "%{http_code}" https://<部署域名>/admin/   # 200
 ```
 
-This will output something like:
-```
-{ binding = "STACKHK", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }
-```
+## 后台使用
 
-### 4. Update wrangler.toml
+- 入口：`/admin/`（noindex）。首次登录使用既定管理员账号。
+- 「工具 / 新闻 / 指南 / 课程 / 设置」全部为本地编辑 + 右上角「保存全部更改」整单提交；每次保存自动生成快照，可在「备份恢复」一键回滚。
+- 「提交审核」：submit.html 的新提交在此列表，「采纳为工具草稿」会立即保存并删除该提交。
+- 「Logo 库」：上传 ≤150KB 图片（存 KV，经 `/assets/` 输出），在工具编辑器中选用。
 
-Replace `YOUR_KV_NAMESPACE_ID` with the actual ID from step 3.
+## 安全要点
 
-### 5. Deploy Worker
-
-```bash
-npm run deploy
-```
-
-### 6. Populate KV with Templates
-
-Run the populate script to generate the data, then use the API to import it:
-
-```bash
-node scripts/populate-kv.js
-```
-
-Or manually via the admin interface at `/notepage/templates.html`.
-
-## Admin Interface
-
-Access the template management interface at:
-```
-https://your-domain.com/notepage/templates.html
-```
-
-Features:
-- Edit header and footer templates
-- Create new page templates
-- Preview templates
-- One-click publish to KV
-
-## API Endpoints
-
-- `GET /api/templates` - Get all templates
-- `POST /api/templates` - Save a template
-- `GET /api/pages` - Get all page templates
-- `POST /api/pages` - Save a page template
-
-## How It Works
-
-1. **Template Injection**: When a user visits `/index.html`, the Worker:
-   - Checks KV for `page:index`
-   - Reads `template:header` and `template:footer` from KV
-   - Assembles the complete HTML
-   - Returns to user
-
-2. **Fallback**: If a page isn't in KV, the Worker falls back to static files.
-
-3. **Admin Management**: The admin interface allows editing templates via the API, which writes directly to KV.
-
-## Benefits
-
-- **Single Source of Truth**: Edit header/footer once, changes apply everywhere
-- **Instant Updates**: No rebuild/deploy needed for template changes
-- **Performance**: KV is edge-cached globally
-- **Flexibility**: Easy to add new pages without duplicating templates
-
-## Next Steps
-
-1. Extract remaining page skeletons from existing HTML files
-2. Add SEO meta tags to templates
-3. Implement preview functionality with tokens
-4. Add template versioning
-5. Migrate existing localStorage data to KV
+- 会话：HttpOnly + Secure + SameSite=Strict 签名 Cookie，12 小时；写请求强制 CSRF 头。
+- 登录限流 5 次/分钟/IP；提交限流 10 次/分钟/IP + 蜜罐 + 最短填写时间。
+- 密码 PBKDF2 校验，Secret 全部存于 Pages Secrets / Workers Secrets，不出现在代码与仓库中。
