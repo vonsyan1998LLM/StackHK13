@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit a Tool for Review - StackHK</title>
+<meta name="description" content="Submit your AI tool for review by StackHK. We test every tool independently before publishing.">
+<link rel="canonical" href="https://www.airecmark.com/submit.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20260828"><link rel="stylesheet" href="css/tp.css?v=20260840">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<meta property="og:title" content="Submit a Tool for Review - StackHK">
+<meta property="og:description" content="Submit your AI tool or B2B SaaS product for an independent StackHK review. We review every submission on merit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.airecmark.com/submit.html">
+<meta property="og:image" content="https://www.airecmark.com/images/best-writing-tools-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Submit a Tool",
+  "url": "https://www.airecmark.com/submit.html",
+  "isPartOf": { "@type": "WebSite", "name": "StackHK", "url": "https://www.airecmark.com" }
+}
+</script></head>
+<body>
+
+<div id="site-header" data-prefix="" data-page="submit"></div>
+
+
+
+
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="crumbs"><a href="index.html">Home</a> &rsaquo; Submit a Tool</div>
+  <h1>Submit Your AI Tool</h1>
+  <p>Have an AI tool you'd like us to review? We're always looking for new tools to test.</p>
+</div>
+
+<!-- SUBMIT FORM -->
+<section>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 350px;gap:3rem;align-items:start">
+      <div class="submit-form">
+        <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:.5rem">Tool Submission Form</h2>
+        <p style="font-size:.9rem;color:var(--muted);margin-bottom:2rem">Fill out the form below and we'll consider your tool for review. We review tools based on editorial merit, not payment.</p>
+        
+        <form id="tool-submit-form">
+          <input type="hidden" name="openedAt" id="opened-at" value="">
+          <!-- honeypot: hidden from humans, bots fill it -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <label>Company</label><input type="text" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label>Tool Name *</label>
+            <input type="text" name="toolName" placeholder="e.g., ChatGPT, Midjourney, Cursor" required>
+          </div>
+
+          <div class="form-group">
+            <label>Tool Website *</label>
+            <input type="url" name="toolUrl" placeholder="https://example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>Category *</label>
+            <select name="category" required>
+              <option value="">Select a category</option>
+              <option value="writing">Writing Tools</option>
+              <option value="coding">Coding Tools</option>
+              <option value="productivity">Productivity</option>
+              <option value="image-video">Image & Video</option>
+              <option value="audio">Audio & Voice</option>
+              <option value="business">Business AI</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>One-Line Description *</label>
+            <input type="text" name="description" placeholder="What does your tool do in one sentence?" required>
+            <div class="form-hint">Keep it concise. This helps us understand your tool quickly.</div>
+          </div>
+
+          <div class="form-group">
+            <label>Pricing</label>
+            <input type="text" name="pricing" placeholder="e.g., Free / $20/month / Freemium">
+            <div class="form-hint">Include free tier details if available.</div>
+          </div>
+
+          <div class="form-group">
+            <label>Key Features</label>
+            <textarea name="features" placeholder="List the 3-5 most important features of your tool."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>What makes your tool unique?</label>
+            <textarea name="unique" placeholder="Why should we review your tool? What sets it apart from competitors?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" name="contactName" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label>Your Email *</label>
+            <input type="email" name="contactEmail" placeholder="you@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>Your Role</label>
+            <input type="text" name="contactRole" placeholder="e.g., Founder, Marketing Manager, Developer">
+          </div>
+
+          <div class="form-group">
+            <label>Free Account for Review?</label>
+            <select name="freeAccount">
+              <option value="">Select an option</option>
+              <option value="yes">Yes, we'll provide a free Pro account</option>
+              <option value="trial">Yes, extended trial available</option>
+              <option value="no">No, review via free tier only</option>
+            </select>
+            <div class="form-hint">Providing a Pro account helps us test all features thoroughly.</div>
+          </div>
+
+          <div class="form-group">
+            <label>Anything else?</label>
+            <textarea name="notes" placeholder="Any additional information, press materials, or special instructions."></textarea>
+          </div>
+
+          <p id="submit-status" style="display:none;font-size:.9rem;margin:0 0 1rem"></p>
+          <button type="submit" class="btn-primary" id="submit-btn" style="width:100%;justify-content:center">Submit for Review →</button>
+        </form>
+      </div>
+      
+      <!-- SIDEBAR -->
+      <div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem">What Happens Next?</h3>
+          <div style="font-size:.9rem;color:var(--muted);line-height:1.7">
+            <p style="margin-bottom:1rem"><strong style="color:var(--text)">1. We Review Your Submission</strong><br>Our editorial team reviews every submission within 5 business days.</p>
+            <p style="margin-bottom:1rem"><strong style="color:var(--text)">2. Testing Period</strong><br>If selected, we'll test your tool for at least 2 weeks before publishing.</p>
+            <p style="margin-bottom:1rem"><strong style="color:var(--text)">3. Publication</strong><br>Reviews are published on our site and may be featured in our weekly newsletter.</p>
+            <p><strong style="color:var(--text)">4. No Guarantees</strong><br>We don't guarantee coverage. We select tools based on editorial merit and reader interest.</p>
+          </div>
+        </div>
+        
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem">Review Criteria</h3>
+          <ul style="font-size:.85rem;color:var(--muted);line-height:1.8;padding-left:1.25rem">
+            <li>Is the tool genuinely useful for professionals?</li>
+            <li>Does it solve a real problem?</li>
+            <li>Is it well-designed and user-friendly?</li>
+            <li>Does it offer good value for money?</li>
+            <li>Is it actively maintained and updated?</li>
+            <li>Does it have a clear privacy policy?</li>
+          </ul>
+        </div>
+        
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem">Questions?</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.6">Email us at <a href="mailto:admin@airecmark.com" style="color:var(--gold);text-decoration:none">admin@airecmark.com</a> with any questions about the submission process.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="nl-title">Stay ahead of the AI curve.</div>
+    <p class="nl-sub">Get our best reviews and tool recommendations delivered every Thursday.</p>
+    <form class="nl-form">
+      <input type="email" class="nl-input" placeholder="Your email address" required>
+      <button type="submit" class="nl-btn">Subscribe →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="site-footer" data-prefix=""></div>
+
+<script src="js/site.js?v=2" defer></script><script src="js/main.js?v=2"></script><script src="js/tp-nav.js" defer></script>
+<script>
+(function () {
+  document.getElementById('opened-at').value = String(Date.now());
+  var form = document.getElementById('tool-submit-form');
+  var btn = document.getElementById('submit-btn');
+  var status = document.getElementById('submit-status');
+  function show(msg, isErr) {
+    status.textContent = msg;
+    status.style.display = 'block';
+    status.style.color = isErr ? 'var(--danger)' : 'var(--ok)';
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (btn.disabled) return;
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+    show('', false);
+    var payload = { openedAt: document.getElementById('opened-at').value };
+    new FormData(form).forEach(function (v, k) { if (k !== 'openedAt') payload[k] = String(v).trim(); });
+    fetch('/api/submissions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', accept: 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (res.ok) {
+          form.reset();
+          document.getElementById('opened-at').value = String(Date.now());
+          show("Thanks! Your submission is in. We review every tool on merit — expect a reply within 5 business days.", false);
+        } else {
+          show((res.j && res.j.error && res.j.error.message) || 'Submission failed. Please try again.', true);
+        }
+      })
+      .catch(function () { show('Network error. Please try again.', true); })
+      .finally(function () { btn.disabled = false; btn.textContent = 'Submit for Review →'; });
+  });
+})();
+</script></body>
+</html>
+
+

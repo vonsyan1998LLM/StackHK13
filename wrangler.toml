@@ -1,0 +1,14 @@
+name = "stackhk13"
+compatibility_date = "2026-08-01"
+pages_build_output_dir = "."
+
+# Pages Functions / admin 的唯一后端机制：functions/ 目录。
+# 仓库内不允许出现 _worker.js（会整体接管路由，与 functions/ 冲突）。
+
+[[kv_namespaces]]
+binding = "STACKHK"
+id = "ed9ee39834274da286d7f06aaaa7e5f9"
+
+[vars]
+ADMIN_USERNAME = "Stackhk007"
+SITE_VERSION = "1.0.0"

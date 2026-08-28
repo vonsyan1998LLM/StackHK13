@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>StackHK Admin</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<!-- 登录视图 -->
+<div id="login-view" class="login-wrap" hidden>
+  <form id="login-form" class="login-card" autocomplete="on">
+    <div class="login-logo">STACK<span>HK</span></div>
+    <p class="login-sub">内容管理系统</p>
+    <label>用户名</label>
+    <input type="text" id="login-username" name="username" autocomplete="username" required>
+    <label>密码</label>
+    <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+    <button type="submit" class="btn btn-primary" id="login-btn">登 录</button>
+    <p id="login-error" class="login-error" hidden></p>
+  </form>
+</div>
+
+<!-- 主应用 -->
+<div id="app-view" hidden>
+  <aside class="sidebar">
+    <div class="side-logo">STACK<span>HK</span><small>Admin</small></div>
+    <nav id="side-nav">
+      <a data-view="dashboard" class="active">仪表盘</a>
+      <a data-view="tools">工具管理 <b id="nav-tools-count"></b></a>
+      <a data-view="news">新闻管理 <b id="nav-news-count"></b></a>
+      <a data-view="guides">购买指南 <b id="nav-guides-count"></b></a>
+      <a data-view="courses">课程频道 <b id="nav-courses-count"></b></a>
+      <a data-view="logos">Logo 库 <b id="nav-logos-count"></b></a>
+      <a data-view="submissions">提交审核 <b id="nav-subs-count"></b></a>
+      <a data-view="settings">站点设置</a>
+      <a data-view="backups">备份恢复</a>
+      <a data-view="health">系统状态</a>
+    </nav>
+    <div class="side-foot">
+      <span id="side-user"></span>
+      <button id="logout-btn" class="btn btn-ghost btn-sm">退出</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 id="view-title">仪表盘</h1>
+      <div class="topbar-right">
+        <span id="save-state" class="save-state"></span>
+        <button id="save-btn" class="btn btn-primary" disabled>保存全部更改</button>
+      </div>
+    </header>
+    <section id="content" class="content"></section>
+  </main>
+</div>
+
+<!-- 通用弹层 -->
+<div id="modal-mask" hidden>
+  <div id="modal-box" class="modal"></div>
+</div>
+<div id="toast" hidden></div>
+
+<script type="module" src="/admin/admin.js"></script>
+</body>
+</html>

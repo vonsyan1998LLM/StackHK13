@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search AI Tools & Reviews - StackHK</title>
+<meta name="description" content="Search StackHK's database of 60+ AI tool and B2B SaaS reviews, comparisons, and buying guides. Find the right tool for your workflow.">
+<link rel="canonical" href="https://www.airecmark.com/search.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20260828"><link rel="stylesheet" href="css/tp.css?v=20260840">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+.search-hero{background:var(--black);padding:3rem 2rem;text-align:center}
+.search-form{max-width:600px;margin:0 auto;position:relative}
+.search-input-lg{width:100%;padding:1rem 1.5rem 1rem 3rem;border:2px solid rgba(255,255,255,.15);border-radius:var(--radius-lg);font-size:1.1rem;font-family:var(--font-sans);background:rgba(255,255,255,.08);color:#fff;outline:none;transition:border-color .15s}
+.search-input-lg:focus{border-color:var(--gold)}
+.search-input-lg::placeholder{color:rgba(255,255,255,.4)}
+.search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4)}
+.search-results-count{color:rgba(255,255,255,.6);font-size:.9rem;margin-top:1rem}
+.search-filters{display:flex;gap:.75rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+.search-filter{padding:.45rem 1rem;border-radius:100px;border:1px solid rgba(255,255,255,.2);background:none;color:rgba(255,255,255,.7);font-size:.85rem;font-family:var(--font-sans);cursor:pointer;transition:all .15s}
+.search-filter:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.search-filter.active{background:var(--gold);border-color:var(--gold);color:var(--black)}
+
+.no-results{text-align:center;padding:4rem 2rem}
+.no-results-icon{font-size:4rem;margin-bottom:1rem}
+.no-results h3{font-family:var(--font-display);font-size:1.5rem;margin-bottom:.5rem}
+.no-results p{color:var(--muted);margin-bottom:1.5rem}
+
+.search-result-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem;transition:border-color .2s,box-shadow .2s}
+.search-result-item:hover{border-color:var(--gold);box-shadow:var(--shadow)}
+.search-result-header{display:flex;align-items:flex-start;gap:1rem;margin-bottom:.75rem}
+.search-result-icon{width:48px;height:48px;background:var(--bg2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.search-result-info{flex:1}
+.search-result-title{font-weight:700;font-size:1.1rem;margin-bottom:.25rem}
+.search-result-title a{color:var(--text);text-decoration:none}
+.search-result-title a:hover{color:var(--gold)}
+.search-result-meta{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.search-result-score{font-family:var(--font-mono);font-size:.85rem;font-weight:600;color:var(--gold)}
+.search-result-excerpt{font-size:.9rem;color:var(--muted);line-height:1.6}
+.search-result-highlight{background:var(--gold-light);padding:0 2px;border-radius:2px}
+</style>
+
+<meta property="og:title" content="Search AI Tools & Reviews - StackHK">
+<meta property="og:description" content="Search StackHK's database of 60+ AI tool and B2B SaaS reviews, comparisons and buying guides.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.airecmark.com/search.html">
+<meta property="og:image" content="https://www.airecmark.com/images/best-writing-tools-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Search StackHK",
+  "url": "https://www.airecmark.com/search.html",
+  "isPartOf": { "@type": "WebSite", "name": "StackHK", "url": "https://www.airecmark.com" }
+}
+</script></head>
+<body>
+
+<div id="site-header" data-prefix="" data-page="search"></div>
+
+
+
+
+
+<!-- SEARCH HERO -->
+<div class="search-hero">
+  <h1 style="font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:#fff;margin-bottom:1.5rem">Search AI Tools &amp; Reviews</h1>
+  <div class="search-form">
+    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" class="search-input-lg" id="searchInput" placeholder="Search AI tools, reviews, comparisons..." autofocus>
+  </div>
+  <div class="search-results-count" id="resultsCount"></div>
+  <div class="search-filters">
+    <button class="search-filter active" data-filter="all">All</button>
+    <button class="search-filter" data-filter="reviews">Reviews</button>
+    <button class="search-filter" data-filter="categories">Categories</button>
+    <button class="search-filter" data-filter="deals">Deals</button>
+  </div>
+</div>
+
+<!-- SEARCH RESULTS -->
+<section>
+  <div class="container">
+    <div id="searchResults">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="site-footer" data-prefix=""></div>
+
+<script src="js/site.js?v=2" defer></script><script src="js/main.js?v=2"></script>
+<script>
+// Search data - all searchable content
+const searchData = [
+  // Reviews
+  { type: 'review', title: 'Claude Pro Review: The AI Writer That Actually Thinks', url: 'reviews/claude-pro.html', category: 'Writing', score: 9.4, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>', excerpt: 'After 3 weeks of daily use, we found Claude Pro consistently produces the most nuanced long-form content of any AI writing tool.' },
+  { type: 'review', title: 'Cursor AI: The Best IDE Add-On for Developers in 2026', url: 'reviews/cursor-ai.html', category: 'Coding', score: 9.1, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', excerpt: 'Cursor\'s tab-complete and multi-file context editing is genuinely transformative. We tested it on 5 real projects.' },
+  { type: 'review', title: 'ChatGPT-4o Review: Still the King of AI Chat?', url: 'reviews/chatgpt-4o.html', category: 'Productivity', score: 8.7, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>', excerpt: 'OpenAI\'s latest model brings multimodal capabilities to the masses. We tested it extensively for work and creative tasks.' },
+  { type: 'review', title: 'Perplexity Pro: AI-Powered Search Done Right', url: 'reviews/perplexity-pro.html', category: 'Productivity', score: 9.0, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>', excerpt: 'Perplexity combines search and AI in a way that actually works. Perfect for research-heavy professionals.' },
+  { type: 'review', title: 'Midjourney v7 Review: The Best AI Image Generator', url: 'reviews/midjourney-v7.html', category: 'Image & Video', score: 8.8, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>', excerpt: 'We ran 200 prompts across both platforms. The results might surprise you — especially on photorealism tasks.' },
+  { type: 'review', title: 'Notion AI: The Best AI for Knowledge Workers?', url: 'reviews/notion-ai.html', category: 'Productivity', score: 8.6, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>', excerpt: 'Notion\'s AI integration is deeply woven into the workspace. Here\'s our take after a month of team-wide usage.' },
+  { type: 'review', title: 'Suno AI: Music from Text in Minutes', url: 'reviews/suno-ai.html', category: 'Audio', score: 8.2, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>', excerpt: 'Suno can generate full songs from a text prompt. We tested it for podcast intros, background music, and more.' },
+  { type: 'review', title: 'Grammarly AI vs ProWritingAid: 2026 Comparison', url: 'reviews/grammarly-vs-prowritingaid.html', category: 'Writing', score: 8.5, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>', excerpt: 'Two of the best writing assistants go head-to-head. Which one deserves a spot in your workflow?' },
+  { type: 'review', title: 'Julius AI for Data Analysis Teams', url: 'reviews/julius-ai.html', category: 'Business', score: 8.4, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>', excerpt: 'Julius lets you analyze data with natural language. We tested it with real business datasets and queries.' },
+  { type: 'review', title: 'Jasper Review: The AI Marketing Writer That Means Business', url: 'reviews/jasper.html', category: 'Writing', score: 8.3, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>', excerpt: 'Enterprise-grade brand voice at scale. We ran real campaigns through Jasper\'s Campaigns and Infobase.' },
+  { type: 'review', title: 'Adobe Firefly 3: Closer to Midjourney?', url: 'reviews/adobe-firefly.html', category: 'Image & Video', score: 7.8, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>', excerpt: 'Adobe\'s AI image generator gets a major upgrade. Is it enough to compete with Midjourney?' },
+  { type: 'review', title: 'GitHub Copilot Review: AI Pair Programming', url: 'reviews/github-copilot.html', category: 'Coding', score: 8.9, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', excerpt: 'GitHub Copilot revolutionized how we write code. Here\'s our comprehensive review.' },
+  { type: 'review', title: 'Windsurf Review: The AI Code Editor That Feels Like a Copilot', url: 'reviews/windsurf.html', category: 'Coding', score: 8.9, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>', excerpt: 'Agentic AI coding with Cascade. We built a full-stack app to test it against Cursor.' },
+  { type: 'review', title: 'Zapier Review: The Automation Platform That Powers Everything', url: 'reviews/zapier.html', category: 'Automation', score: 8.6, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>', excerpt: 'Connect 8,000+ apps with no code. We tested AI Agents and real business workflows.' },
+  { type: 'review', title: 'Descript Review: The AI Editor That Replaces Video Editing', url: 'reviews/descript.html', category: 'Audio & Video', score: 8.4, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Z"/><path d="M21 11h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5Z"/><path d="M3 11v-1a9 9 0 0 1 18 0v1"/></svg>', excerpt: 'Edit video and audio like a text document. We tested Overdub, Studio Sound, and filler removal.' },
+  { type: 'review', title: 'Leonardo AI Review: The Design-First AI Image Generator', url: 'reviews/leonardo-ai.html', category: 'Image & Video', score: 8.2, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>', excerpt: 'Studio-style workflow with built-in editing tools. Great for marketing assets and character design.' },
+  { type: 'review', title: 'HeyGen Review: AI Video Avatars for Real Business Content', url: 'reviews/heygen.html', category: 'Video', score: 8.1, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>', excerpt: 'Turn a script into a presenter video in minutes. We tested realism, voice cloning, and localization.' },
+  { type: 'review', title: 'Make.com Review: The Visual Automation Powerhouse vs Zapier', url: 'reviews/make-com.html', category: 'Automation', score: 8.5, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>', excerpt: 'Complex visual workflows with routers, iterators and data manipulation. We built 15 real automations.' },
+  { type: 'review', title: 'Canva AI Review: Magic Studio Makes Design Effortless for Everyone', url: 'reviews/canva.html', category: 'Image & Video', score: 8.4, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>', excerpt: 'Magic Design, Magic Write and background removal. The most accessible AI design suite.' },
+  { type: 'review', title: 'Synthesia Review: Enterprise AI Avatar Video That Actually Looks Real', url: 'reviews/synthesia.html', category: 'Video', score: 8.2, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>', excerpt: '230+ avatars, 140+ languages, enterprise-grade controls. The gold standard for corporate AI video.' },
+  { type: 'review', title: 'Copy.ai Review: The GTM Automation Platform Behind AI Copy', url: 'reviews/copy-ai.html', category: 'Writing', score: 8.0, emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>', excerpt: 'AI copy plus GTM workflow automation. We built real outbound sequences and tested the Infobase.' },
+  // Categories
+  { type: 'category', title: 'Writing Tools', url: 'categories/writing.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>', excerpt: 'AI writing assistants, content generators, and copywriting tools for professionals. 30 reviews.' },
+  { type: 'category', title: 'Coding Tools', url: 'categories/coding.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', excerpt: 'AI-powered IDEs, code assistants, and developer productivity tools. 22 reviews.' },
+  { type: 'category', title: 'Productivity Tools', url: 'categories/productivity.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>', excerpt: 'AI tools for task management, note-taking, scheduling, and workflow automation. 32 reviews.' },
+  { type: 'category', title: 'Image & Video Tools', url: 'categories/image-video.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>', excerpt: 'AI image generators, video editors, and creative visual tools. 21 reviews.' },
+  { type: 'category', title: 'Audio & Voice Tools', url: 'categories/audio.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v7a7 7 0 0 1-14 0v-7"/><line x1="12" x2="12" y1="19" y2="22"/></svg>', excerpt: 'AI voice generators, music creation, and audio processing tools. 11 reviews.' },
+  { type: 'category', title: 'Business AI Tools', url: 'categories/business.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>', excerpt: 'AI tools for data analysis, marketing, sales, and business intelligence. 17 reviews.' },
+  // Comparisons
+  { type: 'comparison', title: 'ChatGPT vs Gemini: Which AI Assistant is Better?', url: 'compare/chatgpt-vs-gemini.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>', excerpt: 'We\'ve spent months testing both AI assistants across writing, coding, analysis, and creative tasks.' },
+  { type: 'comparison', title: 'Midjourney vs DALL-E 3: AI Image Battle', url: 'compare/midjourney-vs-dalle.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>', excerpt: 'We tested 200 prompts across both platforms. See which generates better images.' },
+  { type: 'comparison', title: 'Grammarly vs ProWritingAid: Writing Assistants', url: 'compare/grammarly-vs-prowritingaid.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>', excerpt: 'The two best writing assistants go head-to-head in our comprehensive comparison.' },
+  { type: 'comparison', title: 'GitHub Copilot vs Cursor: AI Coding Tools', url: 'compare/github-copilot-vs-cursor.html', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', excerpt: 'The two leading AI coding assistants compared. Which one should developers choose?' },
+  // Deals
+  { type: 'deal', title: 'Jasper AI - 20% OFF First 3 Months', url: 'deals.html', category: 'Writing', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>', excerpt: 'AI marketing copy generator. Create ads, emails, social posts, and blog content 10x faster.' },
+  { type: 'deal', title: 'Cursor Pro - 2 Months Free Annual Plan', url: 'deals.html', category: 'Coding', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>', excerpt: 'AI-powered code editor. Tab-complete, multi-file editing, and intelligent suggestions.' },
+  { type: 'deal', title: 'Notion AI - Free Trial 30 Days', url: 'deals.html', category: 'Productivity', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>', excerpt: 'AI-powered workspace. Write, organize, and brainstorm with AI built into your notes.' },
+  { type: 'deal', title: 'Grammarly Premium - 25% OFF Annual Plan', url: 'deals.html', category: 'Writing', emoji: '<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>', excerpt: 'AI writing assistant. Grammar, clarity, tone, and plagiarism checking.' }
+];
+
+let currentFilter = 'all';
+let currentQuery = '';
+
+// Get URL params
+function getUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    q: params.get('q') || '',
+    filter: params.get('filter') || 'all'
+  };
+}
+
+// Highlight matching text
+function highlightText(text, query) {
+  if (!query) return text;
+  const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  return text.replace(regex, '<span class="search-result-highlight">$1</span>');
+}
+
+// Search function
+function performSearch(query, filter = 'all') {
+  currentQuery = query.toLowerCase().trim();
+  currentFilter = filter;
+  
+  if (!currentQuery) {
+    renderResults([]);
+    document.getElementById('resultsCount').textContent = '';
+    return;
+  }
+  
+  let results = searchData.filter(item => {
+    const matchesQuery = item.title.toLowerCase().includes(currentQuery) || 
+                         item.excerpt.toLowerCase().includes(currentQuery) ||
+                         (item.category && item.category.toLowerCase().includes(currentQuery));
+    
+    if (filter === 'all') return matchesQuery;
+    if (filter === 'reviews') return matchesQuery && item.type === 'review';
+    if (filter === 'categories') return matchesQuery && item.type === 'category';
+    if (filter === 'deals') return matchesQuery && (item.type === 'deal' || item.type === 'comparison');
+    return matchesQuery;
+  });
+  
+  renderResults(results);
+  document.getElementById('resultsCount').textContent = `${results.length} result${results.length !== 1 ? 's' : ''} found for "${query}"`;
+}
+
+// Render results
+function renderResults(results) {
+  const container = document.getElementById('searchResults');
+  
+  if (currentQuery && results.length === 0) {
+    container.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>No results found</h3>
+        <p>We couldn't find anything matching "${currentQuery}". Try different keywords or browse our categories.</p>
+        <a href="categories.html" class="btn btn-primary" style="background:var(--black);color:#fff;display:inline-flex">Browse Categories</a>
+      </div>
+    `;
+    return;
+  }
+  
+  if (!currentQuery) {
+    container.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>Search StackHK</h3>
+        <p>Find AI tool reviews, comparisons, deals, and more.</p>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = results.map(item => {
+    const typeLabel = item.type === 'review' ? 'Review' : 
+                      item.type === 'category' ? 'Category' : 
+                      item.type === 'comparison' ? 'Comparison' : 'Deal';
+    
+    const badgeClass = item.type === 'review' ? 'badge-' + (item.category?.toLowerCase().replace(/\s+/g, '') || 'writing') : '';
+    
+    return `
+      <div class="search-result-item">
+        <div class="search-result-header">
+          <div class="search-result-icon">${item.emoji}</div>
+          <div class="search-result-info">
+            <div class="search-result-title"><a href="${item.url}">${highlightText(item.title, currentQuery)}</a></div>
+            <div class="search-result-meta">
+              <span class="badge ${badgeClass}" style="font-size:.75rem;font-weight:600;padding:.2rem .55rem;border-radius:100px;background:var(--bg2);color:var(--muted)">${typeLabel}</span>
+              ${item.category ? `<span style="font-size:.8rem;color:var(--muted)">${item.category}</span>` : ''}
+              ${item.score ? `<span class="search-result-score">★ ${item.score}/10</span>` : ''}
+            </div>
+          </div>
+        </div>
+        <div class="search-result-excerpt">${highlightText(item.excerpt, currentQuery)}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  const params = getUrlParams();
+  const searchInput = document.getElementById('searchInput');
+  
+  // Set initial value from URL
+  if (params.q) {
+    searchInput.value = params.q;
+  }
+  
+  // Set active filter
+  document.querySelectorAll('.search-filter').forEach(btn => {
+    if (btn.dataset.filter === params.filter) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // Perform initial search
+  performSearch(params.q, params.filter);
+  
+  // Search on input
+  let debounceTimer;
+  searchInput.addEventListener('input', function(e) {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      performSearch(e.target.value, currentFilter);
+      // Update URL without reload
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set('q', e.target.value);
+      window.history.replaceState({}, '', newUrl);
+    }, 300);
+  });
+  
+  // Filter buttons
+  document.querySelectorAll('.search-filter').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.search-filter').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentFilter = this.dataset.filter;
+      performSearch(searchInput.value, currentFilter);
+      // Update URL
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set('filter', currentFilter);
+      window.history.replaceState({}, '', newUrl);
+    });
+  });
+});
+</script><script src="js/tp-nav.js" defer></script></body>
+</html>
+
+
