@@ -23,7 +23,7 @@
 - About: https://www.airecmark.com/about.html — Our methodology and team
 - Contact: https://www.airecmark.com/contact.html — Get in touch
 - Submit a Tool: https://www.airecmark.com/submit.html — Submit for review
-- Tools Directory: https://www.airecmark.com/tools.html — Searchable index of all 57+ reviewed tools with filters
+- Tools Directory: https://www.airecmark.com/tools.html — Searchable index of all 61+ reviewed tools with filters
 - AI News: https://www.airecmark.com/news.html — Latest AI news and product updates
 - Top 20 Ranking: https://www.airecmark.com/ranking.html — Highest-scoring tools ranked
 - AI Glossary: https://www.airecmark.com/glossary.html — Definitions of AI terms

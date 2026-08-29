@@ -56,6 +56,9 @@ async function loadData() {
       <p class="feed-excerpt">${esc(n.excerpt)}</p></article>`;
   }
 
+  /* ---- 工具总数动态计数（tools 页标题） ---- */
+  document.querySelectorAll("[data-tool-count]").forEach(el => { el.textContent = DATA.tools.length + "+ AI tools"; });
+
   /* ---- Homepage ---- */
   const homeGrid = $("#tools .tools-grid");
   if (homeGrid) {
