@@ -48,8 +48,8 @@ echo <hash_hex> | wrangler pages secret put ADMIN_PASSWORD_HASH --project-name s
 echo <secret_hex> | wrangler pages secret put ADMIN_SESSION_SECRET --project-name stackhk13
 ```
 
-- 密码哈希 = PBKDF2-SHA256（10,000 轮，32 字节；受免费版 CPU 限制未用更高轮数）。生成：
-  `node -e "const c=require('crypto');const salt=c.randomBytes(16).toString('hex');console.log(salt, c.pbkdf2Sync('<新密码>',salt,10000,32,'sha256').toString('hex'))"`
+- 密码哈希 = PBKDF2-SHA256（10,000 轮，32 字节；受免费版 CPU 限制未用更高轮数）。**注意盐要先从 hex 解码成字节**：
+  `node -e "const c=require('crypto');const salt=c.randomBytes(16).toString('hex');console.log(salt, c.pbkdf2Sync('<新密码>',Buffer.from(salt,'hex'),10000,32,'sha256').toString('hex'))"`
 - `ADMIN_USERNAME` / `SITE_VERSION` 在 wrangler.toml 的 `[vars]` 里，改完重新 deploy。
 
 > Workers 部署路径：`wrangler deploy -c wrangler-workers.jsonc`，secrets 用 `wrangler secret put`（不带 --project-name）。
