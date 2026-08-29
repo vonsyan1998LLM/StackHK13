@@ -526,8 +526,8 @@ svg.ic{width:18px;height:18px;vertical-align:-.18em;flex-shrink:0;display:inline
 .review-tool-logo svg.ic{width:34px;height:34px}
 .rank-num svg.ic{width:16px;height:16px}
 /* news feed 缩略图：左图，右侧 meta/标题/摘要纵向堆叠 */
-#news-feed .feed-item,#home-news-feed .feed-item{display:grid;grid-template-columns:110px 1fr;column-gap:16px;row-gap:4px;align-items:start}
-#news-feed .feed-item .feed-thumb,#home-news-feed .feed-item .feed-thumb{grid-row:1/span 3;grid-column:1;width:110px;height:74px;border-radius:10px;object-fit:cover;align-self:start}
+#news-feed .feed-item,#home-news-feed .feed-item{display:grid;grid-template-columns:145px 1fr;column-gap:16px;row-gap:4px;align-items:start}
+#news-feed .feed-item .feed-thumb,#home-news-feed .feed-item .feed-thumb{grid-row:1/span 3;grid-column:1;width:140px;height:80px;border-radius:10px;object-fit:cover;align-self:start;margin-top:15px}
 #news-feed .feed-item .feed-meta,#home-news-feed .feed-item .feed-meta{grid-column:2;grid-row:1}
 #news-feed .feed-item .feed-title,#home-news-feed .feed-item .feed-title{grid-column:2;grid-row:2}
 #news-feed .feed-item .feed-excerpt,#home-news-feed .feed-item .feed-excerpt{grid-column:2;grid-row:3}
