@@ -32,6 +32,7 @@
 
     <div class="glossary-group">
       <div class="glossary-letter">C</div>
+      <div class="term"><h3>Benchmark</h3><p>A standardized test (MMLU, Terminal Bench, HumanEval) measuring model capability. Useful for direction, dangerous as gospel: benchmarks leak into training data and rarely match your actual workload.</p></div>
       <div class="term"><h3>Context Window</h3><p>How much text a model can consider at once — conversation history, documents, instructions. Bigger windows handle longer projects.</p></div>
       <div class="term"><h3>Chain-of-Thought</h3><p>Prompting a model to reason step by step before answering, which improves accuracy on complex problems.</p></div>
     </div>
@@ -48,11 +49,15 @@
 
     <div class="glossary-group">
       <div class="glossary-letter">H</div>
+      <div class="term"><h3>Function Calling</h3><p>The mechanism that lets an LLM trigger external tools — search a database, call an API, write a file. It is the technical foundation every AI agent is built on.</p></div>
+      <div class="term"><h3>GPT</h3><p>Generative Pre-trained Transformer — the architecture behind OpenAI’s models and the reason "GPT" became shorthand for AI chatbots. Today it also refers to custom chatbot instances built on those models.</p></div>
+      <div class="term"><h3>Guardrails</h3><p>Safety layers around a model — input filters, output checks and topic policies that block harmful or off-brand responses. Businesses deploy their own guardrails on top of vendor-provided ones.</p></div>
       <div class="term"><h3>Hallucination</h3><p>When an AI states something false with confidence. Why citations, sources, and human review still matter.</p></div>
     </div>
 
     <div class="glossary-group">
       <div class="glossary-letter">L</div>
+      <div class="term"><h3>Inference</h3><p>The act of running a trained model to produce output. Inference speed and cost are what you actually pay for when calling an AI API, measured in tokens per second and dollars per million tokens.</p></div>
       <div class="term"><h3>LLM (Large Language Model)</h3><p>The core technology behind chatbots like ChatGPT and Claude — trained on vast text to predict and generate language.</p></div>
     </div>
 
@@ -63,6 +68,8 @@
 
     <div class="glossary-group">
       <div class="glossary-letter">P</div>
+      <div class="term"><h3>MoE (Mixture of Experts)</h3><p>An efficiency architecture where only specialized "expert" subsets activate per request — how a model can hold 284B parameters while activating just 13B, cutting cost without cutting capability.</p></div>
+      <div class="term"><h3>Open Weights</h3><p>Models whose learned parameters are publicly downloadable, letting anyone run, fine-tune or self-host them. Not the same as open-source (training code and data usually stay private). Qwen and DeepSeek are prominent examples.</p></div>
       <div class="term"><h3>Prompt Engineering</h3><p>Designing instructions that reliably get the output you want. Better prompts beat better models more often than people expect.</p></div>
     </div>
 
@@ -74,7 +81,10 @@
     <div class="glossary-group">
       <div class="glossary-letter">T</div>
       <div class="term"><h3>TTS (Text-To-Speech)</h3><p>Generating natural-sounding speech from text. Modern TTS handles emotion, pacing, and voice cloning.</p></div>
-      <div class="term"><h3>Token</h3><p>The unit of text models read and bill by — roughly three-quarters of a word in English.</p></div>
+      <div class="term"><h3>Token</h3><p>The unit of text models read and bill by — roughly three-quarters of a word in English.</p></div><div class="term"><h3>Transformer</h3><p>The neural network architecture introduced in the 2017 paper "Attention Is All You Need." Its attention mechanism lets models weigh every word against every other word — the foundation of all modern LLMs.</p></div><div class="term"><h3>Training Data</h3><p>The text, images and code a model learns from. Its quality, freshness and licensing determine what a model knows — and it is the center of most AI copyright debates.</p></div><div class="term"><h3>Zero-shot / Few-shot</h3><p>Prompting styles: zero-shot asks the model to perform with no examples; few-shot includes a handful of demonstrations. A few good examples still beats clever instructions for consistent formats.</p></div>
+      
+      
+      
     </div>
 
   </div>
