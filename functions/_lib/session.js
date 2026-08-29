@@ -54,10 +54,13 @@ export async function verifySession(env, request) {
   }
 }
 
-// Full guard for write endpoints: session + CSRF header. Returns payload or null.
+// Full guard: session always; CSRF header only for state-changing methods
+// (GET/HEAD are safe methods — requiring CSRF there breaks authed reads).
 export async function requireAuth(request, env) {
   const payload = await verifySession(env, request);
   if (!payload) return null;
+  const method = request.method.toUpperCase();
+  if (method === 'GET' || method === 'HEAD') return payload;
   const header = request.headers.get('X-CSRF-Token') || '';
   if (!header || !timingSafeEqual(header, payload.csrf)) return null;
   return payload;
