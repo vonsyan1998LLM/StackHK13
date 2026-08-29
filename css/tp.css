@@ -49,7 +49,7 @@ header{
   border-bottom:1px solid rgba(26,28,34,.03);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:20px;letter-spacing:-.02em}
 .logo .mark{
   width:32px;height:32px;border-radius:9px;flex:none;color:#fff;font-size:15px;
   background:linear-gradient(135deg,var(--cyan),var(--indigo) 55%,var(--violet));
@@ -92,7 +92,7 @@ header{
 .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#10b981;box-shadow:0 0 8px #10b981}
 h1{position:relative;font-size:clamp(38px,5.6vw,66px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px}
 .grad{background:linear-gradient(90deg,var(--cyan),var(--indigo) 50%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.sub{position:relative;max-width:720px;margin:0 auto;color:var(--muted);font-size:clamp(16px,2vw,19px)}
+.hero p.sub{position:relative;max-width:720px;margin:0 auto;color:var(--muted);font-size:16px}
 .hero p.sub strong{color:var(--text)}
 .hero-actions{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
@@ -194,7 +194,7 @@ section{padding:72px 0}
 .rank-body{min-width:0}
 .rank-name{font-weight:700;font-size:15px}
 .rank-cat{font-size:12.5px;color:var(--muted)}
-.rank-score{margin-left:auto;font-weight:800;font-size:15px;flex:none;background:linear-gradient(90deg,var(--cyan),var(--indigo));-webkit-background-clip:text;background-clip:text;color:transparent}
+.rank-score{color:rgb(94,94,102);background:rgb(247,248,250);padding:3px 10px;border-radius:7px;margin-left:auto;font-weight:100;font-size:14px;flex:none}
 .rank-trend{flex:none;font-size:12px;font-weight:700;width:36px;text-align:right}
 .trend-up{color:#059669}
 .trend-down{color:var(--rose)}
@@ -205,7 +205,7 @@ section{padding:72px 0}
 .cat-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;transition:.25s;display:block;box-shadow:var(--shadow)}
 .cat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cdd3ea}
 .cat-card .emoji{font-size:26px;margin-bottom:12px;display:block}
-.cat-card h3{font-size:15px;font-weight:800;margin-bottom:4px}
+.cat-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
 .cat-card p{font-size:12.5px;color:var(--muted)}
 
 /* ---------- COURSES ---------- */
@@ -304,7 +304,7 @@ section{padding:72px 0}
 .guide-card{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.25s;box-shadow:var(--shadow)}
 .guide-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#cdd3ea}
 .guide-card .emoji{font-size:26px;flex:none}
-.tag-guide{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--indigo);background:#ede9fe;padding:2px 10px;border-radius:999px;margin-bottom:4px}
+.tag-guide{display:inline-block;font-size:12px;font-weight:300;letter-spacing:.06em;text-transform:uppercase;color:#636364;background:#F4F4F4;padding:2px 10px;border-radius:999px;margin-bottom:4px}
 .guide-card h3{font-size:16px;font-weight:700;line-height:1.35}
 .guide-card p{font-size:13px;color:var(--muted);margin-top:6px}
 .meth-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -421,8 +421,7 @@ section.alt,.alt{background:#F3F1EC}
 
 /* 评分徽章：黑底金字（旧站 rc-badge 风格） */
 .tool-card .score b{background:#FFF7EC;color:#B87400;padding:3px 9px;border-radius:7px;display:inline-block}
-.rank-score{background:#FFF7EC;color:#B87400;padding:3px 10px;border-radius:7px}
-.rank-row.top1 .rank-score,.rank-wrap .rank-row:first-child .rank-score{background:#FFEFD1;color:#B87400;border:1px solid #F5A623}
+.rank-row.top1 .rank-score,.rank-wrap .rank-row:first-child .rank-score{color:rgb(94,94,102);background:rgb(247,248,250);border:none}
 
 /* 分类彩签：旧站分类色板 */
 .cat-chat{background:#EEF4FF;color:#2C5EE8}
@@ -439,7 +438,6 @@ section.alt,.alt{background:#F3F1EC}
 .tag-products{background:#EDFAF6;color:#0B8E72}
 .tag-business{background:#F0F4FF;color:#2C5EE8}
 .tag-research{background:#F9EEFF;color:#7A21C4}
-.tag-guide{color:#B87400}
 
 /* Footer：旧站深色 */
 footer{background:#0F1117;border-top:none;margin-top:72px}
@@ -494,7 +492,7 @@ footer .logo .lk{color:#F5A623}
 .hero .hero-badge{color:#1A1C22;background:#fff;border:1px solid rgba(26,28,34,.12);box-shadow:0 2px 10px rgba(26,28,34,.05)}
 .hero h1{color:#1A1C22}
 .hero h1 .grad{background:linear-gradient(92deg,#C7771B,#B87400 55%,#A56500);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.sub{color:#3F4450}
+.hero p.sub{color:var(--muted)}
 .hero p.sub strong{color:#1A1C22}
 .hero .btn-ghost{background:#fff;border:1px solid rgba(26,28,34,.2);color:#1A1C22;box-shadow:0 2px 10px rgba(26,28,34,.06)}
 .hero .hero-stats .stat-card{background:rgba(255,255,255,.9);border-color:rgba(26,28,34,.1)}
@@ -520,8 +518,8 @@ header .nav-links a:hover{color:#111 !important;background:#F3F1EC !important}
 header .logo .lt{color:#0F1117 !important;font-family:'Playfair Display',Georgia,serif !important}
 header .logo .lt .lk{color:#F5A623 !important}
 /* ============ 扁平化 SVG 图标（替换 emoji） ============ */
-svg.ic{width:18px;height:18px;vertical-align:-.18em;flex-shrink:0;display:inline-block;color:#9AA0AC;max-width:none;max-height:none}
-.cat-emoji svg.ic,.emoji svg.ic,.li-emoji svg.ic,.b-emoji-float svg.ic,.g-media svg.ic,.art-card-img svg.ic,.no-results-icon svg.ic,.contact-icon svg.ic{width:26px;height:26px}
+svg.ic{width:18px;height:18px;vertical-align:-.18em;flex-shrink:0;display:inline-block;color:#171717;max-width:none;max-height:none}
+.cat-emoji svg.ic,.emoji svg.ic,.li-emoji svg.ic,.b-emoji-float svg.ic,.g-media svg.ic,.art-card-img svg.ic,.no-results-icon svg.ic,.contact-icon svg.ic{width:30px;height:30px}
 .tool-icon svg.ic{width:20px;height:20px;stroke:#9AA0AC}
 .rev-emoji svg.ic{width:26px;height:26px}
 .deal-ico svg.ic,.t-ico svg.ic{width:18px;height:18px}
