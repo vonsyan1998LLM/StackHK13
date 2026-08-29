@@ -556,3 +556,10 @@ svg.ic{width:18px;height:18px;vertical-align:-.18em;flex-shrink:0;display:inline
 .quote-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:.9rem}
 .quote-card p{font-size:.95rem;line-height:1.7;color:var(--text)}
 .quote-card .who{margin-top:.55rem;font-size:.85rem;color:var(--muted)}
+
+/* ---------- 首页 hero：状态点发光跳动 + 标题打字机（2026-08-29 本地测试） ---------- */
+.hero-badge .dot{background:#00C2A0;display:inline-block;animation:dotGlow 1.6s ease-in-out infinite}
+@keyframes dotGlow{0%,100%{transform:scale(1);box-shadow:0 0 6px rgba(0,194,160,.55),0 0 14px rgba(0,194,160,.25)}50%{transform:scale(1.35);box-shadow:0 0 12px rgba(0,194,160,.9),0 0 26px rgba(0,194,160,.45)}}
+.type-caret{display:none;width:4px;height:.9em;margin-left:6px;background:var(--text);vertical-align:-.08em;border-radius:2px}
+@keyframes caretBlink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.hero-badge .dot{animation:none}}

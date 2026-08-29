@@ -61,3 +61,19 @@ console.log(`sitemap: 保留 ${kept.length} · 新增 ${added.length} · 共 ${a
 if (added.length) console.log('新增:\n' + added.map(a => '  + ' + a.loc.replace(BASE, '') + ` (${a.cf}/${a.pr})`).join('\n'));
 const dropped = oldOrder.filter(loc => !onDisk.has(loc));
 if (dropped.length) console.log('移除（文件已不存在）:\n' + dropped.map(d => '  - ' + d).join('\n'));
+
+// content-stats.json — 前端统计卡数据源（首页/分类页 data-stat 取数）
+const countH = dir => fs.readdirSync(path.join(ROOT, dir)).filter(f => f.endsWith('.html')).length;
+const seed = JSON.parse(fs.readFileSync(path.join(ROOT, 'api-seed.json'), 'utf8'));
+const stats = {
+  generated: new Date().toISOString(),
+  tools: seed.tools.length,
+  articles: countH('articles'),
+  reviews: countH('reviews'),
+  saas: countH('saas'),
+  news: countH('news'),
+  compare: countH('compare'),
+  categoriesPages: countH('categories')
+};
+fs.writeFileSync(path.join(ROOT, 'content-stats.json'), JSON.stringify(stats, null, 2));
+console.log('content-stats:', JSON.stringify({ tools: stats.tools, articles: stats.articles, categoriesPages: stats.categoriesPages, news: stats.news }));

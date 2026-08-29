@@ -59,6 +59,20 @@ async function loadData() {
   /* ---- 工具总数动态计数（tools 页标题） ---- */
   document.querySelectorAll("[data-tool-count]").forEach(el => { el.textContent = DATA.tools.length + "+ AI tools"; });
 
+  /* ---- 内容统计：data-stat 元素动态填充（含徽章数字纠偏） ---- */
+  fetch("/content-stats.json").then(r => r.ok ? r.json() : null).then(stats => {
+    if (!stats) return;
+    document.querySelectorAll("[data-stat]").forEach(el => {
+      const v = stats[el.dataset.stat];
+      if (v === undefined) return;
+      el.textContent = (el.dataset.plus ? "+" : "") + v;
+    });
+    const badge = document.querySelector(".hero-badge");
+    if (badge && badge.lastChild && badge.lastChild.nodeType === 3) {
+      badge.lastChild.textContent = badge.lastChild.textContent.replace(/\d+\+?\s*Tools Tested/, stats.tools + "+ Tools Tested");
+    }
+  }).catch(() => {});
+
   /* ---- Homepage ---- */
   const homeGrid = $("#tools .tools-grid");
   if (homeGrid) {
