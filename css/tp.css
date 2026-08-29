@@ -549,3 +549,10 @@ svg.ic{width:18px;height:18px;vertical-align:-.18em;flex-shrink:0;display:inline
 .tag-release{background:#F4F4F4;color:#636364}
 .feed-tag{font-size:12px;font-weight:300;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
 .side-list .s{font-weight:300;flex:none;-webkit-background-clip:text;color:#999999;font-family:sans-serif}
+
+/* ---------- NEWS 媒体与行业反应引述区（2026-08-29） ---------- */
+.press-quotes{max-width:780px;margin:2rem auto 0;padding:0 24px}
+.press-quotes h2{font-size:1.3rem;margin-bottom:1rem}
+.quote-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:.9rem}
+.quote-card p{font-size:.95rem;line-height:1.7;color:var(--text)}
+.quote-card .who{margin-top:.55rem;font-size:.85rem;color:var(--muted)}
