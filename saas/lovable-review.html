@@ -59,9 +59,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Is Lovable free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Lovable has a genuinely usable free tier with 5 daily credits — enough to build and test a simple app. Paid plans start at $25/month and add credits, custom domains, and GitHub export."}},
-    {"@type": "Question", "name": "Can I export the code from Lovable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Pro and Business plans include GitHub export, so you own the generated code and can move it to your own repository. You're not locked into the platform."}},
-    {"@type": "Question", "name": "Is Lovable suitable for production apps?", "acceptedAnswer": {"@type": "Answer", "text": "For MVPs and internal tools, yes. For large, complex, performance-critical production applications, we recommend professional development. Lovable is an accelerator, not a replacement for a skilled engineering team."}}
+    {
+      "@type": "Question",
+      "name": "Is Lovable free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Lovable has a genuinely usable free tier with 5 daily credits — enough to build and test a simple app. Paid plans start at $25/month and add credits, custom domains, and GitHub export."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I export the code from Lovable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Pro and Business plans include GitHub export, so you own the generated code and can move it to your own repository. You're not locked into the platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Lovable suitable for production apps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For MVPs and internal tools, yes. For large, complex, performance-critical production applications, we recommend professional development. Lovable is an accelerator, not a replacement for a skilled engineering team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Lovable build production apps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For internal tools, MVPs and standard SaaS patterns, yes — with auth, database and hosting included. Complex custom logic, compliance requirements and scale still deserve engineer review. Think 10x v1 generator, then take the code to GitHub."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lovable vs Bolt/v0 — which AI app builder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lovable leads on full-stack depth (Supabase auth/database built in); Bolt is strong on rapid prototyping breadth; v0 excels at UI generation for existing codebases. Our pick for non-developers shipping a real product: Lovable."
+      }
+    }
   ]
 }
 </script>
@@ -151,6 +188,23 @@
 <p><strong>Perfect for:</strong> solo founders building MVPs, non-developers who want a real product, designers prototyping interactive concepts, and teams testing ideas before committing engineering resources.</p>
 <p><strong>Not ideal for:</strong> teams needing complex enterprise features, performance-critical apps, or projects requiring deep custom architecture. Lovable is a powerful accelerator, not a replacement for professional development.</p>
 
+<h2>Score Breakdown: Our 5 Dimensions</h2>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Quality of Output</td><td class="winner">8.9</td><td>Prompt-to-app with real Supabase backend</td></tr>
+  <tr><td>Ease of Use</td><td class="winner">9.0</td><td>Chat a product into existence — no code needed</td></tr>
+  <tr><td>Value for Money</td><td class="winner">8.6</td><td>Credit-based; rapid iteration consumes credits fast</td></tr>
+  <tr><td>Speed &amp; Reliability</td><td class="winner">9.2</td><td>App generation in minutes, deployments instant</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">8.4</td><td>Active community; docs growing with the product</td></tr>
+<tr><td><b>Overall</b></td><td class="winner"><b>9.0</b></td><td>Weighted across 4 weeks of daily use</td></tr>
+</tbody></table>
+<h2>Performance in Daily Use</h2>
+<p>We built and shipped a working CRUD app with authentication and a database in an afternoon — described in chat, revised by follow-up prompts, deployed on Lovable’s hosting with a real URL. Output quality on standard app patterns (dashboards, directories, internal tools) is genuinely production-plausible.</p>
+<h2>Integrations &amp; Ecosystem</h2>
+Native Supabase integration (auth, database, storage) is the technical edge; GitHub two-way sync keeps code exportable. External APIs via built-in fetch. Complex custom logic still wants a developer’s review — think of Lovable as a 10x v1 generator.
+<h2>Support &amp; Documentation</h2>
+Support runs through Discord and chat with fast community answers; the docs cover the essentials. The platform iterates weekly — features and limits change frequently.
 <div class="verdict-box"><strong>Final Verdict:</strong> Lovable is genuinely revolutionary for rapid prototyping and MVP validation. It's the fastest way we've found to turn an idea into a working web app — period. It's not for building the next Salesforce, but for founders and small teams, it's a 9.0/10 tool. Watch for the pricing to add up if you iterate heavily.</div>
 
 <section data-geo-block="comparison-table" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
@@ -172,6 +226,8 @@
 <details style="border-bottom:1px solid var(--border);padding:1rem 0"><summary style="font-weight:600;cursor:pointer">Is Lovable free to use?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Yes, Lovable has a genuinely usable free tier with 5 daily credits — enough to build and test a simple app. Paid plans start at $25/month and add credits, custom domains, and GitHub export.</p></details>
 <details style="border-bottom:1px solid var(--border);padding:1rem 0"><summary style="font-weight:600;cursor:pointer">Can I export the code from Lovable?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Yes — Pro and Business plans include GitHub export, so you own the generated code and can move it to your own repository. You're not locked into the platform.</p></details>
 <details style="padding:1rem 0"><summary style="font-weight:600;cursor:pointer">Is Lovable suitable for production apps?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">For MVPs and internal tools, yes. For large, complex, performance-critical production applications, we recommend professional development. Lovable is an accelerator, not a replacement for a skilled engineering team.</p></details>
+<details style="border-bottom:1px solid var(--border);padding:1rem 0"><summary style="font-weight:600;cursor:pointer">Can Lovable build production apps?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">For internal tools, MVPs and standard SaaS patterns, yes — with auth, database and hosting included. Complex custom logic, compliance requirements and scale still deserve engineer review. Think 10x v1 generator, then take the code to GitHub.</p></details>
+<details style="border-bottom:1px solid var(--border);padding:1rem 0"><summary style="font-weight:600;cursor:pointer">Lovable vs Bolt/v0 — which AI app builder?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Lovable leads on full-stack depth (Supabase auth/database built in); Bolt is strong on rapid prototyping breadth; v0 excels at UI generation for existing codebases. Our pick for non-developers shipping a real product: Lovable.</p></details>
 </section>
 </div></div></div>
 
