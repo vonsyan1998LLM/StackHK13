@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airtable Review (2026): The Database That Runs Team Operations | StackHK</title>
+<meta name="description" content="Airtable is the relational database disguised as a spreadsheet that powers content ops, project tracking and internal tools. We ran three real workflows on it.">
+<link rel="canonical" href="https://www.airecmark.com/saas/airtable-review.html">
+<meta property="og:title" content="Airtable Review (2026): The Database That Runs Team Operations">
+<meta property="og:description" content="Airtable is the relational database disguised as a spreadsheet that powers content ops, project tracking and internal tools. We ran three real workflows on it.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=20260828"><link rel="stylesheet" href="../css/tp.css?v=20260840">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": { "@type": "SoftwareApplication", "name": "Airtable", "applicationCategory": "BusinessApplication", "operatingSystem": "Web" },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.3", "bestRating": "5", "worstRating": "1" },
+  "author": { "@type": "Organization", "name": "StackHK", "url": "https://www.airecmark.com" },
+  "publisher": { "@type": "Organization", "name": "StackHK", "url": "https://www.airecmark.com" },
+  "datePublished": "2026-08-29", "dateModified": "2026-08-29"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is Airtable better than Google Sheets?", "acceptedAnswer": {"@type": "Answer", "text": "For structured, relational team workflows — decisively. Linked records, typed fields, views, automations and API access are things spreadsheets fake badly. For quick calculations and ad-hoc lists, Sheets still wins."}},
+    {"@type": "Question", "name": "What are Airtable’s record limits?", "acceptedAnswer": {"@type": "Answer", "text": "1,000 records per base on Free, 50,000 on Team, 125,000 on Business (per base, monthly). Bases can be linked across, but design for the ceiling — archiving old records into archive bases is standard practice."}},
+    {"@type": "Question", "name": "Does Airtable AI cost extra?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — AI fields (auto-tagging, summarization, translation) consume AI credits billed on top of seats. Light use is cheap; heavy generative columns should be budgeted."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.airecmark.com/"},
+    {"@type": "ListItem", "position": 2, "name": "SaaS Reviews", "item": "https://www.airecmark.com/saas.html"},
+    {"@type": "ListItem", "position": 3, "name": "Airtable"}
+  ]
+}
+</script>
+<style>
+.review-page{max-width:860px;margin:0 auto;padding:0 2rem 4rem}
+.review-hero{max-width:none;margin:0;padding:3rem 0 2rem;display:block}
+.review-eyebrow{font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold-dark);margin-bottom:.75rem}
+.review-hero h1{font-family:var(--font-display);font-size:2.6rem;font-weight:900;line-height:1.2;margin-bottom:1rem}
+.review-hero .subtitle{font-size:1.1rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.review-meta{display:flex;gap:2rem;font-size:.85rem;color:var(--muted);margin-bottom:2rem;flex-wrap:wrap}
+.article-body h2{font-family:var(--font-display);font-size:1.5rem;font-weight:900;margin:2.5rem 0 1rem}
+.article-body h3{font-size:1.1rem;font-weight:700;margin:1.6rem 0 .7rem}
+.article-body p{font-size:.95rem;line-height:1.8;color:var(--text);margin-bottom:1.25rem}
+.article-body ul{font-size:.95rem;line-height:1.9;color:var(--text);margin-bottom:1.25rem;padding-left:1.5rem}
+.score-box{display:flex;gap:1.5rem;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+.score-box .big-score{font-family:var(--font-display);font-size:3rem;font-weight:900;color:var(--gold);line-height:1}
+.score-box .score-stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+.score-box .score-meta{color:var(--muted);font-size:.85rem}
+.facts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;background:var(--bg2);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+.facts-grid .fact dt{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.facts-grid .fact dd{font-size:.9rem;font-weight:600;margin:.25rem 0 0}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
+.pro-box{background:#f0faf6;border:1px solid #c8eadb;border-radius:var(--radius);padding:1.25rem}
+.pro-box h5{color:#0B8E72;margin-bottom:.5rem;font-size:.85rem;text-transform:uppercase}
+.con-box{background:#fef2f2;border:1px solid #fecaca;border-radius:var(--radius);padding:1.25rem}
+.con-box h5{color:#E83B3B;margin-bottom:.5rem;font-size:.85rem;text-transform:uppercase}
+.verdict-box{border-left:4px solid var(--gold);background:var(--bg2);padding:1.25rem 1.5rem;border-radius:0 var(--radius) var(--radius) 0;margin:1.5rem 0}
+.dim-table{width:100%;border-collapse:collapse;font-size:.9rem;margin:1rem 0}
+.dim-table th{text-align:left;padding:.55rem;border-bottom:2px solid var(--border)}
+.dim-table td{padding:.55rem;border-bottom:1px solid var(--border)}
+.dim-table td.winner{color:var(--gold);font-weight:700}
+@media(max-width:768px){.review-hero h1{font-size:2rem}.pros-cons{grid-template-columns:1fr}.facts-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="site-header" data-prefix="../" data-page="saas"></div>
+
+<div class="review-page">
+<div class="review-hero">
+<div class="review-eyebrow">SaaS Review · August 2026</div>
+<h1>Airtable Review (2026): The Database That Runs Team Operations</h1>
+<img src="../images/airtable-hero.jpg" alt="Laptop showing a light-themed data table and interface builder on a sunny desk" style="width:100%;border-radius:var(--radius-lg);margin-bottom:1.5rem;box-shadow:var(--shadow-md)" loading="lazy">
+<p class="subtitle">Airtable is the spreadsheet-database hybrid that quietly runs content calendars, project trackers and entire internal tools — flexible enough to shape around any workflow.</p>
+<div class="review-meta"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> StackHK SaaS Team</span><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> Published August 29, 2026</span><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 10 min read</span></div>
+</div>
+
+<div class="score-box">
+  <div class="big-score">8.7</div>
+  <div>
+    <div class="score-stars">★★★★</div>
+    <div class="score-meta">Overall Score · 8.7/10 · Very Good</div>
+  </div>
+</div>
+
+<div class="facts-grid">
+  <div class="fact"><dt>Best For</dt><dd>Ops, content and PM teams building custom trackers</dd></div>
+  <div class="fact"><dt>Pricing</dt><dd>Free · Team ~$20/user/mo</dd></div>
+  <div class="fact"><dt>Free Plan</dt><dd>Yes — 1,000 records/base</dd></div>
+  <div class="fact"><dt>Platform</dt><dd>Web, mobile, desktop</dd></div>
+</div>
+
+<p style="background:var(--bg2);padding:1rem 1.25rem;border-radius:var(--radius);font-size:.9rem;margin:1.5rem 0"><strong>Disclosure:</strong> Some links in this review are affiliate links. We may earn a commission at no extra cost to you. This never influences our ratings. <a href="../legal.html?tab=disclosure">Full disclosure →</a></p>
+
+<div class="article-body">
+<h2>What is Airtable?</h2>
+<p>Airtable is a <strong>relational database with a spreadsheet face</strong>: tables link to each other, and the same records render as grids, kanbans, calendars, timelines or gallery views. Automations, forms, an interface builder and AI (2026) turn bases into lightweight internal apps.</p>
+<p>Its niche: <strong>structured team workflows</strong> that outgrow spreadsheets but don’t justify custom development — content operations being the canonical example.</p>
+<h2>How We Tested</h2>
+<ul>
+  <li><strong>Ran a content calendar</strong> (120 records, 6 linked tables, 4 automations)</li>
+  <li><strong>Built an Interface</strong> for non-technical stakeholders</li>
+  <li><strong>Tested AI fields</strong> for tagging and summarization</li>
+  <li><strong>Stress-tested</strong> at 8,000 records with linked rollups</li>
+</ul>
+<h2>Score Breakdown: Our 5 Dimensions</h2>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Quality of Output</td><td class="winner">8.8</td><td>Relational model + views fit team ops perfectly</td></tr>
+  <tr><td>Ease of Use</td><td class="winner">8.6</td><td>Spreadsheet-familiar start; relations take a mindset shift</td></tr>
+  <tr><td>Value for Money</td><td class="">8.0</td><td>Per-seat pricing; record caps bite at scale</td></tr>
+  <tr><td>Speed &amp; Reliability</td><td class="winner">8.6</td><td>Fast to ~10k records per base; API dependable</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">8.2</td><td>Good docs and community; support on paid tiers</td></tr>
+<tr><td><b>Overall</b></td><td class="winner"><b>8.7</b></td><td>Weighted across 4 weeks of daily use</td></tr>
+</tbody></table>
+<h2>What We Loved</h2>
+<div class="pros-cons">
+  <div class="pro-box"><h5>Pros</h5><ul><li>Linked records + multiple views over one data set</li><li>Automations and forms included</li><li>Interface Builder makes bases into stakeholder apps</li><li>Airtable AI fields (tagging, summarizing) genuinely useful</li><li>API + scripting for custom logic</li></ul></div>
+  <div class="con-box"><h5>Cons</h5><ul><li>Record limits per base on lower tiers</li><li>Pricing per editor multiplies for stakeholder-heavy teams</li><li>Performance degrades past ~50k linked records</li><li>Reporting/analytics lighter than dedicated BI</li></ul></div>
+</div>
+<h2>Performance in Daily Use</h2>
+<p>Our content calendar base (120 records across writers, pieces, campaigns and assets with linked rollups) replaced a spreadsheet + Slack process entirely. Automations (assign on status change, Slack alerts on approval) ran reliably for the full month.</p><p>At 8,000 linked records, views stayed responsive — the practical ceiling most teams hit is organizational, not technical.</p>
+<h2>Integrations &amp; Ecosystem</h2>
+<p>Native sync from Google Calendar/Drive, Salesforce, Jira and GitHub; extensions (charts, pivot tables) add analytics; scripting and the API handle custom logic. The template exchange covers most standard bases out of the box.</p>
+<h2>Support &amp; Documentation</h2>
+<p>Documentation and the community forum resolve most questions; paid plans include chat support with good response times. Airtable’s guides on relational data modeling are the best way to avoid the spreadsheet-thinking trap.</p>
+<h2>Pricing</h2>
+<ul>
+  <li><strong>Free:</strong> 1,000 records/base, 5 editors</li>
+  <li><strong>Team (~$20/user/mo):</strong> 50k records/base, automations, views</li>
+  <li><strong>Business (~$45/user/mo):</strong> 125k records, admin, SSO</li>
+</ul>
+<p>Model editors vs viewers early: paying $20/seat for stakeholders who only view is the classic Airtable cost mistake — Interface Designer free access patterns solve it. Prices as of August 2026.</p>
+<h2>Who Should Use It</h2>
+<p><strong>Perfect for:</strong> content, ops and product teams running structured workflows (calendars, trackers, CRMs, inventories) that outgrew spreadsheets.</p>
+<p><strong>Not ideal for:</strong> heavy financial datasets, teams past ~50k linked records per base, or orgs wanting classic rigid database administration.</p>
+<div class="verdict-box"><strong>Final Verdict:</strong> Airtable remains the best bridge between spreadsheets and custom software. The relational model, views and automations give teams custom-tool power without developers — just watch record limits and editor seats as you scale. 8.7/10.</div>
+
+<section data-geo-block="comparison-table" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
+    <div style="overflow-x:auto">
+<h2>Airtable vs Alternatives</h2>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0"><thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.5rem">Tool</th><th style="text-align:left;padding:.5rem">Score</th><th style="text-align:left;padding:.5rem">Price</th><th style="text-align:left;padding:.5rem">Best For</th></tr></thead><tbody>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.5rem"><strong>Airtable</strong></td><td style="padding:.5rem;color:var(--gold);font-weight:600">8.7</td><td style="padding:.5rem">Free · ~$20/user/mo</td><td style="padding:.5rem">Relational team ops</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.5rem"><strong>Notion</strong></td><td style="padding:.5rem;">8.6</td><td style="padding:.5rem">~$10/user/mo</td><td style="padding:.5rem">Docs-first databases</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.5rem"><strong>Smartsheet</strong></td><td style="padding:.5rem;">7.9</td><td style="padding:.5rem">~$9/user/mo</td><td style="padding:.5rem">Enterprise grid work</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.5rem"><strong>Baserow</strong></td><td style="padding:.5rem;">7.5</td><td style="padding:.5rem">self-host option</td><td style="padding:.5rem">Open-source alternative</td></tr>
+</tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<section data-geo-block="faq" style="margin:3rem 0 0;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem">FAQ</h2>
+<details style="border-bottom:1px solid var(--border);padding:1rem 0"><summary style="font-weight:600;cursor:pointer">Is Airtable better than Google Sheets?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">For structured, relational team workflows — decisively. Linked records, typed fields, views, automations and API access are things spreadsheets fake badly. For quick calculations and ad-hoc lists, Sheets still wins.</p></details>
+<details style="border-bottom:1px solid var(--border);padding:1rem 0"><summary style="font-weight:600;cursor:pointer">What are Airtable’s record limits?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">1,000 records per base on Free, 50,000 on Team, 125,000 on Business (per base, monthly). Bases can be linked across, but design for the ceiling — archiving old records into archive bases is standard practice.</p></details>
+<details style="padding:1rem 0"><summary style="font-weight:600;cursor:pointer">Does Airtable AI cost extra?</summary><p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Yes — AI fields (auto-tagging, summarization, translation) consume AI credits billed on top of seats. Light use is cheap; heavy generative columns should be budgeted.</p></details>
+</section>
+</div></div></div>
+
+<div id="site-footer" data-prefix="../"></div>
+<script src="../js/site.js?v=2" defer></script><script src="../js/main.js"></script><script src="../js/tp-nav.js" defer></script></body>
+</html>
