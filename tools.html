@@ -24,7 +24,10 @@
 <section style="padding-top:48px">
   <div class="wrap">
     <div class="filter-bar">
-      <input type="text" id="search" class="search-input" placeholder="<svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Search tools… (e.g. writing, video, voice)">
+      <div style="position:relative;flex:1;min-width:240px">
+        <svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="search" class="search-input" placeholder="Search tools… (e.g. writing, video, voice)" style="width:100%;padding-left:44px">
+      </div>
       <button class="chip on" data-cat="all">All</button>
       <button class="chip" data-cat="chat">Chat &amp; Writing</button>
       <button class="chip" data-cat="image">Image</button>
