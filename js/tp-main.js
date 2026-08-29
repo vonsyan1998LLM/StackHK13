@@ -48,7 +48,9 @@ async function loadData() {
 
   function newsItem(n) {
     const [tagLabel, tagClass] = TAG[n.tag] || [n.tag, "tag-products"];
+    const thumb = n.image ? `<img class="feed-thumb" src="${esc(n.image)}" alt="" loading="lazy" onerror="this.remove()">` : "";
     return `<article class="feed-item">
+      ${thumb}
       <div class="feed-meta"><span class="feed-tag ${tagClass}">${esc(tagLabel)}</span><span>· ${esc(n.when)}</span></div>
       <h3 class="feed-title"><a href="${esc(n.url||"#")}">${esc(n.title)}</a></h3>
       <p class="feed-excerpt">${esc(n.excerpt)}</p></article>`;
