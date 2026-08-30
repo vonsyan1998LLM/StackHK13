@@ -4,7 +4,7 @@ import { issueSession, sessionCookie, SESSION_TTL_SECONDS } from '../../_lib/ses
 import { rateLimit } from '../../_lib/ratelimit.js';
 
 export async function onRequestPost({ request, env }) {
-  if (!env.ADMIN_SESSION_SECRET || !env.ADMIN_PASSWORD_HASH || !env.ADMIN_PASSWORD_SALT) {
+  if (!env.ADMIN_SESSION_SECRET || !env.ADMIN_PASSWORD_HASH || !env.ADMIN_PASSWORD_SALT || !env.ADMIN_USERNAME) {
     return fail(500, 'CONFIG', 'Server secrets are not configured');
   }
   if (!(await rateLimit(env, request, env.ADMIN_SESSION_SECRET, 'login', 5))) {
@@ -23,7 +23,7 @@ export async function onRequestPost({ request, env }) {
     return fail(400, 'BAD_REQUEST', 'Username and password are required');
   }
 
-  const userOk = timingSafeEqual(username, env.ADMIN_USERNAME || 'Stackhk007');
+  const userOk = timingSafeEqual(username, env.ADMIN_USERNAME);
   const computed = await pbkdf2HashHex(password, env.ADMIN_PASSWORD_SALT);
   const passOk = timingSafeEqual(computed, env.ADMIN_PASSWORD_HASH);
 
