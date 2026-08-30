@@ -17,21 +17,45 @@
 <link rel="stylesheet" href="css/style.css?v=20260828"><link rel="stylesheet" href="css/tp.css?v=20260840">
 <style>
 .art-page{max-width:1100px;margin:0 auto;padding:3rem 2rem 4rem}
-.art-header{text-align:center;margin-bottom:3rem}
+.art-header{text-align:center;margin-bottom:2.25rem}
 .art-header .eyebrow{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:.75rem}
 .art-header h1{font-family:var(--font-display);font-size:2.4rem;font-weight:900;margin-bottom:.75rem}
 .art-header p{color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto;line-height:1.7}
+.art-stats{display:flex;justify-content:center;gap:2.25rem;margin-top:1.5rem;flex-wrap:wrap}
+.art-stats div{text-align:center}
+.art-stats b{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--gold-dark,#B87E14)}
+.art-stats span{font-size:.8rem;color:var(--muted)}
+.topic-chips{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin:1.75rem 0 0}
+.topic-chips a{font-size:.82rem;font-weight:600;padding:.4rem .9rem;border:1px solid var(--border);border-radius:99px;color:var(--text);text-decoration:none;background:var(--card)}
+.topic-chips a:hover{border-color:var(--gold);color:var(--gold)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin:2.75rem 0 1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)}
+.sec-head:first-of-type{border-top:none;margin-top:0;padding-top:0}
+.sec-head h2{font-family:var(--font-display);font-size:1.45rem;font-weight:900;margin:0}
+.sec-head .count{font-size:.85rem;color:var(--muted)}
 .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .art-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;text-decoration:none;transition:all .2s;display:flex;flex-direction:column}
 .art-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--gold)}
 .art-card-img{height:110px;position:relative;display:flex;align-items:center;justify-content:center;font-size:2.6rem;background-size:cover;background-position:center}
 .art-card-img::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.5)}
 .art-card-img .ic{position:relative;z-index:1}
+.grad{background:linear-gradient(135deg,var(--g1),var(--g2))}
+.grad::before{background:rgba(255,255,255,.25)}
 .art-card-body{padding:1.25rem}
 .art-card-tag{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:.2rem .6rem;border-radius:4px;margin-bottom:.75rem}
 .art-card h3{font-size:.95rem;font-weight:700;line-height:1.4;margin-bottom:.5rem;color:var(--text)}
 .art-card p{font-size:.85rem;color:var(--muted);line-height:1.5;margin-bottom:0}
-@media(max-width:768px){.art-grid{grid-template-columns:1fr}}
+.pick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1rem}
+.pick-card2{position:relative;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;text-decoration:none;background:var(--card);transition:all .2s;display:flex;flex-direction:column}
+.pick-card2:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--gold)}
+.pick-card2 .pick-badge{position:absolute;top:12px;left:12px;z-index:2;background:linear-gradient(135deg,#F5A623,#D4891A);color:#fff;font-size:.72rem;font-weight:700;padding:.25rem .7rem;border-radius:999px}
+.pick-card2 .art-card-img{height:130px}
+.pick-card2 h3{font-size:1.05rem}
+.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;margin-top:2.75rem}
+.trust-strip div{text-align:center}
+.trust-strip .t-ic{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#FFF3DC,#FFE7B8);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.3rem}
+.trust-strip b{display:block;margin-bottom:.35rem;font-size:.95rem}
+.trust-strip p{font-size:.85rem;color:var(--muted);line-height:1.6;margin:0}
+@media(max-width:768px){.art-grid,.pick-grid,.trust-strip{grid-template-columns:1fr}}
 </style>
 
 <meta name="twitter:card" content="summary_large_image">
@@ -47,59 +71,140 @@
 <body>
 <div id="site-header" data-prefix="" data-page="articles"></div>
 
-
-
 <div class="art-page">
 <div class="art-header">
 <div class="eyebrow">Articles & Guides</div>
 <h1>Rankings, Comparisons & Buying Guides</h1>
 <p>Our editors spend weeks testing every tool. These articles distil that research into practical rankings, head-to-head comparisons, and guides you can act on.</p>
+<div class="art-stats">
+  <div><b>31</b><span>In-depth guides</span></div>
+  <div><b>14</b><span>Topics covered</span></div>
+  <div><b>2–4 wks</b><span>Per tool tested</span></div>
+  <div><b>Aug 2026</b><span>Last updated</span></div>
+</div>
+<div class="topic-chips">
+  <a href="#assistants">🤖 Assistants</a>
+  <a href="#writing">✍️ Writing</a>
+  <a href="#coding">💻 Coding</a>
+  <a href="#media">🎨 Image · Video · Audio</a>
+  <a href="#productivity">⚡ Productivity</a>
+  <a href="#business">💼 Business</a>
+  <a href="#start-here">🧭 Start Here</a>
+</div>
 </div>
 
+<div class="sec-head"><h2>Editor's Picks</h2><span class="count">Where to start</span></div>
+<div class="pick-grid">
+  <a href="articles/best-ai-coding-agents-2026.html" class="pick-card2">
+    <span class="pick-badge">Most Requested</span>
+    <div class="art-card-img grad" style="--g1:#EDFAF6;--g2:#c8eadb"><span class="ic" style="font-size:2.6rem">🤖</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#EDFAF6;color:#0B8E72">Coding Agents</span><h3>5 Best AI Coding Agents 2026</h3><p>Cursor, Windsurf, Copilot, Replit Agent and Cline on the same 8 tasks in real repositories.</p></div>
+  </a>
+  <a href="articles/chatgpt-vs-claude-vs-gemini-2026.html" class="pick-card2">
+    <span class="pick-badge">Most Read</span>
+    <div class="art-card-img" style="background-image:url('images/chatgpt-claude-gemini-hero-card.jpg')"><span class="ic" style="font-size:2.4rem">🏆</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#E0F2FE;color:#0369A1">Big Comparison</span><h3>ChatGPT vs Claude vs Gemini 2026</h3><p>The ultimate AI assistant showdown — 500+ head-to-head tests across 6 dimensions.</p></div>
+  </a>
+  <a href="articles/best-mcp-tools-2026.html" class="pick-card2">
+    <span class="pick-badge">Deep Dive</span>
+    <div class="art-card-img grad" style="--g1:#FFF7EC;--g2:#ffe8c8"><span class="ic" style="font-size:2.6rem">🔌</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FFF4E0;color:#B87400">MCP</span><h3>Best MCP Tools 2026</h3><p>The Model Context Protocol stack — 15 server configurations tested across real workflows.</p></div>
+  </a>
+</div>
+
+<div class="sec-head" id="assistants"><h2>🤖 AI Assistants & Chatbots</h2><span class="count">3 guides</span></div>
 <div class="art-grid">
-  <a href="articles/best-ai-writing-tools-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/best-writing-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#EEF4FF;color:#2C5EE8">Writing</span><h3>10 Best AI Writing Tools in 2026</h3><p>Claude Pro, ChatGPT-4o, Jasper and more ranked by quality, value, and real-world performance.</p></div>
-  </a>
-  <a href="articles/best-ai-coding-tools-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/best-coding-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#EDFAF6;color:#0B8E72">Coding</span><h3>8 Best AI Coding Tools in 2026</h3><p>Cursor, GitHub Copilot, and open-source options tested across 50+ real projects.</p></div>
-  </a>
-  <a href="articles/best-ai-productivity-tools-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/ai-productivity-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#FFF7EC;color:#CC6B0B">Productivity</span><h3>7 Best AI Productivity Tools</h3><p>Notion AI, ChatGPT, Perplexity and more that actually save you hours every week.</p></div>
-  </a>
-  <a href="articles/best-ai-image-generators-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/ai-image-generators-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#F9EEFF;color:#7A21C4">Image & Video</span><h3>7 Best AI Image Generators</h3><p>Midjourney, DALL-E 3, Runway and more tested across 300+ prompts.</p></div>
-  </a>
-  <a href="articles/best-ai-audio-tools-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/best-audio-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v7a7 7 0 0 1-14 0v-7"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF2F2;color:#E83B3B">Audio & Voice</span><h3>8 Best AI Audio & Voice Tools</h3><p>ElevenLabs, Suno and more — the best AI voice and music generators of 2026.</p></div>
-  </a>
-  <a href="articles/best-ai-business-tools-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/best-business-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#F0FDF4;color:#166534">Business</span><h3>8 Best AI Business Tools</h3><p>From data analysis to enterprise AI — the tools powering modern businesses.</p></div>
-  </a>
   <a href="articles/chatgpt-vs-claude-vs-gemini-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/chatgpt-claude-gemini-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
+    <div class="art-card-img" style="background-image:url('images/chatgpt-claude-gemini-hero-card.jpg')"><span class="ic" style="font-size:2.4rem">🏆</span></div>
     <div class="art-card-body"><span class="art-card-tag" style="background:#E0F2FE;color:#0369A1">Comparison</span><h3>ChatGPT vs Claude vs Gemini 2026</h3><p>The ultimate AI assistant showdown — 500+ head-to-head tests across 6 dimensions.</p></div>
   </a>
   <a href="articles/best-free-ai-tools-2026.html" class="art-card">
     <div class="art-card-img" style="background-image:url('images/best-free-ai-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg></div>
     <div class="art-card-body"><span class="art-card-tag" style="background:#ECFDF5;color:#047857">Value</span><h3>10 Best Free AI Tools in 2026</h3><p>Actually good free tools that compete with paid options. No credit card required.</p></div>
   </a>
-  <a href="articles/how-to-choose-ai-tool-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/how-to-choose-ai-tool-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF3C7;color:#92400E">Guide</span><h3>How to Choose the Right AI Tool</h3><p>A step-by-step framework for evaluating AI tools by your actual needs — not marketing hype.</p></div>
+  <a href="articles/ai-agents-explained-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/ai-agents-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FFF4E0;color:#B87400">Explainer</span><h3>AI Agents Explained (2026)</h3><p>What AI agents are, how they work, and which agent tools are worth trying.</p></div>
   </a>
-  <a href="articles/ai-tool-mistakes-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/ai-mistakes-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF2F2;color:#DC2626">Guide</span><h3>7 AI Tool Mistakes to Avoid in 2026</h3><p>The biggest mistakes that cost time and money — and exactly how to fix them.</p></div>
+</div>
+
+<div class="sec-head" id="writing"><h2>✍️ Writing & Content</h2><span class="count">1 guide</span></div>
+<div class="art-grid">
+  <a href="articles/best-ai-writing-tools-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/best-writing-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#EEF4FF;color:#2C5EE8">Writing</span><h3>10 Best AI Writing Tools in 2026</h3><p>Claude Pro, ChatGPT-4o, Jasper and more ranked by quality, value, and real-world performance.</p></div>
   </a>
-  <a href="articles/saas-vs-ai-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/saas-vs-ai-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#E0F2FE;color:#0369A1">Insight</span><h3>SaaS vs AI Tools (2026)</h3><p>How AI is reshaping the software industry — and what it means for buyers.</p></div>
+</div>
+
+<div class="sec-head" id="coding"><h2>💻 Coding & Development</h2><span class="count">4 guides</span></div>
+<div class="art-grid">
+  <a href="articles/best-ai-coding-tools-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/best-coding-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#EDFAF6;color:#0B8E72">Coding</span><h3>8 Best AI Coding Tools in 2026</h3><p>Cursor, GitHub Copilot, and open-source options tested across 50+ real projects.</p></div>
+  </a>
+  <a href="articles/best-ai-coding-agents-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#EDFAF6;--g2:#c8eadb"><span class="ic" style="font-size:2.6rem">🤖</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#EDFAF6;color:#0B8E72">Coding Agents</span><h3>5 Best AI Coding Agents 2026</h3><p>Cursor, Windsurf, Copilot, Replit Agent and Cline on the same 8 tasks in real repositories.</p></div>
+  </a>
+  <a href="articles/best-mcp-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#FFF7EC;--g2:#ffe8c8"><span class="ic" style="font-size:2.6rem">🔌</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FFF4E0;color:#B87400">MCP</span><h3>Best MCP Tools 2026</h3><p>The Model Context Protocol stack — 15 server configurations tested across real workflows.</p></div>
+  </a>
+  <a href="articles/chatgpt-vs-claude-for-coding-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#EEF4FF;--g2:#d8e4ff"><span class="ic" style="font-size:2.6rem">⚔️</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#E0F2FE;color:#0369A1">Comparison</span><h3>ChatGPT vs Claude for Coding</h3><p>Two weeks, two repos, one question: which assistant writes better code?</p></div>
+  </a>
+</div>
+
+<div class="sec-head" id="media"><h2>🎨 Image, Video & Audio</h2><span class="count">6 guides</span></div>
+<div class="art-grid">
+  <a href="articles/best-ai-image-generators-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/ai-image-generators-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#F9EEFF;color:#7A21C4">Image & Video</span><h3>7 Best AI Image Generators</h3><p>Midjourney, DALL-E 3, Runway and more tested across 300+ prompts.</p></div>
+  </a>
+  <a href="articles/best-ai-image-editing-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#F9EEFF;--g2:#e8d0ff"><span class="ic" style="font-size:2.6rem">🖼️</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#F9EEFF;color:#7A21C4">Image Editing</span><h3>7 Best AI Image Editing Tools 2026</h3><p>Retouching, background removal and batch editing tested on real product catalogs.</p></div>
+  </a>
+  <a href="articles/best-ai-video-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#FEF2F2;--g2:#fecaca"><span class="ic" style="font-size:2.6rem">🎬</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF2F2;color:#DC2626">Video</span><h3>7 Best AI Video Tools 2026</h3><p>Generation and editing tools tested to broadcast-ready output.</p></div>
+  </a>
+  <a href="articles/best-ai-audio-tools-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/best-audio-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v7a7 7 0 0 1-14 0v-7"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF2F2;color:#E83B3B">Audio & Voice</span><h3>8 Best AI Audio & Voice Tools</h3><p>ElevenLabs, Suno and more — the best AI voice and music generators of 2026.</p></div>
+  </a>
+  <a href="articles/best-ai-transcription-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#FFF0F0;--g2:#ffd6d6"><span class="ic" style="font-size:2.6rem">🎙️</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF2F2;color:#E83B3B">Transcription</span><h3>7 Best AI Transcription Tools 2026</h3><p>Accuracy on brutal audio: crosstalk, jargon and café noise.</p></div>
+  </a>
+  <a href="articles/best-ai-presentation-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#EDE9FE;--g2:#d6ccfb"><span class="ic" style="font-size:2.6rem">📊</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#EDE9FE;color:#6D28D9">Presentations</span><h3>7 Best AI Presentation Tools 2026</h3><p>Gamma and the deck generators — tested to the final exported slide.</p></div>
+  </a>
+</div>
+
+<div class="sec-head" id="productivity"><h2>⚡ Productivity</h2><span class="count">3 guides</span></div>
+<div class="art-grid">
+  <a href="articles/best-ai-productivity-tools-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/ai-productivity-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FFF7EC;color:#CC6B0B">Productivity</span><h3>7 Best AI Productivity Tools</h3><p>Notion AI, ChatGPT, Perplexity and more that actually save you hours every week.</p></div>
+  </a>
+  <a href="articles/best-ai-meeting-notes-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#FFF7EC;--g2:#ffe8c8"><span class="ic" style="font-size:2.6rem">📝</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FFF7EC;color:#CC6B0B">Meetings</span><h3>7 Best AI Meeting Notes Tools 2026</h3><p>Transcription, summaries and action items across 40 hours of real meetings.</p></div>
+  </a>
+  <a href="articles/best-ai-website-builders-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#ECFDF5;--g2:#c8eadb"><span class="ic" style="font-size:2.6rem">🌐</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#ECFDF5;color:#047857">Website Builders</span><h3>7 Best AI Website Builders 2026</h3><p>From prompt to published site — builders ranked on real projects.</p></div>
+  </a>
+</div>
+
+<div class="sec-head" id="business"><h2>💼 Business & Marketing</h2><span class="count">10 guides</span></div>
+<div class="art-grid">
+  <a href="articles/best-ai-business-tools-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/best-business-tools-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#F0FDF4;color:#166534">Business</span><h3>8 Best AI Business Tools</h3><p>From data analysis to enterprise AI — the tools powering modern businesses.</p></div>
   </a>
   <a href="articles/best-crm-small-business-2026.html" class="art-card">
     <div class="art-card-img" style="background-image:url('images/best-crm-smb-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
@@ -117,16 +222,78 @@
     <div class="art-card-img" style="background-image:url('images/best-analytics-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></div>
     <div class="art-card-body"><span class="art-card-tag" style="background:#CCFBF1;color:#0F766E">Ranking</span><h3>7 Best Analytics Tools 2026</h3><p>From Mixpanel to Google Analytics — the tools that turn data into decisions.</p></div>
   </a>
+  <a href="articles/best-ai-automation-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#F0F4FF;--g2:#d8e4ff"><span class="ic" style="font-size:2.6rem">⚙️</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#F0F4FF;color:#2C5EE8">Automation</span><h3>7 Best AI Automation Tools 2026</h3><p>Zapier, Make, n8n compared on real production workflows.</p></div>
+  </a>
+  <a href="articles/best-ai-seo-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#FEF9C3;--g2:#f5eeb8"><span class="ic" style="font-size:2.6rem">🔍</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF9C3;color:#92400E">SEO</span><h3>7 Best AI SEO Tools 2026</h3><p>Content optimization and research AI tested against actual rankings.</p></div>
+  </a>
+  <a href="articles/best-ai-sales-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#ECFDF5;--g2:#c8eadb"><span class="ic" style="font-size:2.6rem">💰</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#ECFDF5;color:#047857">Sales</span><h3>7 Best AI Sales Tools 2026</h3><p>Prospecting, outreach and pipeline AI ranked by real usage.</p></div>
+  </a>
+  <a href="articles/best-ai-hr-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#F0F4FF;--g2:#d8e4ff"><span class="ic" style="font-size:2.6rem">👥</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#F0F4FF;color:#2C5EE8">HR</span><h3>7 Best AI HR Tools 2026</h3><p>Recruiting, onboarding and people-ops AI worth adopting.</p></div>
+  </a>
+  <a href="articles/best-ai-customer-support-tools-2026.html" class="art-card">
+    <div class="art-card-img grad" style="--g1:#E0F2FE;--g2:#c4e2fb"><span class="ic" style="font-size:2.6rem">🎧</span></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#E0F2FE;color:#0369A1">Support</span><h3>7 Best AI Customer Support Tools 2026</h3><p>Deflection, handoffs and help-center AI compared on live tickets.</p></div>
+  </a>
+</div>
+
+<div class="sec-head" id="start-here"><h2>🧭 Start Here</h2><span class="count">4 guides</span></div>
+<div class="art-grid">
+  <a href="articles/how-to-choose-ai-tool-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/how-to-choose-ai-tool-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF3C7;color:#92400E">Guide</span><h3>How to Choose the Right AI Tool</h3><p>A step-by-step framework for evaluating AI tools by your actual needs — not marketing hype.</p></div>
+  </a>
+  <a href="articles/ai-tool-mistakes-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/ai-mistakes-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#FEF2F2;color:#DC2626">Guide</span><h3>7 AI Tool Mistakes to Avoid in 2026</h3><p>The biggest mistakes that cost time and money — and exactly how to fix them.</p></div>
+  </a>
   <a href="articles/how-to-start-ai-business-2026.html" class="art-card">
     <div class="art-card-img" style="background-image:url('images/ai-business-start-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
     <div class="art-card-body"><span class="art-card-tag" style="background:#FEF9C3;color:#92400E">Guide</span><h3>How to Start Using AI in Your Business</h3><p>A practical 5-step guide to adopting AI — starting with free tools and quick wins.</p></div>
   </a>
-  <a href="articles/ai-agents-explained-2026.html" class="art-card">
-    <div class="art-card-img" style="background-image:url('images/ai-agents-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
-    <div class="art-card-body"><span class="art-card-tag" style="background:#FFF4E0;color:#B87400">Explainer</span><h3>AI Agents Explained (2026)</h3><p>What AI agents are, how they work, and which agent tools are worth trying.</p></div>
+  <a href="articles/saas-vs-ai-2026.html" class="art-card">
+    <div class="art-card-img" style="background-image:url('images/saas-vs-ai-hero-card.jpg')"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></div>
+    <div class="art-card-body"><span class="art-card-tag" style="background:#E0F2FE;color:#0369A1">Insight</span><h3>SaaS vs AI Tools (2026)</h3><p>How AI is reshaping the software industry — and what it means for buyers.</p></div>
   </a>
 </div>
+
+<div class="trust-strip">
+  <div>
+    <div class="t-ic">🧪</div>
+    <b>Tested, not skimmed</b>
+    <p>Every tool runs 2–4 weeks of real workloads on accounts we pay for — no vendor trials, no demos.</p>
+  </div>
+  <div>
+    <div class="t-ic">📊</div>
+    <b>Scored blind</b>
+    <p>Multiple reviewers grade against criteria written before testing starts. Scores are re-checked every 60–90 days.</p>
+  </div>
+  <div>
+    <div class="t-ic">🚫</div>
+    <b>No paid rankings</b>
+    <p>Affiliate links never influence scores or positions. If a tool breaks during testing, this site says so.</p>
+  </div>
 </div>
+</div>
+
+<section class="alt" style="padding:48px 0">
+  <div class="wrap">
+    <div class="cta" style="border-radius:24px">
+      <h2>Can't find your favorite tool?</h2>
+      <p>Thousands of new tools launch every month. Submit yours and we'll test it within two weeks.</p>
+      <div class="hero-actions" style="position:relative;margin-top:26px">
+        <a class="btn btn-primary" style="background:#0f172a;box-shadow:none" href="submit.html">Submit a Tool →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="site-footer" data-prefix=""></div>
 <script src="js/site.js?v=2" defer></script><script src="js/main.js?v=2"></script><script src="js/tp-nav.js" defer></script></body>
