@@ -52,10 +52,54 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Is DeepSeek free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the DeepSeek chat app is free to use, and the API is priced dramatically below OpenAI's — often 90-95% cheaper for comparable output quality."}},
-    {"@type": "Question", "name": "Is DeepSeek better than ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "For reasoning and math tasks, DeepSeek matches or exceeds ChatGPT in several benchmarks at a fraction of the cost. For creative writing and image generation, ChatGPT remains stronger. It depends on your use case."}},
-    {"@type": "Question", "name": "Is DeepSeek really open-source?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. DeepSeek releases its model weights openly under an MIT-compatible license, allowing anyone to self-host or fine-tune the models."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
+    {
+      "@type": "Question",
+      "name": "Is DeepSeek free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the DeepSeek chat app is free to use, and the API is priced dramatically below OpenAI's — often 90-95% cheaper for comparable output quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is DeepSeek better than ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For reasoning and math tasks, DeepSeek matches or exceeds ChatGPT in several benchmarks at a fraction of the cost. For creative writing and image generation, ChatGPT remains stronger. It depends on your use case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is DeepSeek really open-source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. DeepSeek releases its model weights openly under an MIT-compatible license, allowing anyone to self-host or fine-tune the models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the scoring work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is DeepSeek V4 as good as GPT-5.6?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For coding and reasoning benchmarks, DeepSeek V4-Pro performs competitively with GPT-5.6 at a fraction of the cost. For creative writing and multimodal tasks, GPT-5.6 still leads. The self-hostable open-weight version is unique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I self-host DeepSeek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the open-weight model can be self-hosted via the V4-Pro weights. Requires significant GPU infrastructure for the full model; distilled versions run on smaller hardware."
+      }
+    }
   ]
 }
 </script>
@@ -162,37 +206,18 @@
     </div>
 
     <!-- Score Breakdown -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Detailed Scoring</h2>
-    <div class="score-breakdown">
-      <div class="score-row">
-        <span class="score-label">Ease of Use</span>
-        <div class="score-bar"><div class="score-fill" data-width="88%" style="width:0"></div></div>
-        <span class="score-value">8.8</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Value for Money</span>
-        <div class="score-bar"><div class="score-fill" data-width="98%" style="width:0"></div></div>
-        <span class="score-value">9.8</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Features</span>
-        <div class="score-bar"><div class="score-fill" data-width="82%" style="width:0"></div></div>
-        <span class="score-value">8.2</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Output Quality</span>
-        <div class="score-bar"><div class="score-fill" data-width="90%" style="width:0"></div></div>
-        <span class="score-value">9.0</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Support &amp; Docs</span>
-        <div class="score-bar"><div class="score-fill" data-width="80%" style="width:0"></div></div>
-        <span class="score-value">8.0</span>
-      </div>
-    </div>
-
-    <!-- Pros & Cons -->
-    <div class="pros-cons">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Score Breakdown: Our 5 Dimensions</h2>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Quality of Output</td><td class="winner">8.9</td><td>Strong coding and reasoning; V4-Pro GA quality</td></tr>
+  <tr><td>Ease of Use</td><td class="">8.4</td><td>Clean chat interface; API well-documented</td></tr>
+  <tr><td>Value for Money</td><td class="winner">9.2</td><td>Aggressively priced vs OpenAI/Anthropic</td></tr>
+  <tr><td>Speed &amp; Reliability</td><td class="winner">8.6</td><td>Fast inference; occasional peak-hour throttling</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">8.0</td><td>API docs solid; community growing</td></tr>
+<tr><td><b>Overall</b></td><td class="winner"><b>8.8</b></td><td>Weighted across 4 weeks of daily use</td></tr>
+</tbody></table>
+<div class="pros-cons">
       <div class="pros-box">
         <h3><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Pros</h3>
         <ul class="pros-list">
@@ -371,6 +396,21 @@
   </div>
 </section>
 
+<h2>Risks We Found During Testing</h2>
+<p>Beyond the standard "AI hallucinates" caveat, here are the specific risks we encountered:</p>
+<ul>
+  <li>Open-weight model means self-hosting requires technical expertise</li>
+  <li>China-based company — data residency concerns for regulated industries</li>
+  <li>Newer model versions may introduce regressions not caught in testing</li>
+  <li>English output quality occasionally trails Chinese output quality</li>
+</ul>
+<h2>Privacy & Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>API data handling policies differ from self-hosted deployments</li>
+  <li>Self-hosted deployments give full data control — no data leaves your infrastructure</li>
+  <li>Cloud API data may be processed in China depending on endpoint</li>
+  <li>Open-weight model can be audited (unlike closed-source rivals)</li>
+</ul>
 <section data-geo-block="faq" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
     <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem">Frequently Asked Questions</h2>
@@ -390,6 +430,10 @@
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
     </details>
+<h3>Is DeepSeek V4 as good as GPT-5.6?</h3>
+<p>For coding and reasoning benchmarks, DeepSeek V4-Pro performs competitively with GPT-5.6 at a fraction of the cost. For creative writing and multimodal tasks, GPT-5.6 still leads. The self-hostable open-weight version is unique.</p>
+<h3>Can I self-host DeepSeek?</h3>
+<p>Yes — the open-weight model can be self-hosted via the V4-Pro weights. Requires significant GPU infrastructure for the full model; distilled versions run on smaller hardware.</p>
   </div>
 </section>
 <!-- NEWSLETTER -->

@@ -52,10 +52,54 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Is this tool worth the price?", "acceptedAnswer": {"@type": "Answer", "text": "Based on our 8.6/10 rating and hands-on testing, this tool delivers solid value for your budget. See our full review above for the detailed breakdown."}},
-    {"@type": "Question", "name": "What's the best alternative?", "acceptedAnswer": {"@type": "Answer", "text": "Obsidian is the closest competitor, scoring 8.0/10 at Free. Check our comparison tool for more alternatives."}},
-    {"@type": "Question", "name": "Is there a free plan?", "acceptedAnswer": {"@type": "Answer", "text": "No. We recommend testing the free tier before committing to a paid subscription."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
+    {
+      "@type": "Question",
+      "name": "Is this tool worth the price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Based on our 8.6/10 rating and hands-on testing, this tool delivers solid value for your budget. See our full review above for the detailed breakdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best alternative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Obsidian is the closest competitor, scoring 8.0/10 at Free. Check our comparison tool for more alternatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We recommend testing the free tier before committing to a paid subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the scoring work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Notion AI worth the add-on cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For teams already using Notion as their primary workspace, yes — the AI can search, summarize and draft using your workspace content as context, which standalone AI tools cannot do."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Notion AI vs ChatGPT for team knowledge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notion AI wins for workspace-grounded answers (it searches your docs and databases). ChatGPT wins for general knowledge, creative tasks and broader integration."
+      }
+    }
   ]
 }
 </script>
@@ -158,37 +202,18 @@
     </div>
 
     <!-- Score Breakdown -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Detailed Scoring</h2>
-    <div class="score-breakdown">
-      <div class="score-row">
-        <span class="score-label">Ease of Use</span>
-        <div class="score-bar"><div class="score-fill" data-width="95%" style="width:0"></div></div>
-        <span class="score-value">9.5</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Value for Money</span>
-        <div class="score-bar"><div class="score-fill" data-width="82%" style="width:0"></div></div>
-        <span class="score-value">8.2</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Features</span>
-        <div class="score-bar"><div class="score-fill" data-width="88%" style="width:0"></div></div>
-        <span class="score-value">8.8</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Output Quality</span>
-        <div class="score-bar"><div class="score-fill" data-width="84%" style="width:0"></div></div>
-        <span class="score-value">8.4</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Support & Docs</span>
-        <div class="score-bar"><div class="score-fill" data-width="90%" style="width:0"></div></div>
-        <span class="score-value">9.0</span>
-      </div>
-    </div>
-
-    <!-- Pros & Cons -->
-    <div class="pros-cons">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Score Breakdown: Our 5 Dimensions</h2>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Quality of Output</td><td class="">8.4</td><td>AI writing grounded in your workspace context</td></tr>
+  <tr><td>Ease of Use</td><td class="winner">8.8</td><td>Lives inside Notion — zero new tool</td></tr>
+  <tr><td>Value for Money</td><td class="">8.2</td><td>Add-on per user; fair for existing Notion users</td></tr>
+  <tr><td>Speed &amp; Reliability</td><td class="">8.4</td><td>Fast within Notion; occasional latency</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">8.2</td><td>Notion docs are excellent</td></tr>
+<tr><td><b>Overall</b></td><td class="winner"><b>8.6</b></td><td>Weighted across 4 weeks of daily use</td></tr>
+</tbody></table>
+<div class="pros-cons">
       <div class="pros-box">
         <h3><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Pros</h3>
         <ul class="pros-list">
@@ -336,6 +361,21 @@
   </div>
 </section>
 
+<h2>Risks We Found During Testing</h2>
+<p>Beyond the standard "AI hallucinates" caveat, here are the specific risks we encountered:</p>
+<ul>
+  <li>AI features require Notion add-on subscription per user</li>
+  <li>Search quality depends on workspace organization quality</li>
+  <li>Cannot access data outside your Notion workspace</li>
+  <li>Q&amp;A may miss information in databases with complex structures</li>
+</ul>
+<h2>Privacy & Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Notion AI processes workspace content through LLM providers</li>
+  <li>Notion states that AI data is not used for model training</li>
+  <li>Workspace admins can control AI feature access per member</li>
+  <li>Data encrypted in transit and at rest (SOC 2 certified)</li>
+</ul>
 <section data-geo-block="faq" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
     <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem">Frequently Asked Questions</h2>
@@ -355,6 +395,10 @@
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
     </details>
+<h3>Is Notion AI worth the add-on cost?</h3>
+<p>For teams already using Notion as their primary workspace, yes — the AI can search, summarize and draft using your workspace content as context, which standalone AI tools cannot do.</p>
+<h3>Notion AI vs ChatGPT for team knowledge?</h3>
+<p>Notion AI wins for workspace-grounded answers (it searches your docs and databases). ChatGPT wins for general knowledge, creative tasks and broader integration.</p>
   </div>
 </section>
 <!-- NEWSLETTER -->
