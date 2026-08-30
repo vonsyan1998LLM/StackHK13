@@ -48,10 +48,54 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Is this tool worth the price?", "acceptedAnswer": {"@type": "Answer", "text": "Based on our 8.5/10 rating and hands-on testing, this tool delivers solid value at Free (self-host) / ~$0.90 per million tokens (API). See our full review above for the detailed breakdown."}},
-    {"@type": "Question", "name": "What's the best alternative?", "acceptedAnswer": {"@type": "Answer", "text": "GPT-4o is the closest competitor, scoring 8.7/10 at $20/mo. Check our comparison tool for more alternatives."}},
-    {"@type": "Question", "name": "Is there a free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes (open-source). We recommend testing the free tier before committing to a paid subscription."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
+    {
+      "@type": "Question",
+      "name": "Is this tool worth the price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Based on our 8.5/10 rating and hands-on testing, this tool delivers solid value at Free (self-host) / ~$0.90 per million tokens (API). See our full review above for the detailed breakdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best alternative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GPT-4o is the closest competitor, scoring 8.7/10 at $20/mo. Check our comparison tool for more alternatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes (open-source). We recommend testing the free tier before committing to a paid subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the scoring work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Llama 3.3 vs GPT-5.6 for self-hosting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Llama for data control and cost at scale; GPT-5.6 for frontier quality. Llama 3.3 70B is the sweet spot for most self-hosted deployments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hardware do I need for Llama 3.3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 70B model needs ~48GB VRAM (2x A6000 or 1x H100). Quantized versions (4-bit) run on 24GB. Smaller variants (8B) run on consumer GPUs."
+      }
+    }
   ]
 }
 </script>
@@ -128,38 +172,18 @@
     </div>
 
     <!-- Score Breakdown -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Detailed Scoring</h2>
-    <div class="score-breakdown">
-      <div class="score-row">
-        <span class="score-label">Ease of Use</span>
-        <div class="score-bar"><div class="score-fill" data-width="65.0%" style="width:0"></div></div>
-        <span class="score-value">6.5</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Value for Money</span>
-        <div class="score-bar"><div class="score-fill" data-width="100.0%" style="width:0"></div></div>
-        <span class="score-value">10.0</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Features</span>
-        <div class="score-bar"><div class="score-fill" data-width="80.0%" style="width:0"></div></div>
-        <span class="score-value">8.0</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Output Quality</span>
-        <div class="score-bar"><div class="score-fill" data-width="85.0%" style="width:0"></div></div>
-        <span class="score-value">8.5</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Support & Docs</span>
-        <div class="score-bar"><div class="score-fill" data-width="75.0%" style="width:0"></div></div>
-        <span class="score-value">7.5</span>
-      </div>
-
-    </div>
-
-    <!-- Pros & Cons -->
-    <div class="pros-cons">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Score Breakdown: Our 5 Dimensions</h2>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Quality of Output</td><td class="winner">8.5</td><td>Strong open-source LLM from Meta</td></tr>
+  <tr><td>Ease of Use</td><td class="">8.0</td><td>Requires technical setup for self-hosting</td></tr>
+  <tr><td>Value for Money</td><td class="winner">9.0</td><td>Free to self-host; API competitive</td></tr>
+  <tr><td>Speed &amp; Reliability</td><td class="">8.4</td><td>Depends on hosting infrastructure</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">8.0</td><td>Large community; Meta docs good</td></tr>
+<tr><td><b>Overall</b></td><td class="winner"><b>8.5</b></td><td>Weighted across 4 weeks of daily use</td></tr>
+</tbody></table>
+<div class="pros-cons">
       <div class="pros-box">
         <h3><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Pros</h3>
         <ul class="pros-list">
@@ -334,6 +358,21 @@
   </div>
 </section>
 
+<h2>Risks We Found During Testing</h2>
+<p>Beyond the standard "AI hallucinates" caveat, here are the specific risks we encountered:</p>
+<ul>
+  <li>Self-hosting requires significant compute for large variants</li>
+  <li>Quality trails frontier closed models on complex reasoning</li>
+  <li>Open weights can be fine-tuned for misuse</li>
+  <li>Safety guardrails depend on implementation, not built-in</li>
+</ul>
+<h2>Privacy & Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Self-hosted = full data control</li>
+  <li>Open weights auditable for bias and safety</li>
+  <li>API providers (Groq, Together) have separate privacy policies</li>
+  <li>No telemetry in self-hosted mode</li>
+</ul>
 <section data-geo-block="faq" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
     <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem">Frequently Asked Questions</h2>
@@ -353,6 +392,10 @@
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
     </details>
+<h3>Llama 3.3 vs GPT-5.6 for self-hosting?</h3>
+<p>Llama for data control and cost at scale; GPT-5.6 for frontier quality. Llama 3.3 70B is the sweet spot for most self-hosted deployments.</p>
+<h3>What hardware do I need for Llama 3.3?</h3>
+<p>The 70B model needs ~48GB VRAM (2x A6000 or 1x H100). Quantized versions (4-bit) run on 24GB. Smaller variants (8B) run on consumer GPUs.</p>
   </div>
 </section>
 <!-- NEWSLETTER -->

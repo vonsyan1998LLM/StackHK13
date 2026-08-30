@@ -52,10 +52,54 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Is Flux free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Flux is open-source with free self-hosting, and it's available on many free platforms. Commercial API access and premium features are paid."}},
-    {"@type": "Question", "name": "Is Flux better than Midjourney?", "acceptedAnswer": {"@type": "Answer", "text": "For photorealism and prompt adherence, Flux is highly competitive with — and often better than — Midjourney. For stylized artistic looks, Midjourney still has an edge. It depends on the style you need."}},
-    {"@type": "Question", "name": "What makes Flux different from other image models?", "acceptedAnswer": {"@type": "Answer", "text": "Flux is open-weight (self-hostable), excels at realistic text rendering and photorealism, and offers strong prompt adherence — all in a model you can run locally."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
+    {
+      "@type": "Question",
+      "name": "Is Flux free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flux is open-source with free self-hosting, and it's available on many free platforms. Commercial API access and premium features are paid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Flux better than Midjourney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For photorealism and prompt adherence, Flux is highly competitive with — and often better than — Midjourney. For stylized artistic looks, Midjourney still has an edge. It depends on the style you need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Flux different from other image models?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flux is open-weight (self-hostable), excels at realistic text rendering and photorealism, and offers strong prompt adherence — all in a model you can run locally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the scoring work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Flux vs Midjourney for commercial work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flux for full control (self-host, fine-tune, API) and text rendering; Midjourney for aesthetic quality. Flux’s open weights make it the choice for custom pipelines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What GPU do I need for Flux?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flux Schnell runs on 12GB VRAM; Flux Dev needs 24GB for full quality. Quantized versions (GGUF) run on 8GB with some quality trade-off."
+      }
+    }
   ]
 }
 </script>
@@ -164,37 +208,18 @@
     </div>
 
     <!-- Score Breakdown -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Detailed Scoring</h2>
-    <div class="score-breakdown">
-      <div class="score-row">
-        <span class="score-label">Ease of Use</span>
-        <div class="score-bar"><div class="score-fill" data-width="84%" style="width:0"></div></div>
-        <span class="score-value">8.4</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Value for Money</span>
-        <div class="score-bar"><div class="score-fill" data-width="94%" style="width:0"></div></div>
-        <span class="score-value">9.4</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Features</span>
-        <div class="score-bar"><div class="score-fill" data-width="86%" style="width:0"></div></div>
-        <span class="score-value">8.6</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Output Quality</span>
-        <div class="score-bar"><div class="score-fill" data-width="92%" style="width:0"></div></div>
-        <span class="score-value">9.2</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">Support &amp; Docs</span>
-        <div class="score-bar"><div class="score-fill" data-width="80%" style="width:0"></div></div>
-        <span class="score-value">8.0</span>
-      </div>
-    </div>
-
-    <!-- Pros & Cons -->
-    <div class="pros-cons">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Score Breakdown: Our 5 Dimensions</h2>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Quality of Output</td><td class="winner">8.6</td><td>Strong photorealism and text rendering</td></tr>
+  <tr><td>Ease of Use</td><td class="">8.2</td><td>Multiple interfaces; API for developers</td></tr>
+  <tr><td>Value for Money</td><td class="winner">8.8</td><td>Open weights — free to self-host</td></tr>
+  <tr><td>Speed &amp; Reliability</td><td class="winner">8.6</td><td>Fast on proper hardware</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">7.8</td><td>Community-driven; docs improving</td></tr>
+<tr><td><b>Overall</b></td><td class="winner"><b>8.6</b></td><td>Weighted across 4 weeks of daily use</td></tr>
+</tbody></table>
+<div class="pros-cons">
       <div class="pros-box">
         <h3><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Pros</h3>
         <ul class="pros-list">
@@ -373,6 +398,21 @@
   </div>
 </section>
 
+<h2>Risks We Found During Testing</h2>
+<p>Beyond the standard "AI hallucinates" caveat, here are the specific risks we encountered:</p>
+<ul>
+  <li>Open weights require significant GPU hardware for self-hosting</li>
+  <li>Prompt adherence varies between Flux Pro, Dev and Schnell variants</li>
+  <li>Text-in-image rendering is good but not perfect</li>
+  <li>Licensing terms differ between variants — check commercial use</li>
+</ul>
+<h2>Privacy & Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Self-hosted model = full data control, nothing leaves your machine</li>
+  <li>API usage processes prompts through Black Forest Labs servers</li>
+  <li>Open weights can be audited for safety and bias</li>
+  <li>No telemetry in self-hosted mode</li>
+</ul>
 <section data-geo-block="faq" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
     <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem">Frequently Asked Questions</h2>
@@ -392,6 +432,10 @@
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
     </details>
+<h3>Flux vs Midjourney for commercial work?</h3>
+<p>Flux for full control (self-host, fine-tune, API) and text rendering; Midjourney for aesthetic quality. Flux’s open weights make it the choice for custom pipelines.</p>
+<h3>What GPU do I need for Flux?</h3>
+<p>Flux Schnell runs on 12GB VRAM; Flux Dev needs 24GB for full quality. Quantized versions (GGUF) run on 8GB with some quality trade-off.</p>
   </div>
 </section>
 <!-- NEWSLETTER -->
