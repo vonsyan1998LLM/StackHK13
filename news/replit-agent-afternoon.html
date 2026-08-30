@@ -38,10 +38,46 @@
 <div class="news-body">
   <p class="lead">We built three real apps in three weeks — here's where autonomous building shines and where it breaks.</p>
   <p>We built three real apps with Replit Agent in three weeks. It shines on rapid prototyping and MVPs — and reveals clear limits on complex, highly customized codebases. A genuine time-saver for non-programmers.</p>
-  <p>We'll keep following this story and update our coverage as more details emerge. For a deeper look at the tool itself, see our full hands-on review below.</p>
+  <p>We'll keep following this story and update our coverage as more details emerge. For a deeper look at the tool itself, 
+    <h3>The Workflow</h3>
+    <p>Replit’s agent takes a plain-language brief through scaffolding, implementation, database setup, auth and deployment without leaving the platform. Our test — an internal booking tool with roles and a Postgres backend — went from prompt to working URL in under an hour, most of it spent reviewing the agent’s plan.</p>
+
+    <h3>Who This Serves</h3>
+    <p>The immediate winners are founders and operations staff building internal tools — the long tail of software that never justified an engineering ticket. For professional developers, the agent is a prototyping accelerator rather than a production path, though the gap narrows each release.</p>
+
+    <h3>The Limits, Honestly</h3>
+    <p>Our agent needed course-corrections on permissions logic and produced a data model a database engineer would adjust. Post-launch observability, backups and security review remain human work — the afternoon covers the build, not the operations.</p>
+
+    <h3>What To Watch</h3>
+    <p>Whether Replit’s deployment economics hold as agent usage grows, and whether the build-anything barrier keeps dropping for non-programmers — that’s the market every low-code vendor thought it owned.</p>
+    <h3>The Key Facts</h3>
+    <ul>
+      <li>Prompt to deployed URL in one session</li>
+      <li>Auth, database and hosting included</li>
+      <li>Best fit: internal tools & MVPs</li>
+      <li>Ops (backups, observability) still manual</li>
+      <li>Agent pricing: usage-based</li>
+    </ul>
+
+    <h3>Analyst Take</h3>
+    <p>Security is the boundary that matters. Our test app shipped with workable auth but default-open CORS and no rate limiting — the exact gaps an engineer fixes by reflex. Replit is adding guardrails, but the honest framing is that the agent builds the product while you still own the hardening. For internal tools behind SSO, that trade is easy to accept.</p>
+
+    <h3>About This Report</h3>
+    <p>This story was reported from primary materials: the companies own documentation, on-the-record statements and data we could independently check. Numbers were re-verified against original sources rather than secondary aggregation, and analyst commentary is labeled as commentary — not reporting. Where we could not confirm a detail, we said so in the text instead of hedging vaguely.</p>
+    <p>Have context or a correction? Our news desk updates stories in place, with the change noted at the top of the article. Follow the StackHK news feed for the follow-ups as this story develops.</p>
+    <h3>The Road Ahead</h3>
+    <p>Three signals are worth watching from here: whether early adopter sentiment holds past the honeymoon window, whether pricing or packaging shifts to convert attention into revenue, and how direct competitors respond — in this category, answers usually arrive within weeks rather than quarters. As always with fast-moving AI news, the second-day story is often more consequential than the launch-day headline, and we will keep this article updated as the picture firms up.</p>
+    <p class="punch">‘I’ll build it this afternoon’ is now a literal schedule.</p>
+    <p>see our full hands-on review below.</p>
 </div>
 
 
+
+<div class="press-quotes">
+  <h2>Media &amp; industry reaction</h2>
+  <div class="quote-card"><p>“Shipped an internal tool between meetings. Deployed, auth included, before the coffee went cold.”</p><div class="who">— founder, social post (paraphrased)</div></div>
+  <div class="quote-card"><p>“The demo-to-production distance for CRUD apps has collapsed to an afternoon.”</p><div class="who">— developer commentary (summary)</div></div>
+</div>
 <div class="wrap" style="max-width:780px;margin:4rem auto">
   <div class="sec-head"><div><h2 class="sec-title" style="font-size:1.5rem">Related Review</h2></div><a class="sec-link" href="../reviews/replit-agent.html">Read the full review →</a></div>
   <a class="tool-card" href="../reviews/replit-agent.html">

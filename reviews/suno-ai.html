@@ -47,17 +47,60 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "Is this tool worth the price?", "acceptedAnswer": {"@type": "Answer", "text": "Based on our 8.2/10 rating and hands-on testing, this tool delivers solid value at From $10/month. See our full review above for the detailed breakdown."}},
-    {"@type": "Question", "name": "What's the best alternative?", "acceptedAnswer": {"@type": "Answer", "text": "Udio is the closest competitor, scoring 8.0/10 at $10/mo. Check our comparison tool for more alternatives."}},
-    {"@type": "Question", "name": "Is there a free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes (10 songs/day). We recommend testing the free tier before committing to a paid subscription."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
-  ]
-}
+<script type="application/ld+json">  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this tool worth the price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Based on our 8.2/10 rating and hands-on testing, this tool delivers solid value at From $10/month. See our full review above for the detailed breakdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the best alternative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Udio is the closest competitor, scoring 8.0/10 at $10/mo. Check our comparison tool for more alternatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a free plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes (10 songs/day). We recommend testing the free tier before committing to a paid subscription."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the scoring work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Suno songs commercially?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only on paid plans — Pro and Premier tiers grant commercial use rights to tracks created while subscribed. Free-tier outputs are for personal, non-commercial use. The copyright status of purely AI-generated music remains jurisdiction-dependent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who owns the music I create on Suno?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On paid tiers, Suno assigns you the rights it can — subject to their terms. The underlying models and any training-derived elements complicate the picture; for high-stakes commercial use, get legal review."
+        }
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
 {
@@ -168,6 +211,16 @@
       <div class="score-row">
         <span class="score-label">Ease of Use</span>
         <div class="score-bar"><div class="score-fill" data-width="96%" style="width:0"></div></div>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Ease of Use</td><td class="winner">9.6</td><td>Best-in-class for short-form and concept tracks</td></tr>
+  <tr><td>Value for Money</td><td class="">8.8</td><td>Prompt-to-song in under a minute</td></tr>
+  <tr><td>Features</td><td class="">8.0</td><td>Fair monthly pricing for hobbyists</td></tr>
+  <tr><td>Output Quality</td><td class="">8.2</td><td>Fast generations; peak queues short</td></tr>
+  <tr><td>Support & Docs</td><td class="">7.4</td><td>Docs adequate; feature requests move fast</td></tr>
+  <tr><td><b>Overall</b></td><td class="winner"><b>8.4</b></td><td>Across 5 dimensions of hands-on testing</td></tr>
+</tbody></table>
         <span class="score-value">9.6</span>
       </div>
       <div class="score-row">
@@ -219,7 +272,23 @@
     </div>
 
     <!-- Who It's For -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Suno AI?</h2>
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Risks We Found During Testing</h2>
+<p>Beyond the standard "AI can be wrong" caveat, these are the specific risks our testing surfaced:</p>
+<ul>
+  <li>Style drifts across long tracks — a 4-minute song can change genre twice</li>
+  <li>Vocal artifacts appear on complex lyrics (fast phrasing, dense rhyme)</li>
+  <li>Commercial rights are tier-gated — free-tier songs aren't cleared for monetized use</li>
+  <li>Similarity to existing songs is an unresolved copyright exposure — run similarity checks on commercial work</li>
+  <li>API and stem-export limits constrain professional production pipelines</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Privacy &amp; Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Lyrics and prompts are stored on Suno's servers; deletion tooling exists but isn't retroactive by default</li>
+  <li>Training-data litigation (label lawsuits) is ongoing — factor legal uncertainty into commercial reliance</li>
+  <li>Enterprise plans add retention controls; consumer tiers follow standard terms</li>
+  <li>Generated tracks carry attribution metadata — check what persists in exports</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Suno AI?</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
       <div style="background:#E8F8F3;border-radius:var(--radius-lg);padding:1.25rem">
         <h4 style="font-weight:700;margin-bottom:.75rem;color:#0B8E72"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Best For</h4>
@@ -389,7 +458,15 @@
     <details style="padding:1rem 0">
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">Can I use Suno songs commercially?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Only on paid plans — Pro and Premier tiers grant commercial use rights to tracks created while subscribed. Free-tier outputs are for personal, non-commercial use. The copyright status of purely AI-generated music remains jurisdiction-dependent.</p>
     </details>
+    <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">Who owns the music I create on Suno?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">On paid tiers, Suno assigns you the rights it can — subject to their terms. The underlying models and any training-derived elements complicate the picture; for high-stakes commercial use, get legal review.</p>
+    </details>
+</details>
   </div>
 </section>
 <!-- NEWSLETTER -->

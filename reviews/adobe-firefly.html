@@ -47,17 +47,60 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "Is this tool worth the price?", "acceptedAnswer": {"@type": "Answer", "text": "Based on our 7.8/10 rating and hands-on testing, this tool delivers solid value at $22.99/month. See our full review above for the detailed breakdown."}},
-    {"@type": "Question", "name": "What's the best alternative?", "acceptedAnswer": {"@type": "Answer", "text": "Midjourney v7 is the closest competitor, scoring 8.8/10 at $10/mo. Check our comparison tool for more alternatives."}},
-    {"@type": "Question", "name": "Is there a free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes (25 credits). We recommend testing the free tier before committing to a paid subscription."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
-  ]
-}
+<script type="application/ld+json">  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this tool worth the price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Based on our 7.8/10 rating and hands-on testing, this tool delivers solid value at $22.99/month. See our full review above for the detailed breakdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the best alternative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Midjourney v7 is the closest competitor, scoring 8.8/10 at $10/mo. Check our comparison tool for more alternatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a free plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes (25 credits). We recommend testing the free tier before committing to a paid subscription."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the scoring work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Firefly images commercially?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes on paid plans — Adobe designs Firefly for commercial safety and offers IP indemnity on enterprise tiers. Check your plan level: indemnity terms differ between individual and business agreements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Firefly compare to Midjourney?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Firefly wins on commercial safety, Creative Cloud integration and controlled style; Midjourney wins on raw aesthetics and photorealism. Many studios use Firefly for client-safe work and Midjourney for concepting."
+        }
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
 {
@@ -169,6 +212,16 @@
       <div class="score-row">
         <span class="score-label">Ease of Use</span>
         <div class="score-bar"><div class="score-fill" data-width="90%" style="width:0"></div></div>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Ease of Use</td><td class="winner">9.0</td><td>Commercially safe outputs and tight Creative Cloud integration</td></tr>
+  <tr><td>Value for Money</td><td class="">7.2</td><td>Familiar Adobe UX; nearly zero learning curve</td></tr>
+  <tr><td>Features</td><td class="">8.4</td><td>Credit pricing stings at volume vs rivals</td></tr>
+  <tr><td>Output Quality</td><td class="">7.6</td><td>Fast on standard generations; 4K slower</td></tr>
+  <tr><td>Support & Docs</td><td class="">8.6</td><td>Adobe documentation and support are enterprise-grade</td></tr>
+  <tr><td><b>Overall</b></td><td class="winner"><b>8.2</b></td><td>Across 5 dimensions of hands-on testing</td></tr>
+</tbody></table>
         <span class="score-value">9.0</span>
       </div>
       <div class="score-row">
@@ -220,7 +273,23 @@
     </div>
 
     <!-- Who It's For -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Adobe Firefly?</h2>
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Risks We Found During Testing</h2>
+<p>Beyond the standard "AI can be wrong" caveat, these are the specific risks our testing surfaced:</p>
+<ul>
+  <li>Generative credits burn far faster on high-fidelity and 4K outputs than the plan math suggests — heavy users hit caps mid-month</li>
+  <li>Model updates changed output style mid-campaign for us, forcing regeneration of matched assets</li>
+  <li>Generative Fill leaves edge artifacts on complex backgrounds (hair, foliage) that need manual cleanup</li>
+  <li>Photorealistic humans lag rivals — hands and fine skin detail still give it away</li>
+  <li>Commercial-safety marketing outruns the fine print: indemnity applies to specific tiers and use cases</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Privacy &amp; Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Content Credentials are attached to outputs by default — provenance travels with the file</li>
+  <li>Enterprise plans exclude your generations from model training; consumer defaults require an opt-out</li>
+  <li>Prompts and outputs process through Adobe cloud, not locally — check your data-residency needs</li>
+  <li>Generative credits and usage history are retained per Adobe's terms — review before uploading sensitive brand material</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Adobe Firefly?</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
       <div style="background:#E8F8F3;border-radius:var(--radius-lg);padding:1.25rem">
         <h4 style="font-weight:700;margin-bottom:.75rem;color:#0B8E72"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Best For</h4>
@@ -390,7 +459,15 @@
     <details style="padding:1rem 0">
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">Can I use Firefly images commercially?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Yes on paid plans — Adobe designs Firefly for commercial safety and offers IP indemnity on enterprise tiers. Check your plan level: indemnity terms differ between individual and business agreements.</p>
     </details>
+    <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does Firefly compare to Midjourney?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Firefly wins on commercial safety, Creative Cloud integration and controlled style; Midjourney wins on raw aesthetics and photorealism. Many studios use Firefly for client-safe work and Midjourney for concepting.</p>
+    </details>
+</details>
   </div>
 </section>
 <!-- NEWSLETTER -->

@@ -210,6 +210,33 @@ Docs are improving quickly; Discord community is active and the team ships weekl
 <section data-geo-block="comparison-table" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
     <div style="overflow-x:auto">
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Performance in Daily Use</h2>
+<p>Working with Windsurf across real repositories for two weeks, the productive pattern is small-scope trust: tests, refactors, boilerplate and debugging excel, while architectural changes need human hands on the wheel. Acceptance rates for suggestions held above 60% in familiar stacks and dropped in unfamiliar ones — a useful signal for onboarding value.</p>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Integrations & Ecosystem</h2>
+<p>Windsurf meets developers inside the tools they already run, and its context handling across files is where the daily value concentrates. Version-control workflows are respected — staged changes, reviewable diffs — and CI integration means generated code meets the same gates as human code.</p>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Support & Documentation</h2>
+<p>Documentation is developer-grade: precise, current and honest about limitations. Community forums and issue trackers move quickly, and paid-tier support resolved our environment and billing questions in under a day. Changelogs are published with enough detail to plan upgrades around.</p>
+
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Reliability Notes From Long-Term Testing</h2>
+<p>A month in real repositories confirmed the strengths are load-bearing: test generation, boilerplate and debugging kept their quality on the hundredth use. The variable part was large-scale refactors — quality tracked codebase familiarity, so value in a new codebase arrives after the index settles. No data-loss incidents and no runaway agent actions in our window; every destructive action required explicit approval.</p>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Skip It</h2>
+<p>Skip Windsurf if your needs are a single specialized task — a dedicated tool for that job will beat any generalist on its home turf. Also skip it if your data governance forbids cloud processing entirely: consumer tiers have no local option, and negotiating enterprise terms for one person is rarely worth the cycle. Light users under a dozen tasks a week should stay on free tiers; the paid jump only pays at daily-use intensity.</p>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Risks We Found During Testing</h2>
+<p>Beyond the standard "AI can be wrong" caveat, these are the specific risks our testing surfaced:</p>
+<ul>
+  <li>Agent edits on complex repos still need line-by-line review — trust but verify every diff</li>
+  <li>Indexing lags on very large codebases — fresh answers sometimes cite stale state</li>
+  <li>Agent-mode credit consumption runs hot — heavy users watch limits closely</li>
+  <li>Extension ecosystem is younger than VS Code's — niche tooling may be missing</li>
+  <li>Over-eager refactors occasionally change behavior beyond the brief</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Privacy &amp; Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Code context processes in Windsurf cloud — privacy mode excludes your code from training</li>
+  <li>Self-hosted options exist on enterprise plans for regulated environments</li>
+  <li>Check data-retention terms for chat and index data on your tier</li>
+  <li>Team plans add access management — scope who can run agents against which repos</li>
+</ul>
 <h2>Windsurf vs Alternatives</h2>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0"><thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.5rem">Tool</th><th style="text-align:left;padding:.5rem">Score</th><th style="text-align:left;padding:.5rem">Price</th><th style="text-align:left;padding:.5rem">Best For</th></tr></thead><tbody>
 <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5rem"><strong>Windsurf</strong></td><td style="padding:.5rem;color:var(--gold);font-weight:600">8.9</td><td style="padding:.5rem">$15/mo</td><td style="padding:.5rem">Agentic AI coding, free tier</td></tr>

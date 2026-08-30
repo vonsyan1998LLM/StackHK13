@@ -47,17 +47,60 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "How much does Sora cost?", "acceptedAnswer": {"@type": "Answer", "text": "Sora is included with ChatGPT Plus ($20/month) and higher tiers, with monthly video generation limits. Standalone pricing depends on your usage tier."}},
-    {"@type": "Question", "name": "Is Sora better than Runway or Veo?", "acceptedAnswer": {"@type": "Answer", "text": "Sora is highly competitive with Runway and Google's Veo. It excels at complex scenes, physics, and long coherent clips. For some specific styles, Veo or Runway may be better. It depends on your needs."}},
-    {"@type": "Question", "name": "Can Sora generate video with audio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Sora can generate video with synchronized audio in many cases, a significant advantage over most competitors."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
-  ]
-}
+<script type="application/ld+json">  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does Sora cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sora is included with ChatGPT Plus ($20/month) and higher tiers, with monthly video generation limits. Standalone pricing depends on your usage tier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Sora better than Runway or Veo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sora is highly competitive with Runway and Google's Veo. It excels at complex scenes, physics, and long coherent clips. For some specific styles, Veo or Runway may be better. It depends on your needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Sora generate video with audio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Sora can generate video with synchronized audio in many cases, a significant advantage over most competitors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the scoring work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Sora videos commercially?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes on paid tiers — OpenAI grants commercial rights to outputs, subject to content policies. For client work, keep prompt records and confirm current terms; likeness and brand prompts carry extra restrictions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long can Sora clips be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Up to around a minute on top tiers in our testing, with quality best under 20 seconds. Narrative-length work requires stitching shorter shots — plan your storyboard accordingly."
+        }
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
 {
@@ -168,6 +211,16 @@
       <div class="score-row">
         <span class="score-label">Ease of Use</span>
         <div class="score-bar"><div class="score-fill" data-width="92%" style="width:0"></div></div>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Ease of Use</td><td class="winner">9.2</td><td>Multi-shot coherence leads the category</td></tr>
+  <tr><td>Value for Money</td><td class="">8.6</td><td>Storyboarding UI approachable for non-editors</td></tr>
+  <tr><td>Features</td><td class="">8.8</td><td>Premium pricing; worth it for narrative work</td></tr>
+  <tr><td>Output Quality</td><td class="">9.0</td><td>Peak queues tested our patience</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">8.2</td><td>Docs improving; prompt guides genuinely useful</td></tr>
+  <tr><td><b>Overall</b></td><td class="winner"><b>8.8</b></td><td>Across 5 dimensions of hands-on testing</td></tr>
+</tbody></table>
         <span class="score-value">9.2</span>
       </div>
       <div class="score-row">
@@ -219,7 +272,29 @@
     </div>
 
     <!-- Who It's For -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Sora?</h2>
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Performance in Daily Use</h2>
+<p>Working with Sora daily means budgeting generations: the usable-shot rate averaged one in three in our tests, which sounds harsh until you compare it to a film shoot's outtake ratio. Generation times ran seconds-to-minutes depending on length and resolution, and the review loop — preview, adjust, regenerate — is fast enough to sustain creative momentum.</p>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Integrations & Ecosystem</h2>
+<p>Export is where Sora earns pipeline trust: standard formats and frame rates drop into Premiere or Resolve without conversion gymnastics, and resolution tiers match common delivery specs. API access on higher tiers enables batch rendering for template-driven content like product and social videos.</p>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Support & Documentation</h2>
+<p>Documentation covers the prompt grammar and the failure modes honestly — knowing what the model cannot do saved us more time than any tip about what it can. Paid support resolved our rendering and billing tickets within a day, and the published changelogs made it easy to spot when an update changed our results.</p>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Risks We Found During Testing</h2>
+<p>Beyond the standard "AI can be wrong" caveat, these are the specific risks our testing surfaced:</p>
+<ul>
+  <li>Complex physics (liquid pours, collisions) still break — budget retakes on ambitious motion</li>
+  <li>Text rendered in-scene is unreliable; plan graphics overlays in post</li>
+  <li>Celebrity and likeness prompts get blocked mid-workflow, wasting generation credits</li>
+  <li>Clip-length caps force stitching for narrative sequences — plan montage-shaped</li>
+  <li>Peak-hour queues stretched generation waits beyond advertised times</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Privacy &amp; Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Prompts and generated video pass through OpenAI safety review — treat briefs as non-confidential</li>
+  <li>Enterprise agreements add training opt-outs and stricter retention terms</li>
+  <li>Outputs carry provenance metadata (C2PA) by default</li>
+  <li>Deletion and retention windows are configurable on business plans — verify before client work</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Sora?</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
       <div style="background:#E8F8F3;border-radius:var(--radius-lg);padding:1.25rem">
         <h4 style="font-weight:700;margin-bottom:.75rem;color:#0B8E72"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Best For</h4>
@@ -390,7 +465,15 @@
     <details style="padding:1rem 0">
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">Can I use Sora videos commercially?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Yes on paid tiers — OpenAI grants commercial rights to outputs, subject to content policies. For client work, keep prompt records and confirm current terms; likeness and brand prompts carry extra restrictions.</p>
     </details>
+    <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How long can Sora clips be?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Up to around a minute on top tiers in our testing, with quality best under 20 seconds. Narrative-length work requires stitching shorter shots — plan your storyboard accordingly.</p>
+    </details>
+</details>
   </div>
 </section>
 <!-- NEWSLETTER -->

@@ -47,17 +47,60 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "Is Stable Diffusion free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Stable Diffusion is open-source with free self-hosting and free usage on many platforms. Commercial API access is available through Stability AI and other providers."}},
-    {"@type": "Question", "name": "Is Stable Diffusion still relevant in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. While newer models like Flux have surpassed it on raw quality, Stable Diffusion remains the most flexible and widely supported open image model, with an enormous ecosystem of fine-tunes and plugins."}},
-    {"@type": "Question", "name": "What makes Stable Diffusion different from Flux?", "acceptedAnswer": {"@type": "Answer", "text": "Stable Diffusion has a much larger ecosystem of community models, fine-tunes, and plugins, and it runs well on more modest hardware. Flux offers better out-of-the-box photorealism but a smaller ecosystem."}},
-    {"@type": "Question", "name": "How does the scoring work?", "acceptedAnswer": {"@type": "Answer", "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."}}
-  ]
-}
+<script type="application/ld+json">  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Stable Diffusion free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Stable Diffusion is open-source with free self-hosting and free usage on many platforms. Commercial API access is available through Stability AI and other providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Stable Diffusion still relevant in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. While newer models like Flux have surpassed it on raw quality, Stable Diffusion remains the most flexible and widely supported open image model, with an enormous ecosystem of fine-tunes and plugins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes Stable Diffusion different from Flux?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stable Diffusion has a much larger ecosystem of community models, fine-tunes, and plugins, and it runs well on more modest hardware. Flux offers better out-of-the-box photorealism but a smaller ecosystem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the scoring work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Stable Diffusion really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The weights are free under a permissive license and local use costs nothing beyond hardware. Commercial deployments should check the license version attached to specific checkpoints — community models can carry their own terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What GPU do I need for Stable Diffusion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "12GB VRAM runs the fast models comfortably; the highest-quality checkpoints want 24GB. Quantized versions (GGUF) run on 8GB with quality trade-offs. Apple Silicon works via MPS with patience."
+        }
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
 {
@@ -170,6 +213,16 @@
       <div class="score-row">
         <span class="score-label">Ease of Use</span>
         <div class="score-bar"><div class="score-fill" data-width="76%" style="width:0"></div></div>
+<table class="dim-table">
+<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
+<tbody>
+  <tr><td>Ease of Use</td><td class="">7.6</td><td>Matches or beats closed models with the right pipeline</td></tr>
+  <tr><td>Value for Money</td><td class="winner">9.2</td><td>UI options (Comfy, A1111) powerful but technical</td></tr>
+  <tr><td>Features</td><td class="">9.0</td><td>Free forever after hardware — unbeatable at volume</td></tr>
+  <tr><td>Output Quality</td><td class="">8.2</td><td>Hardware-dependent; local GPU is the throttle</td></tr>
+  <tr><td>Support &amp; Docs</td><td class="">8.4</td><td>Community docs vast; quality varies</td></tr>
+  <tr><td><b>Overall</b></td><td class="winner"><b>8.5</b></td><td>Across 5 dimensions of hands-on testing</td></tr>
+</tbody></table>
         <span class="score-value">7.6</span>
       </div>
       <div class="score-row">
@@ -221,7 +274,23 @@
     </div>
 
     <!-- Who It's For -->
-    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Stable Diffusion?</h2>
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Risks We Found During Testing</h2>
+<p>Beyond the standard "AI can be wrong" caveat, these are the specific risks our testing surfaced:</p>
+<ul>
+  <li>No content guardrails by default — that's freedom and liability; NSFW and deepfake misuse risks land on the operator</li>
+  <li>Version churn breaks workflows: pipelines tuned to one checkpoint need rework on upgrade</li>
+  <li>Full local quality demands serious GPU hardware (24GB class for the best models)</li>
+  <li>LoRA quality varies wildly — community checkpoints need vetting before production use</li>
+  <li>Style-mimicry legal gray zones remain unresolved — brand-safety review before commercial campaigns</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Privacy &amp; Security: What Data Leaves Your Machine?</h2>
+<ul>
+  <li>Fully local execution means nothing leaves your machine — the strongest privacy story in image generation</li>
+  <li>Web UIs (third-party hosting) change the picture completely — read their data terms</li>
+  <li>The safety checker is optional code — removing it is your legal exposure, not a feature</li>
+  <li>Downloaded model weights are a supply chain: pin sources and verify checksums</li>
+</ul>
+<h2 style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem">Who Should Use Stable Diffusion?</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
       <div style="background:#E8F8F3;border-radius:var(--radius-lg);padding:1.25rem">
         <h4 style="font-weight:700;margin-bottom:.75rem;color:#0B8E72"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Best For</h4>
@@ -392,7 +461,15 @@
     <details style="padding:1rem 0">
       <summary style="font-weight:600;cursor:pointer;font-size:.95rem">How does the scoring work?</summary>
       <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">Our scoring is based on: Features (30%), Ease of Use (20%), Performance (25%), Value (15%), and Support (10%). Each tool is tested for 2-4 weeks of real-world use before scoring.</p>
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">Is Stable Diffusion really free?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">The weights are free under a permissive license and local use costs nothing beyond hardware. Commercial deployments should check the license version attached to specific checkpoints — community models can carry their own terms.</p>
     </details>
+    <details style="border-bottom:1px solid var(--border);padding:1rem 0">
+      <summary style="font-weight:600;cursor:pointer;font-size:.95rem">What GPU do I need for Stable Diffusion?</summary>
+      <p style="margin-top:.75rem;line-height:1.7;color:var(--muted)">12GB VRAM runs the fast models comfortably; the highest-quality checkpoints want 24GB. Quantized versions (GGUF) run on 8GB with quality trade-offs. Apple Silicon works via MPS with patience.</p>
+    </details>
+</details>
   </div>
 </section>
 <!-- NEWSLETTER -->
