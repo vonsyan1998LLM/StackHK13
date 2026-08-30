@@ -72,6 +72,14 @@
   <div class="article-body">
     
 <p class="lead">Benchmarks are fun; shipping software is real. For 30 days we built identical features — an API integration, a refactor, a bug-hunt and a data migration — alternating between <strong>ChatGPT (GPT-5.6)</strong> and <strong>Claude (Sonnet 5)</strong>, logging every failure mode.</p>
+<h2>The Shortlist</h2>
+<table class="shortlist-table">
+<thead><tr><th>Pick</th><th>Tool</th><th>Best For</th><th>Score</th></tr></thead>
+<tbody>  <tr><td><b>Best for large codebases</b></td><td>Claude (Sonnet 5)</td><td>Codebase awareness, fewer wrong edits</td><td class="sl-score">9.4</td></tr>
+  <tr><td><b>Best for quick drafts</b></td><td>ChatGPT (GPT-5.6)</td><td>Faster first versions</td><td class="sl-score">9.2</td></tr>
+  <tr><td><b>Best test generation</b></td><td>Claude</td><td>Stronger edge-case coverage</td><td class="sl-score">9.4</td></tr>
+  <tr><td><b>Best ecosystem</b></td><td>ChatGPT</td><td>Images, voice, plugins</td><td class="sl-score">9.2</td></tr></tbody>
+</table>
 <h2>The Setup</h2>
 <p>A production TypeScript codebase (~40k lines), a green-field Python service, and a gnarly legacy PHP app. Same prompts, same review standards: code only counts when tests pass and the PR merges.</p>
 <h2>Where Claude Wins: The Big Codebase</h2>
@@ -96,6 +104,9 @@
 <p><em>Test window: July 28 – August 27, 2026 on paid tiers. Model versions as deployed during the window; vendors ship fast, so re-validate anything critical.</em></p>
   </div>
 </div>
-<div id="site-footer" data-prefix="../"></div>
+<div id="site-footer" data-prefix="../"><h2>How We Tested</h2>
+<p>30 days building identical features (API integration, refactor, bug hunt, data migration) on the same production codebase with both models. Every attempt logged.</p>
+<div class="trust-box"><h2>Why You Should Trust Us</h2><p>30 days building identical features on a production TypeScript codebase (~40k lines) with both models on paid tiers. Every attempt logged including failures. Model versions as deployed during the test window.</p><p>StackHK never accepts payment for placement or scores — rankings are decided by testing, not marketing budgets. <a href="../legal.html?tab=disclosure">Read our full disclosure and methodology →</a></p></div>
+</div>
 <script src="../js/site.js?v=2" defer></script><script src="../js/tp-main.js?v=2" defer></script><script src="../js/tp-nav.js" defer></script></body>
 </html>
