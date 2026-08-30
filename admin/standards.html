@@ -4,27 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Content Production Standards | StackHK Admin</title>
+<title>Content Standards | StackHK Admin</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/admin/admin.css">
 <style>
-:root{--bg:#0f1115;--bg2:#161a21;--card:#1c212b;--border:#2a3140;--text:#e8ebf1;--muted:#9aa3b2;--gold:#f5a623;--green:#0B8E72;--red:#E83B3B;--blue:#2C5EE8;--radius:10px}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"DM Sans","Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
-a{color:var(--gold);text-decoration:none}
-.container{max-width:1200px;margin:0 auto;padding:2rem}
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
-header h1{font-size:1.5rem;font-weight:800}
-header .sub{color:var(--muted);font-size:.9rem}
-.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-bottom:2rem}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:.8rem 1rem;text-align:center}
-.stat b{font-size:1.4rem;display:block;color:var(--gold)}
-.stat span{font-size:.75rem;color:var(--muted)}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem}
-.tab{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:.45rem .9rem;border-radius:8px;cursor:pointer;font-size:.85rem;transition:.2s}
-.tab:hover{border-color:var(--gold);color:var(--text)}
-.tab.active{background:var(--gold);color:#141414;border-color:var(--gold);font-weight:600}
-.panel{display:none}
-.panel.active{display:block}
+.panel{display:none}.panel.active{display:block}
 .ch-title{font-size:1.3rem;font-weight:800;margin-bottom:.3rem}
 .ch-desc{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
 .ch-stats{display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
@@ -46,478 +30,350 @@ header .sub{color:var(--muted);font-size:.9rem}
 .guideline b{color:var(--gold)}
 .guideline ul{padding-left:1.2rem;margin:.5rem 0}
 .guideline ul li{margin-bottom:.3rem;font-size:.88rem}
+.data-table{width:100%;border-collapse:collapse;font-size:.9rem;margin:1rem 0}
+.data-table th{text-align:left;padding:.6rem;border-bottom:2px solid var(--border);font-size:.8rem;text-transform:uppercase;color:var(--muted)}
+.data-table td{padding:.6rem;border-bottom:1px solid var(--border)}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-@media(max-width:768px){.two-col{grid-template-columns:1fr}.container{padding:1rem}}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}}
 .print-btn{background:var(--gold);color:#141414;border:none;padding:.5rem 1.2rem;border-radius:8px;cursor:pointer;font-weight:600;font-size:.85rem}
-@media print{.tabs,.print-btn,header .sub{display:none!important}.panel{display:block!important;page-break-after:always}}
+@media print{.sidebar,.topbar,.print-btn{display:none!important}.content{padding:0}}
 </style>
 </head>
 <body>
-<div class="container">
-<header>
-  <div>
-    <h1>📋 Content Production Standards</h1>
-    <p class="sub">StackHK 全站内容产出标准 · 按频道分类 · 最后更新 2026-08-29</p>
+
+<aside class="sidebar">
+  <div class="side-logo">STACK<span>HK</span><small>Admin</small></div>
+  <nav id="side-nav">
+    <a href="/admin/">← 返回后台</a>
+    <a class="active">📋 Standards</a>
+  </nav>
+  <div class="side-foot">
+    <span>Content Standards</span>
   </div>
-  <button class="print-btn" onclick="window.print()">🖨️ Print All</button>
-</div>
+</aside>
 
-<div class="stats">
-  <div class="stat"><b>34</b><span>SaaS Reviews</span></div>
-  <div class="stat"><b>39</b><span>AI Tool Reviews</span></div>
-  <div class="stat"><b>31</b><span>Guides</span></div>
-  <div class="stat"><b>30</b><span>News</span></div>
-  <div class="stat"><b>9</b><span>Comparisons</span></div>
-  <div class="stat"><b>33</b><span>Glossary</span></div>
-  <div class="stat"><b>8</b><span>Deals</span></div>
-  <div class="stat"><b>170</b><span>Sitemap URLs</span></div>
-</div>
+<main class="main">
+  <header class="topbar">
+    <h1>Content Production Standards</h1>
+    <div class="topbar-right">
+      <button class="print-btn" onclick="window.print()">🖨️ Print All</button>
+    </div>
+  </header>
+  <section class="content">
 
-<div class="tabs">
-  <button class="tab active" data-panel="overview">Overview</button>
-  <button class="tab" data-panel="saas">SaaS Review</button>
-  <button class="tab" data-panel="ai-review">AI Tool Review</button>
-  <button class="tab" data-panel="guide">Guide / Roundup</button>
-  <button class="tab" data-panel="news">News Article</button>
-  <button class="tab" data-panel="compare">Comparison</button>
-  <button class="tab" data-panel="glossary">Glossary</button>
-  <button class="tab" data-panel="deals">Deals</button>
-  <button class="tab" data-panel="universal">Universal Standards</button>
-  <button class="tab" data-panel="checklist">Pre-Publish Checklist</button>
-</div>
-
-<!-- OVERVIEW -->
-<div class="panel active" id="panel-overview">
-  <div class="ch-title">Content Production Standards Overview</div>
-  <p class="ch-desc">全站 7 个内容频道的产出标准总览。每个频道有独立的页面结构、写作规范、评分体系、SEO 要求和质量检查清单。</p>
-
-  <div class="sec-title">频道总览</div>
-  <table style="width:100%;border-collapse:collapse;font-size:.9rem">
-    <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.6rem">频道</th><th style="text-align:left;padding:.6rem">路径</th><th style="text-align:left;padding:.6rem">数量</th><th style="text-align:left;padding:.6rem">标准版本</th><th style="text-align:left;padding:.6rem">核心要求</th></tr></thead>
-    <tbody>
-      <tr><td style="padding:.6rem"><b>SaaS Review</b></td><td style="padding:.6rem">/saas/*-review</td><td>34</td><td>v2 (dim-table + deep-dive)</td><td>5 维评分表 + 实测数据 + Risks + Privacy + FAQ 5</td></tr>
-      <tr><td style="padding:.6rem"><b>AI Tool Review</b></td><td style="padding:.6rem">/reviews/*</td><td>39</td><td>v2 (dim-table + deep-dive)</td><td>5 维评分表 + Risks + Privacy + FAQ 5-6</td></tr>
-      <tr><td style="padding:.6rem"><b>Guide / Roundup</b></td><td style="padding:.6rem">/articles/best-*</td><td>31</td><td>v2 (pick-card + shortlist + trust)</td><td>Shortlist + Pick Cards + Pros/Cons + Trust Box</td></tr>
-      <tr><td style="padding:.6rem"><b>News Article</b></td><td style="padding:.6rem">/news/*</td><td>30</td><td>v2 (deck + sections + punch)</td><td>Deck + What's Happening + Why It Matters + Punch + Media Quotes</td></tr>
-      <tr><td style="padding:.6rem"><b>Comparison</b></td><td style="padding:.6rem">/compare/*-vs-*</td><td>9</td><td>v2 (benchmark + TL;DR + scoring)</td><td>Quick Verdict + 14-param + 5-dim + Cost per Usable + Failure Gallery</td></tr>
-      <tr><td style="padding:.6rem"><b>Glossary</b></td><td style="padding:.6rem">/glossary (single page)</td><td>33 words</td><td>v1 (alphabetical + definition)</td><td>100-150 words + cross-link + alphabetical position</td></tr>
-      <tr><td style="padding:.6rem"><b>Deals</b></td><td style="padding:.6rem">/deals (JS data array)</td><td>8</td><td>v1 (JS data array)</td><td>Verified pricing + expiration + CTA + category</td></tr>
-    </tbody>
-  </table>
-
-  <div class="sec-title">通用标准（适用于所有频道）</div>
-  <div class="guideline"><b>1. 图片生成规范</b> — gen-image skill (maizitech GPT Image 2)，明亮/温馨/写实，无大面积黑色，屏幕浅色主题，1536×1024，压缩至 ≤200KB JPEG (mozjpeg q82)</div>
-  <div class="guideline"><b>2. SEO 标准</b> — canonical URL、OG tags、JSON-LD (Article/Review + FAQPage + BreadcrumbList)、sitemap 更新、IndexNow 自动提报</div>
-  <div class="guideline"><b>3. E-E-A-T 标准</b> — 测试方法论（工具数/天数/评测人数）、联盟披露（页顶）、无供应商关系声明、复测周期（60-90 天）、真实测试数据（Evidence &gt; Adjectives）</div>
-  <div class="guideline"><b>4. 写作风格</b> — Evidence &gt; Adjectives，禁止绝对化营销语（如 "untouchable" "revolutionary"），用测试观察替代主观判断，每段 1-3 句，分节标题给结论</div>
-  <div class="guideline"><b>5. 部署流程</b> — 本地构建 → 用户预览 → 确认 → gen-sitemap.mjs → 单次 wrangler deploy → 单次 git push</div>
-</div>
-
-<!-- SaaS Review -->
-<div class="panel" id="panel-saas">
-  <div class="ch-title">SaaS Review 标准格式</div>
-  <p class="ch-desc">路径：/saas/{slug}-review.html · 当前 34 篇 · 全部详细版</p>
-  <div class="ch-stats"><span>字数 ≥ <b>1,500</b></span><span>配图 <b>1 张</b> hero</span><span>FAQ ≥ <b>5 条</b></span><span>JSON-LD <b>3 块</b></span><span>内链 ≥ <b>4 个</b></span></div>
-
-  <div class="sec-title">Required Sections (In Order)</div>
-  <ul class="section-list">
-    <li class="req">Review Hero (eyebrow + h1 + hero image + subtitle + meta)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Quick Verdict box<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Facts Grid (Best For / Pricing / Free Plan / Platform)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Affiliate Disclosure<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">What is [Tool]? (2 paragraphs)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">How We Tested (bullet list with specifics)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Score Breakdown: Our 5 Dimensions (dim-table with notes)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">What We Loved (Pros / Cons grid)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="opt">Performance in Daily Use (measured data)<span class="tag tag-opt">DEEP-DIVE</span></li>
-    <li class="opt">Integrations &amp; Ecosystem<span class="tag tag-opt">DEEP-DIVE</span></li>
-    <li class="opt">Support &amp; Documentation<span class="tag tag-opt">DEEP-DIVE</span></li>
-    <li class="req">Pricing (tiered list + analysis note)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Who Should Use It / Not Ideal For<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Final Verdict (verdict-box)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Comparison Table (vs 3-4 alternatives)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">FAQ (≥ 5 questions, JSON-LD synced)<span class="tag tag-req">REQUIRED</span></li>
-  </ul>
-
-  <div class="sec-title">5-Dimension Scoring</div>
-  <div class="guideline">
-    <b>Quality of Output</b> — 核心功能的实际产出质量（如代码正确性、文本深度、图像质量）。<br>
-    <b>Ease of Use</b> — 上手难度、UI 清晰度、新用户多久能产出。<br>
-    <b>Value for Money</b> — 每 1 美元产出的实际价值、免费层慷慨度、成本增长曲线。<br>
-    <b>Speed &amp; Reliability</b> — 延迟、稳定性和持续使用的一致性。<br>
-    <b>Support &amp; Docs</b> — 文档深度、社区活跃度、官方支持质量。<br><br>
-    总分 = 5 维加权平均，评分必须与测试数据一致。每个维度必须有具体 Notes 说明评分依据。
+  <div class="stats" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-bottom:2rem">
+    <div class="stat"><b>34</b><span>SaaS Reviews</span></div>
+    <div class="stat"><b>39</b><span>AI Tool Reviews</span></div>
+    <div class="stat"><b>31</b><span>Guides</span></div>
+    <div class="stat"><b>30</b><span>News</span></div>
+    <div class="stat"><b>9</b><span>Comparisons</span></div>
+    <div class="stat"><b>33</b><span>Glossary</span></div>
+    <div class="stat"><b>8</b><span>Deals</span></div>
+    <div class="stat"><b>170</b><span>Sitemap URLs</span></div>
   </div>
 
-  <div class="sec-title">Writing Style Guidelines</div>
-  <div class="guideline"><b>Do:</b> 用测试观察替代营销判断。写具体数字（如 "28% open rate, 6% reply rate"）。同时展示优点和缺点。减少营销语言。</div>
-  <div class="guideline"><b>Don't:</b> 绝对化表述（"untouchable" "revolutionary" "the best ever"）。虚构测试数据。只说优点不说缺点。使用未经核实的价格。</div>
-
-  <div class="sec-title">Pre-Publish Checklist</div>
-  <ul class="checklist">
-    <li class="must">Score Breakdown dim-table 存在且 5 维都有 Notes</li>
-    <li class="must">FAQ 可见数量 = JSON-LD 数量（5+ 条）</li>
-    <li class="must">3 组 JSON-LD（Review + FAQPage + Breadcrumb）</li>
-    <li class="must">Disclosure 在页顶</li>
-    <li>所有价格标注 "as of [month] [year]"</li>
-    <li>对比表至少 3 个竞品</li>
-    <li>内链 ≥ 4 个（相关评测/指南/分类）</li>
-    <li>Hero 图片 ≤ 200KB JPEG</li>
-    <li>字数 ≥ 1,500</li>
-  </ul>
-</div>
-
-<!-- AI Tool Review -->
-<div class="panel" id="panel-ai-review">
-  <div class="ch-title">AI Tool Review 标准格式</div>
-  <p class="ch-desc">路径：/reviews/{slug}.html · 当前 39 篇 · 全部详细版</p>
-  <div class="ch-stats"><span>字数 ≥ <b>1,200</b></span><span>FAQ ≥ <b>5 条</b></span><span>JSON-LD <b>3 块</b></span><span>Risks ≥ <b>5 条</b></span><span>Privacy points ≥ <b>4 条</b></span></div>
-
-  <div class="sec-title">Required Sections (In Order)</div>
-  <ul class="section-list">
-    <li class="req">Review Hero (h1 + logo + tagline + meta with Last Tested / Pricing Checked)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Quick Verdict box<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Facts Grid (6 facts incl. Our Score)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Affiliate Disclosure<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">What is [Tool]?<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Our Testing Process (specific bullet list)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Score Breakdown: Our 5 Dimensions (dim-table)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">What We Loved (Pros / Cons grid)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="opt">Performance in Daily Use<span class="tag tag-opt">DEEP-DIVE</span></li>
-    <li class="opt">Integrations &amp; Ecosystem<span class="tag tag-opt">DEEP-DIVE</span></li>
-    <li class="opt">Support &amp; Documentation<span class="tag tag-opt">DEEP-DIVE</span></li>
-    <li class="req">Risks We Found During Testing (≥ 5 specific risks)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Privacy &amp; Security: What Data Leaves Your Machine? (≥ 4 points)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Pricing (tiered)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Who Should Use It / Not Ideal For<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Final Verdict<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Comparison Table<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">FAQ (≥ 5 questions, JSON-LD synced)<span class="tag tag-req">REQUIRED</span></li>
-  </ul>
-
-  <div class="sec-title">Key Differences from SaaS Review</div>
-  <div class="guideline"><b>1. Risks We Found 是必备模块</b> — AI 工具评测必须有具体风险列表（不是笼统的 "AI hallucinates"）。每条风险必须是测试中实际遇到的具体场景。</div>
-  <div class="guideline"><b>2. Privacy &amp; Security 是必备模块</b> — 必须回答 "What data leaves your machine?" 并给出可执行的建议（如 "Enable Privacy Mode, review model provider retention policy"）。</div>
-  <div class="guideline"><b>3. Agent / Capability 深度</b> — 如果工具有 Agent、MCP 或其他 2026 新能力，必须有独立小节展开（What it does → Where it works → Where it fails）。</div>
-
-  <div class="sec-title">Pre-Publish Checklist</div>
-  <ul class="checklist">
-    <li class="must">dim-table 存在且 5 维有 Notes</li>
-    <li class="must">Risks We Found ≥ 5 条</li>
-    <li class="must">Privacy &amp; Security ≥ 4 条</li>
-    <li class="must">FAQ 可见 = JSON-LD（5+ 条）</li>
-    <li class="must">3 组 JSON-LD</li>
-    <li class="must">Disclosure 在页顶</li>
-    <li>产品信息与官方 2026 页面一致（定价、模型、功能）</li>
-    <li>对比表至少 2 个竞品</li>
-    <li>字数 ≥ 1,200</li>
-  </ul>
-</div>
-
-<!-- Guide -->
-<div class="panel" id="panel-guide">
-  <div class="ch-title">Guide / Roundup 标准格式</div>
-  <p class="ch-desc">路径：/articles/best-*.html · 当前 31 篇（5 篇 v2 + 26 篇 upgraded）</p>
-  <div class="ch-stats"><span>字数 ≥ <b>1,500</b></span><span>配图 <b>1 张</b> hero</span><span>FAQ ≥ <b>3 条</b></span><span>JSON-LD <b>3 块</b></span><span>Pick Cards <b>4-5 个</b></span></div>
-
-  <div class="sec-title">Required Sections (v2 In Order)</div>
-  <ul class="section-list">
-    <li class="req">Article Hero (eyebrow + h1 + subtitle + hero image + meta)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Lead paragraph (hook + scope statement)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">The Shortlist (summary table with all picks)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">How We Tested (methodology with specifics)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Pick Cards × 4-5 (badge + name + tagline + score + para + pros/cons + specs + best for)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Quick Comparison Table (all picks × parameters)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="opt">Deep-dive sections (category-specific analysis)<span class="tag tag-opt">CONTENT</span></li>
-    <li class="req">How to Choose (decision framework)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Verdict box<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Why You Should Trust Us (trust-box)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">FAQ (≥ 3 questions, JSON-LD synced)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="opt">Testing period disclaimer<span class="tag tag-opt">RECOMMENDED</span></li>
-  </ul>
-
-  <div class="sec-title">Pick Card Structure (per tool)</div>
-  <div class="guideline">
-    每个 Pick Card 必须包含：<br>
-    <b>Badge</b> — 排名（🥇 Best Overall / 🥈 Runner-up / 🥉 Third / 4. 5. …）<br>
-    <b>Name + Link</b> — 工具名，链接到站内评测页<br>
-    <b>Tagline</b> — 一句话定位（如 "Best for Ecommerce Email"）<br>
-    <b>Score</b> — 评分（与评测页一致）<br>
-    <b>Feature Line</b> — 核心功能标签（4-6 个用 · 分隔）<br>
-    <b>Analysis</b> — 深度分析段落（100+ 词，含具体测试观察）<br>
-    <b>Pros / Cons</b> — 优缺点对比格<br>
-    <b>Specs Table</b> — 关键参数（价格/平台/最佳场景）<br>
-    <b>Best For</b> — 一句话目标用户
+  <div class="tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem">
+    <button class="tab btn active" data-panel="overview">Overview</button>
+    <button class="tab btn" data-panel="saas">SaaS Review</button>
+    <button class="tab btn" data-panel="ai-review">AI Tool Review</button>
+    <button class="tab btn" data-panel="guide">Guide / Roundup</button>
+    <button class="tab btn" data-panel="news">News Article</button>
+    <button class="tab btn" data-panel="compare">Comparison</button>
+    <button class="tab btn" data-panel="glossary">Glossary</button>
+    <button class="tab btn" data-panel="deals">Deals</button>
+    <button class="tab btn" data-panel="universal">Universal</button>
+    <button class="tab btn" data-panel="checklist">✅ Checklist</button>
   </div>
 
-  <div class="sec-title">Pre-Publish Checklist</div>
-  <ul class="checklist">
-    <li class="must">Shortlist 表在正文前部</li>
-    <li class="must">每个 Pick Card 有 Pros / Cons</li>
-    <li class="must">Trust Box 在 FAQ 前</li>
-    <li class="must">How We Tested 有具体数字</li>
-    <li class="must">对比表覆盖所有 Pick</li>
-    <li>内链 ≥ 4 个（评测/对比/分类）</li>
-    <li>字数 ≥ 1,500</li>
-    <li>FAQ JSON-LD 同步</li>
-  </ul>
-</div>
-
-<!-- News -->
-<div class="panel" id="panel-news">
-  <div class="ch-title">News Article 标准格式（v2 Editorial）</div>
-  <p class="ch-desc">路径：/news/{slug}.html · 当前 30 篇 · 全部 v2 版式</p>
-  <div class="ch-stats"><span>字数 <b>600-1,000</b></span><span>配图 <b>1+1</b> hero+thumb</span><span>FAQ <b>无</b>（新闻不需要）</span><span>媒体评价 ≥ <b>2 条</b></span></div>
-
-  <div class="sec-title">Required Sections (v2 In Order)</div>
-  <ul class="section-list">
-    <li class="req">Page Hero (crumbs + tag + when + h1)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">News Deck (1-2 sentence hook below title)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Byline (StackHK News Desk · Updated date)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Hero Image (1536×1024 → 820px display)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Lead paragraph (1-2 sentences, factual)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">What's Happening (1-2 short paragraphs)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Why It Matters (1-2 short paragraphs)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Punch Line (single bold standalone sentence)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="opt">Media &amp; Industry Reaction (quote cards × 2-3)<span class="tag tag-opt">RECOMMENDED</span></li>
-  </ul>
-
-  <div class="sec-title">Writing Style (v2 Editorial)</div>
-  <div class="guideline"><b>Deck:</b> 1-2 句钩子，概括文章核心观点。不是描述性摘要，而是有立场的开场白。</div>
-  <div class="guideline"><b>Lead:</b> 事实先行（谁/什么/何时/数据）。1-2 句。</div>
-  <div class="guideline"><b>段落:</b> 每段 1-3 句。短段落是 v2 的核心风格——避免 3 句以上的连续段落。</div>
-  <div class="guideline"><b>Punch Line:</b> 单句独立段落，加粗放大。是整篇文章的"金句"。例: "The people building frontier systems are asking to be slowed down."</div>
-  <div class="guideline"><b>媒体评价:</b> 每篇 2-3 条引述卡。来源必须是真实媒体报道（TechCrunch、BBC、Reuters 等）或官方公告（标注 paraphrased）。</div>
-
-  <div class="sec-title">Data Pipeline</div>
-  <div class="guideline"><b>1. KV 入库:</b> 新闻数据存 KV（site:data → news 数组），含 id/tag/when/title/excerpt/url/image 字段</div>
-  <div class="guideline"><b>2. 首页展示:</b> 首页新闻流自动显示最新 5 条</div>
-  <div class="guideline"><b>3. 归档页:</b> news.html 按时间倒序显示全部</div>
-  <div class="guideline"><b>4. 缩略图:</b> 每篇生成 thumb（480px 宽），tools 页和首页共用</div>
-
-  <div class="sec-title">Pre-Publish Checklist</div>
-  <ul class="checklist">
-    <li class="must">Deck 副题存在（news-deck class）</li>
-    <li class="must">至少 2 条媒体评价引述卡</li>
-    <li class="must">Punch Line 存在（加粗独立段）</li>
-    <li class="must">配图 hero + thumb 都已上传</li>
-    <li class="must">KV 已入库（news 数组已更新）</li>
-    <li class="must">所有事实有信源（媒体名或官方链接）</li>
-    <li>不与已有 30 篇新闻重复</li>
-  </ul>
-</div>
-
-<!-- Comparison -->
-<div class="panel" id="panel-compare">
-  <div class="ch-title">Comparison / Benchmark 标准格式</div>
-  <p class="ch-desc">路径：/compare/{a}-vs-{b}.html · 当前 9 组 · v2 Benchmark 格式</p>
-  <div class="ch-stats"><span>字数 ≥ <b>2,000</b></span><span>Prompts <b>20+</b></span><span>FAQ ≥ <b>4 条</b></span><span>对比表 <b>2+ 张</b></span></div>
-
-  <div class="sec-title">Required Sections (v2 In Order)</div>
-  <ul class="section-list">
-    <li class="req">Page Hero (eyebrow + h1 + subtitle + meta)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">VS Hero (两个 logo + VS + title + desc)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Quick Verdict / TL;DR box (分项胜负表 + bottom line)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">At a Glance: 14 参数对照表<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Score Breakdown: 5 维度评分表（带胜方高亮 + Overall）<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Verdict-as-Headline sections × 3（每节标题就是结论）<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Pricing side-by-side table<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Choose X if / Choose Y if / Use both if<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">FAQ (≥ 4 questions, JSON-LD synced)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Related links (内链到两篇评测 + 相关文章)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="req">Trust footer (methodology + tested period + retest promise)<span class="tag tag-req">REQUIRED</span></li>
-    <li class="opt">Benchmark data table (per-task timing/results)<span class="tag tag-opt">BENCHMARK</span></li>
-    <li class="opt">Cost per usable output analysis<span class="tag tag-opt">BENCHMARK</span></li>
-    <li class="opt">Failure Gallery (real failure cases from both tools)<span class="tag tag-opt">BENCHMARK</span></li>
-    <li class="opt">Character/Product Consistency test<span class="tag tag-opt">BENCHMARK</span></li>
-  </ul>
-
-  <div class="sec-title">Writing Style (Zapier Benchmark Pattern)</div>
-  <div class="guideline"><b>Verdict-as-Headline:</b> 每个比较小节的标题直接给出结论（如 "Semrush wins on breadth: one subscription, five jobs"），读者只看 H2 就能获得全部结论。</div>
-  <div class="guideline"><b>Same Prompt Testing:</b> 给两个工具完全相同的任务/Prompt，并排展示结果，用统一标准评分。不分别测试不同的任务。</div>
-  <div class="guideline"><b>Evidence &gt; Adjectives:</b> 用具体测试观察替代主观判断。不写 "X is absolutely incredible"，写 "In our test, X produced stronger lighting and material detail."</div>
-  <div class="guideline"><b>失败案例:</b> 必须展示两个工具的真实失败案例，比 Pros/Cons 更有说服力。</div>
-
-  <div class="sec-title">Pre-Publish Checklist</div>
-  <ul class="checklist">
-    <li class="must">TL;DR box 在页首</li>
-    <li class="must">14 参数对照表</li>
-    <li class="must">5 维评分表（含胜方高亮 + Overall）</li>
-    <li class="must">至少 3 个判词式 H2</li>
-    <li class="must">Choose X/Y/Both 推荐完整</li>
-    <li class="must">Trust footer 含 methodology + tested date</li>
-    <li class="must">Related links 到两篇评测</li>
-    <li>所有测试数据来自真实测试</li>
-    <li>价格标注 checked 日期</li>
-  </ul>
-</div>
-
-<!-- Glossary -->
-<div class="panel" id="panel-glossary">
-  <div class="ch-title">Glossary 词条标准</div>
-  <p class="ch-desc">路径：/glossary（单页多词条）· 当前 33 词 · 目标 33（已达标）</p>
-
-  <div class="sec-title">Per-Term Structure</div>
-  <div class="guideline">
-    每个词条 100-150 词，包含：<br>
-    <b>定义</b> — 核心概念解释（1-2 句）<br>
-    <b>展开</b> — 实际应用场景或重要性（1-2 句）<br>
-    <b>举例</b> — 具体工具或案例引用（如 "Qwen and DeepSeek are prominent examples"）<br>
-    <b>交叉链接</b> — 站内相关评测/文章/新闻的链接<br><br>
-    格式：&lt;div class="term"&gt;&lt;h3&gt;Term Name&lt;/h3&gt;&lt;p&gt;Definition...&lt;/p&gt;&lt;/div&gt;
+  <!-- OVERVIEW -->
+  <div class="panel active" id="panel-overview">
+    <h2 class="ch-title">Content Production Standards Overview</h2>
+    <p class="ch-desc">全站 7 个内容频道的产出标准总览。每个频道有独立的页面结构、写作规范、评分体系、SEO 要求和质量检查清单。</p>
+    <table class="data-table">
+      <thead><tr><th>频道</th><th>路径</th><th>数量</th><th>标准版本</th><th>核心要求</th></tr></thead>
+      <tbody>
+        <tr><td><b>SaaS Review</b></td><td>/saas/*-review</td><td>34</td><td>v2</td><td>5 维评分 + 实测 + Risks + Privacy + FAQ 5</td></tr>
+        <tr><td><b>AI Tool Review</b></td><td>/reviews/*</td><td>39</td><td>v2</td><td>5 维评分 + Risks + Privacy + FAQ 5-6</td></tr>
+        <tr><td><b>Guide / Roundup</b></td><td>/articles/best-*</td><td>31</td><td>v2</td><td>Shortlist + Pick Cards + Pros/Cons + Trust</td></tr>
+        <tr><td><b>News</b></td><td>/news/*</td><td>30</td><td>v2</td><td>Deck + Sections + Punch + Media Quotes</td></tr>
+        <tr><td><b>Comparison</b></td><td>/compare/*-vs-*</td><td>9</td><td>v2</td><td>Quick Verdict + 14-param + Cost per Usable</td></tr>
+        <tr><td><b>Glossary</b></td><td>/glossary</td><td>33 words</td><td>v1</td><td>100-150 words + cross-link + alphabetical</td></tr>
+        <tr><td><b>Deals</b></td><td>/deals (JS array)</td><td>8</td><td>v1</td><td>Verified pricing + expiration + CTA</td></tr>
+      </tbody>
+    </table>
+    <h2 class="sec-title">通用标准</h2>
+    <div class="guideline"><b>图片</b> — gen-image skill，明亮/温馨/写实，无大面积黑色，浅色屏幕，1536×1024，压缩 ≤ 200KB JPEG</div>
+    <div class="guideline"><b>SEO</b> — canonical + OG + JSON-LD 三件套 + sitemap + IndexNow</div>
+    <div class="guideline"><b>E-E-A-T</b> — 测试方法论 + 联盟披露 + 无供应商关系 + 60-90 天复测 + Evidence &gt; Adjectives</div>
+    <div class="guideline"><b>部署</b> — 本地构建 → 用户预览 → 确认 → gen-sitemap → 单次 deploy → 单次 push</div>
   </div>
 
-  <div class="sec-title">Insertion Rules</div>
-  <div class="guideline">按字母序插入到 glossary.html 中正确位置。每个词条是独立的 &lt;div class="term"&gt; 块。插入前先检查是否有重复（grep &lt;h3&gt;TermName）。</div>
-
-  <div class="sec-title">Pre-Publish Checklist</div>
-  <ul class="checklist">
-    <li class="must">不与已有 33 词重复</li>
-    <li>定义 100-150 词</li>
-    <li>按字母序插入</li>
-    <li>包含实际应用或举例</li>
-    <li>有站内交叉链接</li>
-  </ul>
-</div>
-
-<!-- Deals -->
-<div class="panel" id="panel-deals">
-  <div class="ch-title">Deals 标准</div>
-  <p class="ch-desc">路径：/deals（JS 数据数组）· 当前 8 条</p>
-
-  <div class="sec-title">Per-Deal Structure (JS Object)</div>
-  <div class="guideline">
-    { id, tool, category, discount, code, expires, status }<br><br>
-    <b>tool</b> — 工具名（与站内评测对应）<br>
-    <b>category</b> — 分类（writing/coding/productivity/image/audio/business）<br>
-    <b>discount</b> — 折扣描述（格式："XX% OFF — Plan" 或 "Free Trial — XX Days"）<br>
-    <b>code</b> — 优惠码<br>
-    <b>expires</b> — 到期日（YYYY-MM-DD）<br>
-    <b>status</b> — active / expired
+  <!-- SaaS -->
+  <div class="panel" id="panel-saas">
+    <h2 class="ch-title">SaaS Review</h2>
+    <p class="ch-desc">/saas/{slug}-review.html · 34 篇 · 全部 v2 详细版</p>
+    <div class="ch-stats"><span>字数 ≥ <b>1,500</b></span><span>配图 <b>1</b></span><span>FAQ ≥ <b>5</b></span><span>JSON-LD <b>3</b></span><span>内链 ≥ <b>4</b></span></div>
+    <h2 class="sec-title">Required Sections</h2>
+    <ul class="section-list">
+      <li class="req">Review Hero (eyebrow + h1 + hero image + subtitle + meta)</li>
+      <li class="req">Quick Verdict box</li>
+      <li class="req">Facts Grid (6 items incl. Our Score)</li>
+      <li class="req">Affiliate Disclosure</li>
+      <li class="req">What is [Tool]?</li>
+      <li class="req">How We Tested (specific bullet list)</li>
+      <li class="req">Score Breakdown: 5 Dimensions (dim-table)</li>
+      <li class="req">What We Loved (Pros / Cons grid)</li>
+      <li>Performance in Daily Use <span class="tag tag-opt" style="font-size:.7rem">DEEP-DIVE</span></li>
+      <li>Integrations &amp; Ecosystem <span class="tag tag-opt" style="font-size:.7rem">DEEP-DIVE</span></li>
+      <li>Support &amp; Documentation <span class="tag tag-opt" style="font-size:.7rem">DEEP-DIVE</span></li>
+      <li class="req">Pricing (tiered list + note)</li>
+      <li class="req">Who Should Use It / Not Ideal For</li>
+      <li class="req">Final Verdict (verdict-box)</li>
+      <li class="req">Comparison Table (vs 3-4)</li>
+      <li class="req">FAQ (≥ 5, JSON-LD synced)</li>
+    </ul>
+    <h2 class="sec-title">5-Dimension Scoring</h2>
+    <div class="guideline"><b>Quality of Output</b> — 核心功能产出质量<br><b>Ease of Use</b> — 上手难度 / UI / 新用户效率<br><b>Value for Money</b> — 每 1 美元产出价值 / 免费层<br><b>Speed &amp; Reliability</b> — 延迟 / 稳定 / 一致性<br><b>Support &amp; Docs</b> — 文档 / 社区 / 官方支持<br><br>总分 = 5 维加权，每维必须有 Notes</div>
+    <h2 class="sec-title">✅ Checklist</h2>
+    <ul class="checklist">
+      <li class="must">dim-table 5 维有 Notes</li>
+      <li class="must">FAQ 可见 = JSON-LD（≥5）</li>
+      <li class="must">3 组 JSON-LD</li>
+      <li class="must">Disclosure 在页顶</li>
+      <li>价格标注 as-of 日期</li>
+      <li>对比表 ≥ 3 竞品</li>
+      <li>内链 ≥ 4</li>
+      <li>字数 ≥ 1,500</li>
+    </ul>
   </div>
 
-  <div class="sec-title">Pre-Publish Checklist</div>
-  <ul class="checklist">
-    <li class="must">折扣信息已核对官方页面（不是猜测）</li>
-    <li>到期日已设置</li>
-    <li>对应的站内评测页存在</li>
-    <li>过期的 deal 及时标记 expired</li>
-  </ul>
-</div>
-
-<!-- Universal Standards -->
-<div class="panel" id="panel-universal">
-  <div class="ch-title">Universal Standards（全站通用）</div>
-
-  <div class="sec-title">Image Generation</div>
-  <div class="guideline">
-    <b>Pipeline:</b> gen-image skill (maizitech GPT Image 2) → sharp compression (mozjpeg q82) → site images/<br>
-    <b>Style:</b> 明亮/温馨/写实，无大面积黑色，电脑屏幕浅色主题<br>
-    <b>Size:</b> 1536×1024 (3:2) → 压缩 JPEG ≤ 200KB<br>
-    <b>Usage:</b> Hero 图（每页 1 张），News 额外生成 thumbnail (480px)<br>
-    <b>场景:</b> 办公室/科技公司/会场/写字楼/商业区/咖啡厅/家庭/休闲旅游等<br>
-    <b>Prompt 规范:</b> 描述场景 + 光线 + 氛围 + "realistic photography, no dark areas"
+  <!-- AI Tool Review -->
+  <div class="panel" id="panel-ai">
+    <h2 class="ch-title">AI Tool Review</h2>
+    <p class="ch-desc">/reviews/{slug}.html · 39 篇 · 全部 v2 详细版</p>
+    <div class="ch-stats"><span>字数 ≥ <b>1,200</b></span><span>FAQ ≥ <b>5</b></span><span>Risks ≥ <b>5</b></span><span>Privacy ≥ <b>4</b></span></div>
+    <h2 class="sec-title">Required Sections</h2>
+    <ul class="section-list">
+      <li class="req">Review Hero + Quick Verdict + Facts Grid + Disclosure</li>
+      <li class="req">What is [Tool]?</li>
+      <li class="req">Our Testing Process</li>
+      <li class="req">Score Breakdown: 5 Dimensions (dim-table)</li>
+      <li class="req">What We Loved (Pros / Cons)</li>
+      <li>Performance / Integrations / Support (deep-dive)</li>
+      <li class="req">Risks We Found During Testing (≥ 5 specific)</li>
+      <li class="req">Privacy &amp; Security (≥ 4 points)</li>
+      <li class="req">Pricing</li>
+      <li class="req">Who Should Use / Not Ideal For</li>
+      <li class="req">Final Verdict</li>
+      <li class="req">Comparison Table</li>
+      <li class="req">FAQ (≥ 5, JSON-LD synced)</li>
+    </ul>
+    <h2 class="sec-title">Key Differences from SaaS Review</h2>
+    <div class="guideline"><b>Risks We Found 必须有</b> — ≥ 5 条具体风险（不是笼统 "AI hallucinates"）</div>
+    <div class="guideline"><b>Privacy &amp; Security 必须有</b> — 回答 "What data leaves your machine?"</div>
+    <h2 class="sec-title">✅ Checklist</h2>
+    <ul class="checklist">
+      <li class="must">dim-table 5 维有 Notes</li>
+      <li class="must">Risks We Found ≥ 5</li>
+      <li class="must">Privacy &amp; Security ≥ 4</li>
+      <li class="must">FAQ 可见 = JSON-LD（≥5）</li>
+      <li class="must">3 组 JSON-LD + Disclosure</li>
+      <li>产品信息与官方 2026 页面一致</li>
+      <li>字数 ≥ 1,200</li>
+    </ul>
   </div>
 
-  <div class="sec-title">SEO Standards</div>
-  <div class="guideline">
-    <b>Title:</b> [Topic] (2026): [Descriptor] | StackHK — 核心关键词靠前<br>
-    <b>Meta:</b> 150-160 字符描述，含核心关键词<br>
-    <b>Canonical:</b> 每页必须有 canonical URL<br>
-    <b>OG:</b> og:title + og:description + og:type<br>
-    <b>JSON-LD:</b> Article 或 Review + FAQPage + BreadcrumbList（三件套）<br>
-    <b>Sitemap:</b> 每次部署前跑 gen-sitemap.mjs<br>
-    <b>IndexNow:</b> git push 自动触发
+  <!-- Guide -->
+  <div class="panel" id="panel-guide">
+    <h2 class="ch-title">Guide / Roundup</h2>
+    <p class="ch-desc">/articles/best-*.html · 31 篇（5 篇 v2 + 26 篇 upgraded）</p>
+    <div class="ch-stats"><span>字数 ≥ <b>1,500</b></span><span>Pick Cards <b>4-5</b></span><span>FAQ ≥ <b>3</b></span><span>Trust Box <b>1</b></span></div>
+    <h2 class="sec-title">Required Sections (v2)</h2>
+    <ul class="section-list">
+      <li class="req">Article Hero</li>
+      <li class="req">Lead paragraph (hook + scope)</li>
+      <li class="req">The Shortlist (summary table)</li>
+      <li class="req">How We Tested</li>
+      <li class="req">Pick Cards × 4-5 (badge + pros/cons + specs + best for)</li>
+      <li class="req">Quick Comparison Table</li>
+      <li>Deep-dive sections</li>
+      <li class="req">How to Choose</li>
+      <li class="req">Verdict box</li>
+      <li class="req">Why You Should Trust Us (trust-box)</li>
+      <li class="req">FAQ (≥ 3, JSON-LD synced)</li>
+      <li>Testing period disclaimer</li>
+    </ul>
+    <h2 class="sec-title">✅ Checklist</h2>
+    <ul class="checklist">
+      <li class="must">Shortlist 在正文前部</li>
+      <li class="must">Pick Cards 有 Pros / Cons</li>
+      <li class="must">Trust Box 在 FAQ 前</li>
+      <li>How We Tested 有具体数字</li>
+      <li>内链到每个 Pick 的评测页</li>
+      <li>字数 ≥ 1,500</li>
+    </ul>
   </div>
 
-  <div class="sec-title">E-E-A-T Standards</div>
-  <div class="guideline">
-    <b>Experience:</b> 每篇评测有具体的 Testing Process（不是笼统的 "we tested"），包含测试天数、项目类型、具体任务<br>
-    <b>Expertise:</b> 展示专业知识（评分有 Notes、对比有数据、分析有深度）<br>
-    <b>Authoritativeness:</b> 独立立场声明（"never accepts payment for placement"）、无供应商关系披露<br>
-    <b>Trustworthiness:</b> 联盟披露在页顶、价格标注 checked 日期、失败案例展示、年度复测承诺
+  <!-- News -->
+  <div class="panel" id="panel-news">
+    <h2 class="ch-title">News Article (v2 Editorial)</h2>
+    <p class="ch-desc">/news/{slug}.html · 30 篇 · 全部 v2 版式</p>
+    <div class="ch-stats"><span>字数 <b>600-1,000</b></span><span>配图 <b>1+1</b></span><span>媒体评价 ≥ <b>2</b></span></div>
+    <h2 class="sec-title">Required Sections (v2)</h2>
+    <ul class="section-list">
+      <li class="req">Page Hero (crumbs + tag + when + h1)</li>
+      <li class="req">News Deck (1-2 sentence hook)</li>
+      <li class="req">Byline (StackHK News Desk · date)</li>
+      <li class="req">Hero Image</li>
+      <li class="req">Lead paragraph (1-2 sentences factual)</li>
+      <li class="req">What's Happening (1-2 short paras)</li>
+      <li class="req">Why It Matters (1-2 short paras)</li>
+      <li class="req">Punch Line (bold standalone sentence)</li>
+      <li>Media &amp; Industry Reaction (quote cards × 2-3)</li>
+    </ul>
+    <h2 class="sec-title">Writing Style (v2)</h2>
+    <div class="guideline"><b>Deck:</b> 1-2 句钩子，有立场的开场白（不是摘要）</div>
+    <div class="guideline"><b>段落:</b> 每段 1-3 句</div>
+    <div class="guideline"><b>Punch Line:</b> 单句独立段，加粗放大</div>
+    <div class="guideline"><b>媒体评价:</b> 来源必须是真实媒体报道或官方公告</div>
+    <h2 class="sec-title">✅ Checklist</h2>
+    <ul class="checklist">
+      <li class="must">Deck 存在</li>
+      <li class="must">≥ 2 条媒体评价</li>
+      <li class="must">Punch Line 存在</li>
+      <li class="must">配图 hero + thumb</li>
+      <li class="must">KV 已入库</li>
+      <li>不与已有 30 篇重复</li>
+    </ul>
   </div>
 
-  <div class="sec-title">Internal Linking</div>
-  <div class="guideline">
-    每篇内容至少 4 个站内交叉链接：<br>
-    评测 → 相关对比页 + 分类页 + 词汇表<br>
-    指南 → 入榜工具的评测页（每个 Pick）<br>
-    新闻 → 相关评测/指南<br>
-    对比 → 两篇评测 + 相关指南<br><br>
-    形成 Topic Cluster：主页面（pillar）链接子页面，子页面反向链接主页面。
+  <!-- Comparison -->
+  <div class="panel" id="panel-compare">
+    <h2 class="ch-title">Comparison / Benchmark</h2>
+    <p class="ch-desc">/compare/{a}-vs-{b}.html · 9 组 · v2 Benchmark</p>
+    <div class="ch-stats"><span>字数 ≥ <b>2,000</b></span><span>Prompts <b>20+</b></span><span>FAQ ≥ <b>4</b></span><span>对比表 <b>2+</b></span></div>
+    <h2 class="sec-title">Required Sections</h2>
+    <ul class="section-list">
+      <li class="req">Hero + VS logos + subtitle</li>
+      <li class="req">Quick Verdict / TL;DR box</li>
+      <li class="req">At a Glance: 14 参数对照表</li>
+      <li class="req">Score Breakdown: 5 维评分表</li>
+      <li class="req">Verdict-as-Headline sections × 3</li>
+      <li class="req">Pricing table</li>
+      <li class="req">Choose X / Y / Both</li>
+      <li class="req">FAQ (≥ 4, JSON-LD synced)</li>
+      <li class="req">Related links</li>
+      <li class="req">Trust footer</li>
+      <li>Benchmark data table</li>
+      <li>Cost per usable output</li>
+      <li>Failure Gallery</li>
+    </ul>
+    <h2 class="sec-title">Writing Style</h2>
+    <div class="guideline"><b>Verdict-as-Headline:</b> H2 直接给结论</div>
+    <div class="guideline"><b>Same Prompt Testing:</b> 两个工具相同任务</div>
+    <div class="guideline"><b>失败案例:</b> 必须展示真实失败</div>
+    <h2 class="sec-title">✅ Checklist</h2>
+    <ul class="checklist">
+      <li class="must">TL;DR box 在页首</li>
+      <li class="must">14 参数对照表</li>
+      <li class="must">5 维评分表</li>
+      <li class="must">Choose X/Y/Both 完整</li>
+      <li class="must">Trust footer</li>
+      <li>价格标注 checked 日期</li>
+    </ul>
   </div>
-</div>
 
-<!-- Pre-Publish Checklist -->
-<div class="panel" id="panel-checklist">
-  <div class="ch-title">Pre-Publish Checklist（发布前统一检查）</div>
+  <!-- Glossary -->
+  <div class="panel" id="panel-glossary">
+    <h2 class="ch-title">Glossary</h2>
+    <p class="ch-desc">/glossary · 33 词</p>
+    <div class="guideline">每词条 100-150 词：定义 + 展开 + 举例 + 交叉链接。按字母序插入。<br>格式：&lt;div class="term"&gt;&lt;h3&gt;Term&lt;/h3&gt;&lt;p&gt;Def&lt;/p&gt;&lt;/div&gt;</div>
+    <h2 class="sec-title">✅ Checklist</h2>
+    <ul class="checklist">
+      <li class="must">不与已有重复</li>
+      <li>定义 100-150 词</li>
+      <li>字母序插入</li>
+      <li>有站内交叉链接</li>
+    </ul>
+  </div>
 
-  <div class="sec-title">Every Page (Universal)</div>
-  <ul class="checklist">
-    <li class="must">canonical URL 正确</li>
-    <li class="must">OG tags 完整</li>
-    <li class="must">JSON-LD 语法正确（3 块）</li>
-    <li class="must">robots = index, follow</li>
-    <li class="must">图片 ≤ 200KB JPEG + alt text</li>
-    <li class="must">内链 ≥ 4 个</li>
-    <li class="must">本地 200 OK</li>
-  </ul>
+  <!-- Deals -->
+  <div class="panel" id="panel-deals">
+    <h2 class="ch-title">Deals</h2>
+    <p class="ch-desc">/deals（JS 数据数组）· 8 条</p>
+    <div class="guideline">{ id, tool, category, discount, code, expires, status }</div>
+    <h2 class="sec-title">✅ Checklist</h2>
+    <ul class="checklist">
+      <li class="must">折扣已核对官方页面</li>
+      <li>到期日已设置</li>
+      <li>对应评测页存在</li>
+      <li>过期及时标记</li>
+    </ul>
+  </div>
 
-  <div class="sec-title">Review Pages (SaaS + AI Tool)</div>
-  <ul class="checklist">
-    <li class="must">dim-table 5 维有 Notes</li>
-    <li class="must">FAQ 可见 = JSON-LD（≥ 5 条）</li>
-    <li class="must">Disclosure 在页顶</li>
-    <li class="must">对比表 ≥ 2 个竞品</li>
-    <li>Risks We Found ≥ 5 条（AI Tool 必须有）</li>
-    <li>Privacy &amp; Security ≥ 4 条（AI Tool 必须有）</li>
-    <li>字数 ≥ 1,200</li>
-    <li>所有价格标注 as-of 日期</li>
-  </ul>
+  <!-- Universal -->
+  <div class="panel" id="panel-universal">
+    <h2 class="ch-title">Universal Standards</h2>
+    <h2 class="sec-title">Image Generation</h2>
+    <div class="guideline"><b>Pipeline:</b> gen-image skill → sharp compression (mozjpeg q82) → site images/<br><b>Style:</b> 明亮/温馨/写实，无大面积黑色，浅色屏幕<br><b>Size:</b> 1536×1024 → JPEG ≤ 200KB<br><b>Prompt:</b> 场景 + 光线 + 氛围 + "realistic photography, no dark areas"</div>
+    <h2 class="sec-title">SEO</h2>
+    <div class="guideline"><b>Title:</b> [Topic] (2026): [Descriptor] | StackHK<br><b>Meta:</b> 150-160 chars<br><b>Canonical:</b> 每页必须<br><b>JSON-LD:</b> Article/Review + FAQPage + BreadcrumbList<br><b>Sitemap:</b> 每次部署前跑 gen-sitemap.mjs<br><b>IndexNow:</b> git push 自动</div>
+    <h2 class="sec-title">E-E-A-T</h2>
+    <div class="guideline"><b>Experience:</b> 具体 Testing Process<br><b>Expertise:</b> 评分有 Notes、对比有数据<br><b>Authoritativeness:</b> 独立声明<br><b>Trustworthiness:</b> 联盟披露页顶 + 价格 as-of + 失败案例 + 复测承诺</div>
+    <h2 class="sec-title">Internal Linking</h2>
+    <div class="guideline">每篇 ≥ 4 个交叉链接。Topic Cluster: 主页面(pillar) ↔ 子页面互链。</div>
+  </div>
 
-  <div class="sec-title">Guide Pages</div>
-  <ul class="checklist">
-    <li class="must">Shortlist 表在正文前部</li>
-    <li class="must">Pick Cards 有 Pros / Cons</li>
-    <li class="must">Trust Box 在 FAQ 前</li>
-    <li>How We Tested 有具体数字</li>
-    <li>内链到每个 Pick 的评测页</li>
-    <li>字数 ≥ 1,500</li>
-  </ul>
+  <!-- Checklist -->
+  <div class="panel" id="panel-checklist">
+    <h2 class="ch-title">Pre-Publish Checklist</h2>
+    <h2 class="sec-title">Every Page</h2>
+    <ul class="checklist">
+      <li class="must">canonical + OG + JSON-LD ×3 + robots</li>
+      <li class="must">图片 ≤ 200KB + alt text</li>
+      <li class="must">内链 ≥ 4</li>
+      <li class="must">本地 200 OK</li>
+    </ul>
+    <h2 class="sec-title">Reviews (SaaS + AI)</h2>
+    <ul class="checklist">
+      <li class="must">dim-table 5 维有 Notes</li>
+      <li class="must">FAQ 可见 = JSON-LD ≥ 5</li>
+      <li class="must">Disclosure 页顶</li>
+      <li class="must">对比表 ≥ 2 竞品</li>
+      <li>Risks ≥ 5（AI Tool 必须）</li>
+      <li>Privacy ≥ 4（AI Tool 必须）</li>
+      <li>字数 ≥ 1,200</li>
+    </ul>
+    <h2 class="sec-title">Guides</h2>
+    <ul class="checklist">
+      <li class="must">Shortlist 在正文前</li>
+      <li class="must">Pick Cards 有 Pros/Cons</li>
+      <li class="must">Trust Box 在 FAQ 前</li>
+      <li>字数 ≥ 1,500</li>
+    </ul>
+    <h2 class="sec-title">News</h2>
+    <ul class="checklist">
+      <li class="must">Deck + Punch Line + ≥ 2 评价 + KV 已入库</li>
+      <li>不重复</li>
+    </ul>
+    <h2 class="sec-title">Comparison</h2>
+    <ul class="checklist">
+      <li class="must">TL;DR + 14 参数 + 5 维评分 + Choose + Trust footer</li>
+      <li>测试数据来自真实测试</li>
+    </ul>
+    <h2 class="sec-title">Deploy</h2>
+    <ul class="checklist">
+      <li class="must">本地 200 OK</li>
+      <li class="must">gen-sitemap.mjs 已跑</li>
+      <li class="must">content-stats.json 已更新</li>
+      <li>单次部署</li>
+      <li>单次推送</li>
+      <li>生产回归通过</li>
+    </ul>
+  </div>
 
-  <div class="sec-title">News Pages</div>
-  <ul class="checklist">
-    <li class="must">Deck 存在</li>
-    <li class="must">≥ 2 条媒体评价</li>
-    <li class="must">Punch Line 存在</li>
-    <li class="must">KV 已入库</li>
-    <li>不与已有新闻重复</li>
-    <li>所有事实有信源</li>
-  </ul>
-
-  <div class="sec-title">Comparison Pages</div>
-  <ul class="checklist">
-    <li class="must">TL;DR box 在页首</li>
-    <li class="must">14 参数对照表</li>
-    <li class="must">5 维评分表</li>
-    <li class="must">Choose X/Y/Both 完整</li>
-    <li>测试数据来自真实测试</li>
-    <li>价格标注 checked 日期</li>
-  </ul>
-
-  <div class="sec-title">Deploy Checklist</div>
-  <ul class="checklist">
-    <li class="must">本地 wrangler 200 OK</li>
-    <li class="must">node scripts/gen-sitemap.mjs 已跑</li>
-    <li class="must">content-stats.json 已更新</li>
-    <li>单次部署（不是多次）</li>
-    <li>单次推送（git 或 API）</li>
-    <li>生产回归抽检通过</li>
-  </ul>
-</div>
-
-</div>
+  </section>
+</main>
 
 <script>
 document.querySelectorAll('.tab').forEach(t => {
