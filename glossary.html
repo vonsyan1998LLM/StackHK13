@@ -32,7 +32,9 @@
 
     <div class="glossary-group">
       <div class="glossary-letter">C</div>
-      <div class="term"><h3>Benchmark</h3><p>A standardized test (MMLU, Terminal Bench, HumanEval) measuring model capability. Useful for direction, dangerous as gospel: benchmarks leak into training data and rarely match your actual workload.</p></div>
+      <div class="term"><h3>AGI (Artificial General Intelligence)</h3><p>A hypothetical AI system that matches or exceeds human cognitive abilities across virtually all domains. Current LLMs are narrow AI — powerful within their training domain but not genuinely general. AGI remains theoretical and is the long-term goal of several research labs.</p></div>
+    <div class="term"><h3>AI Watermarking</h3><p>A technique for embedding detectable signals in AI-generated content (text, images, audio) to identify its origin. Anthropic began embedding watermarks in Claude outputs in August 2026. Detection requires access to the generating model or a detection tool.</p></div>
+    <div class="term"><h3>Benchmark</h3><p>A standardized test (MMLU, Terminal Bench, HumanEval) measuring model capability. Useful for direction, dangerous as gospel: benchmarks leak into training data and rarely match your actual workload.</p></div>
       <div class="term"><h3>Context Window</h3><p>How much text a model can consider at once — conversation history, documents, instructions. Bigger windows handle longer projects.</p></div>
       <div class="term"><h3>Chain-of-Thought</h3><p>Prompting a model to reason step by step before answering, which improves accuracy on complex problems.</p></div>
     </div>
@@ -44,7 +46,9 @@
 
     <div class="glossary-group">
       <div class="glossary-letter">F</div>
-      <div class="term"><h3>Fine-tuning</h3><p>Additional training on your own examples to specialize a model's tone, format, or domain knowledge.</p></div>
+      <div class="term"><h3>Distillation</h3><p>Training a smaller “student” model to replicate a larger “teacher” model’s behavior. Enables deploying capable AI at lower cost and latency — the technique behind many “mini” or “flash” model variants.</p></div>
+    <div class="term"><h3>Embedding</h3><p>A numerical vector representation of text, images or other data that captures semantic meaning. Words or documents with similar meanings have similar embeddings — the foundation of semantic search and RAG systems.</p></div>
+    <div class="term"><h3>Fine-tuning</h3><p>Additional training on your own examples to specialize a model's tone, format, or domain knowledge.</p></div>
     </div>
 
     <div class="glossary-group">
@@ -63,7 +67,8 @@
 
     <div class="glossary-group">
       <div class="glossary-letter">M</div>
-      <div class="term"><h3>Multimodal</h3><p>Models that work across formats — reading images, hearing audio, watching video — not just text in, text out.</p></div>
+      <div class="term"><h3>LoRA (Low-Rank Adaptation)</h3><p>A parameter-efficient fine-tuning technique that trains small “adapter” layers instead of the full model. Enables customizing large models on consumer hardware at a fraction of full fine-tuning cost.</p></div>
+    <div class="term"><h3>Multimodal</h3><p>Models that work across formats — reading images, hearing audio, watching video — not just text in, text out.</p></div>
     </div>
 
     <div class="glossary-group">
@@ -80,8 +85,13 @@
 
     <div class="glossary-group">
       <div class="glossary-letter">T</div>
-      <div class="term"><h3>TTS (Text-To-Speech)</h3><p>Generating natural-sounding speech from text. Modern TTS handles emotion, pacing, and voice cloning.</p></div>
-      <div class="term"><h3>Token</h3><p>The unit of text models read and bill by — roughly three-quarters of a word in English.</p></div><div class="term"><h3>Transformer</h3><p>The neural network architecture introduced in the 2017 paper "Attention Is All You Need." Its attention mechanism lets models weigh every word against every other word — the foundation of all modern LLMs.</p></div><div class="term"><h3>Training Data</h3><p>The text, images and code a model learns from. Its quality, freshness and licensing determine what a model knows — and it is the center of most AI copyright debates.</p></div><div class="term"><h3>Zero-shot / Few-shot</h3><p>Prompting styles: zero-shot asks the model to perform with no examples; few-shot includes a handful of demonstrations. A few good examples still beats clever instructions for consistent formats.</p></div>
+      <div class="term"><h3>Synthetic Data</h3><p>Artificially generated training data created by AI models rather than collected from real sources. Used to augment limited datasets, but carries risks of reinforcing model biases or degrading quality through recursive training.</p></div>
+    <div class="term"><h3>System Prompt</h3><p>Instructions given to an AI model that define its behavior, personality, constraints and output format before the user’s input is processed. System prompts shape every response but are invisible in standard chat interfaces.</p></div>
+    <div class="term"><h3>TTS (Text-To-Speech)</h3><p>Generating natural-sounding speech from text. Modern TTS handles emotion, pacing, and voice cloning.</p></div>
+      <div class="term"><h3>Token</h3><p>The unit of text models read and bill by — roughly three-quarters of a word in English.</p></div><div class="term"><h3>Transformer</h3><p>The neural network architecture introduced in the 2017 paper "Attention Is All You Need." Its attention mechanism lets models weigh every word against every other word — the foundation of all modern LLMs.</p></div><div class="term"><h3>Training Data</h3><p>The text, images and code a model learns from. Its quality, freshness and licensing determine what a model knows — and it is the center of most AI copyright debates.</p></div><div class="term"><h3>Temperature</h3><p>A parameter controlling the randomness of AI model outputs. Lower values (0–0.3) produce focused, deterministic responses; higher values (0.7–1.0) increase creativity and variety but reduce consistency.</p></div>
+    <div class="term"><h3>Vector Database</h3><p>A database optimized for storing and searching embeddings by similarity rather than exact match. Powers semantic search, RAG systems and recommendation engines. Examples include Pinecone, Weaviate and pgvector.</p></div>
+    <div class="term"><h3>VLM (Vision Language Model)</h3><p>A multimodal AI model that processes both images and text — enabling tasks like image description, visual question answering, chart analysis and UI understanding. GPT-5.6, Claude and Gemini all include vision capabilities.</p></div>
+    <div class="term"><h3>Zero-shot / Few-shot</h3><p>Prompting styles: zero-shot asks the model to perform with no examples; few-shot includes a handful of demonstrations. A few good examples still beats clever instructions for consistent formats.</p></div>
       
       
       
