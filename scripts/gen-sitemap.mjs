@@ -7,7 +7,7 @@ import path from 'node:path';
 
 const ROOT = 'D:/web/StackHK13';
 const BASE = 'https://www.airecmark.com';
-const SECTIONS = ['reviews', 'saas', 'articles', 'compare', 'news', 'categories'];
+const SECTIONS = ['reviews', 'saas', 'articles', 'compare', 'news', 'categories', 'weekly'];
 
 // 新 URL 的默认约定（沿用现有 sitemap 的分级习惯）
 function defaults(p) {
