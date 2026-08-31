@@ -13,7 +13,7 @@ airecmark.com
 ├── 静态前端          index.html + saas/ reviews/ articles/ compare/ news/ …（纯 HTML，无框架）
 ├── 后端 API          functions/（Cloudflare Pages Functions，唯一后端机制）
 ├── 数据存储          Cloudflare KV（binding: STACKHK）
-├── 管理后台          /admin/（原生 JS SPA，无构建、无第三方依赖）
+├── 管理后台          /console-9k4f/（原生 JS SPA，无构建、无第三方依赖）
 └── 部署              Cloudflare Pages 直传（wrangler pages deploy）
 ```
 
@@ -23,7 +23,7 @@ airecmark.com
 | 账户 | `f3c243d01277c2479426f92c3e40e4c8` |
 | KV namespace | `STACKHK` → `ed9ee39834274da286d7f06aaaa7e5f9` |
 | 仓库 | `vonsyan1998LLM/StackHK13`（**公开仓库**，勿放任何密钥） |
-| 后台地址 | https://www.airecmark.com/admin/ |
+| 后台地址 | https://www.airecmark.com/console-9k4f/ |
 | 后台账号 | 用户名 `StackhkMain`（2026-08-30 由 Stackhk007 更换，见安全审计）；密码在 CF Secrets |
 | 免费配额 | KV 每日 10 万次读写——历史上被旧 `_worker.js` 每页一调耗尽，**仓库内严禁出现 `_worker.js`** |
 
@@ -60,7 +60,7 @@ StackHK13/
 │   └── assets/[id].js        GET 上传图片输出（8 位 hex id，immutable 缓存）
 ├── scripts/                  内容管线与工具（见第七节）
 ├── docs/                     文档
-├── _headers                  /admin/* 安全响应头
+├── _headers                  /console-9k4f/* 安全响应头
 ├── wrangler.toml             KV 绑定 + 非密钥变量
 └── api-seed.json             前端降级用静态数据（KV 不可用时兜底）
 ```
@@ -102,7 +102,7 @@ StackHK13/
 ### 3.5 防收录与安全头（_headers）
 
 ```
-/admin/*
+/console-9k4f/*
   X-Robots-Tag: noindex, nofollow
   X-Frame-Options: DENY
   Cache-Control: no-store
@@ -215,7 +215,7 @@ GH_TOKEN=… node scripts/api-push.mjs   # ⑤ GitHub 推送（见 7.3）
 
 ### 7.4 内容标准（新内容必查）
 
-- 标准：后台 /admin/standards 页（7 频道 + 通用 + 检查清单）
+- 标准：后台 /console-9k4f/standards 页（7 频道 + 通用 + 检查清单）
 - 审计：`node scripts/audit-content.mjs` → 当前 **149/149 达标**（对比 15、新闻 30、AI 39、SaaS 34、指南 31×2 类）
 - 图标规范：站点统一 Feather 线性风（`svg.ic`，stroke currentColor）；首页已换 IconPark outline（`@icon-park/svg`，currentColor）；新增页面图标沿用这两种，**不用 emoji**
 

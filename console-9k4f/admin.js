@@ -15,6 +15,7 @@ const TIERS = [['free', 'Free'], ['freemium', 'Freemium'], ['paid', 'Paid']];
 
 const state = {
   csrf: null,
+  captchaId: null,
   username: null,
   data: null,
   meta: null,
@@ -93,6 +94,22 @@ function showLogin() {
   $('#app-view').hidden = true;
   $('#login-view').hidden = false;
   $('#login-password').value = '';
+  $('#login-captcha').value = '';
+  loadCaptcha();
+}
+
+async function loadCaptcha() {
+  const box = $('#captcha-img');
+  if (!box) return;
+  try {
+    const r = await fetch('/api/auth/captcha', { credentials: 'same-origin' });
+    const j = await r.json();
+    if (!r.ok || !j.id) throw new Error(j.error && j.error.message ? j.error.message : 'load failed');
+    state.captchaId = j.id;
+    box.innerHTML = j.svg;
+  } catch (e) {
+    box.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:.72rem;color:var(--muted)">加载失败 · 点击重试</div>';
+  }
 }
 
 async function enterApp() {
@@ -129,7 +146,9 @@ $('#login-form').addEventListener('submit', async (e) => {
       method: 'POST',
       body: JSON.stringify({
         username: $('#login-username').value.trim(),
-        password: $('#login-password').value
+        password: $('#login-password').value,
+        captchaId: state.captchaId,
+        captchaText: $('#login-captcha').value
       })
     });
     state.csrf = r.csrf;
@@ -138,6 +157,7 @@ $('#login-form').addEventListener('submit', async (e) => {
   } catch (err) {
     $('#login-error').textContent = err.message;
     $('#login-error').hidden = false;
+    loadCaptcha();
   } finally {
     btn.disabled = false;
   }

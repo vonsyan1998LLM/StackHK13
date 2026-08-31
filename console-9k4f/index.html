@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>StackHK Admin</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/admin/admin.css">
+<link rel="stylesheet" href="/console-9k4f/admin.css">
 </head>
 <body>
 
@@ -19,6 +19,11 @@
     <input type="text" id="login-username" name="username" autocomplete="username" required>
     <label>密码</label>
     <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+    <label>验证码</label>
+    <div class="captcha-row">
+      <div id="captcha-img" class="captcha-img" title="点击刷新验证码"></div>
+      <input type="text" id="login-captcha" class="captcha-input" maxlength="5" autocomplete="off" spellcheck="false" placeholder="输入图中字符" required>
+    </div>
     <button type="submit" class="btn btn-primary" id="login-btn">登 录</button>
     <p id="login-error" class="login-error" hidden></p>
   </form>
@@ -39,7 +44,7 @@
       <a data-view="settings">站点设置</a>
       <a data-view="backups">备份恢复</a>
       <a data-view="health">系统状态</a>
-    <a href="/admin/standards.html" style="color:var(--gold);margin-left:1rem">📋 Standards</a></nav>
+    <a href="/console-9k4f/standards.html" style="color:var(--gold);margin-left:1rem">📋 Standards</a></nav>
     <div class="side-foot">
       <span id="side-user"></span>
       <button id="logout-btn" class="btn btn-ghost btn-sm">退出</button>
@@ -64,6 +69,6 @@
 </div>
 <div id="toast" hidden></div>
 
-<script type="module" src="/admin/admin.js"></script>
+<script type="module" src="/console-9k4f/admin.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # StackHK（airecmark.com）— 全新后端版
 
-前端沿用原站静态页面（零改动迁移），后端为全新开发的 Cloudflare Pages Functions + KV，后台为全新 `/admin/` 单页应用。**不包含旧系统的任何文件**（`_worker.js`、旧 `functions/`、`notepage/` 均未带入）。
+前端沿用原站静态页面（零改动迁移），后端为全新开发的 Cloudflare Pages Functions + KV，后台为全新 `/console-9k4f/` 单页应用。**不包含旧系统的任何文件**（`_worker.js`、旧 `functions/`、`notepage/` 均未带入）。
 
 > 历史注记：旧版 `_worker.js` 为 Advanced Mode，会让**每一次页面访问都消耗一次 Workers 调用**，在免费版每日 10 万次配额下被爬虫流量耗尽，导致全账号 Functions 停止执行——这是旧后台"无法修复"的根因（2026-08-29 确认）。本仓库不使用 `_worker.js`，只保留 `functions/`（仅 `/api/*`、`/assets/*` 路径产生调用），若走 Workers 部署路径则由 `wrangler-workers.jsonc` 的 `run_worker_first` 限定调用范围。
 
@@ -11,7 +11,7 @@
                                    ▼
 /js/tp-main.js         Cloudflare Pages Functions（functions/，唯一后端机制）
                                    │
-后台 /admin/（SPA）────读写─────────┼── KV（stackhk-data 命名空间，绑定名 STACKHK）
+后台 /console-9k4f/（SPA）────读写─────────┼── KV（stackhk-data 命名空间，绑定名 STACKHK）
                                    │     site:data / site:meta / backup:site:*
 submit.html ──POST /api/submissions┘     data:submissions:* / img:* / rl:*
 ```
@@ -59,12 +59,12 @@ echo <secret_hex> | wrangler pages secret put ADMIN_SESSION_SECRET --project-nam
 ```bash
 curl -s https://<部署域名>/api/health   # 必须返回 JSON；返回 HTML = Functions 未执行，先查当日调用配额
 curl -s https://<部署域名>/api/data | head -c 200
-curl -s -o NUL -w "%{http_code}" https://<部署域名>/admin/   # 200
+curl -s -o NUL -w "%{http_code}" https://<部署域名>/console-9k4f/   # 200
 ```
 
 ## 后台使用
 
-- 入口：`/admin/`（noindex）。首次登录使用既定管理员账号。
+- 入口：`/console-9k4f/`（noindex）。首次登录使用既定管理员账号。
 - 「工具 / 新闻 / 指南 / 课程 / 设置」全部为本地编辑 + 右上角「保存全部更改」整单提交；每次保存自动生成快照，可在「备份恢复」一键回滚。
 - 「提交审核」：submit.html 的新提交在此列表，「采纳为工具草稿」会立即保存并删除该提交。
 - 「Logo 库」：上传 ≤150KB 图片（存 KV，经 `/assets/` 输出），在工具编辑器中选用。

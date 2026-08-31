@@ -19,8 +19,19 @@ export async function onRequestPost({ request, env }) {
   }
   const username = typeof body.username === 'string' ? body.username.trim() : '';
   const password = typeof body.password === 'string' ? body.password : '';
+  const captchaId = typeof body.captchaId === 'string' ? body.captchaId : '';
+  const captchaText = typeof body.captchaText === 'string' ? body.captchaText.trim() : '';
   if (!username || !password) {
     return fail(400, 'BAD_REQUEST', 'Username and password are required');
+  }
+
+  // Captcha gate: one-time KV challenge, checked before the expensive PBKDF2 derive
+  // so bot traffic never reaches password hashing. Delete-then-compare = single use.
+  const capKey = `captcha:${captchaId}`;
+  const capExpected = captchaId && env.STACKHK ? await env.STACKHK.get(capKey) : null;
+  if (env.STACKHK) await env.STACKHK.delete(capKey);
+  if (!capExpected || !captchaText || !timingSafeEqual(captchaText.toLowerCase(), capExpected)) {
+    return fail(401, 'CAPTCHA', 'Captcha is wrong or expired. Try the new one.');
   }
 
   const userOk = timingSafeEqual(username, env.ADMIN_USERNAME);
