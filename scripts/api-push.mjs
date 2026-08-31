@@ -5,10 +5,11 @@
 // Usage:
 //   GH_TOKEN=ghp_xxx node scripts/api-push.mjs [local-base-ref]   # base optional
 // Env: GH_TOKEN (required), REPO (default vonsyan1998LLM/StackHK13), BRANCH (default main)
-import { execSync } from "node:child_process";
+import { execSync, execFileSync } from "node:child_process";
 
 const REPO = process.env.REPO || "vonsyan1998LLM/StackHK13";
 const BRANCH = process.env.BRANCH || "main";
+const GITCWD = "D:/web/StackHK13";
 const H = { Authorization: `Bearer ${process.env.GH_TOKEN}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" };
 const api = async (path, method = "GET", body) => {
   const r = await fetch(`https://api.github.com/repos/${REPO}${path}`, { method, headers: H, body: body ? JSON.stringify(body) : undefined });
@@ -16,7 +17,8 @@ const api = async (path, method = "GET", body) => {
   if (!r.ok) throw new Error(`${method} ${path}: ${r.status} ${j.message}`);
   return j;
 };
-const git = (cmd) => execSync(cmd, { encoding: "utf8", cwd: "D:/web/StackHK13" }).trim();
+// execFileSync with array args: no shell quoting issues (Windows cmd eats ^, mangles UTF-8 paths)
+const git = (args) => execFileSync("git", ["-c", "core.quotepath=false", ...args], { encoding: "utf8", cwd: GITCWD }).trim();
 
 const remoteHead = (await api(`/git/ref/heads/${BRANCH}`)).object.sha;
 const remoteTree = (await api(`/commits/${remoteHead}`)).commit.tree.sha;
@@ -24,24 +26,24 @@ const remoteTree = (await api(`/commits/${remoteHead}`)).commit.tree.sha;
 // base: explicit arg, else first local commit (walking back from HEAD) whose tree == remote tree
 let baseCommit = process.argv[2] || null;
 if (!baseCommit) {
-  for (const c of git("git rev-list --max-count=30 HEAD").split("\n")) {
-    const t = (git(`git cat-file -p ${c}`).match(/^tree ([0-9a-f]{40})/m) || [])[1];
+  for (const c of git(["rev-list", "--max-count=30", "HEAD"]).split("\n")) {
+    const t = (git(["cat-file", "-p", c]).match(/^tree ([0-9a-f]{40})/m) || [])[1];
     if (t === remoteTree) { baseCommit = c; break; }
   }
 }
 if (!baseCommit) throw new Error("no local commit matches remote tree — inspect divergence manually");
-const commits = git(`git rev-list --reverse ${baseCommit}..HEAD`).split("\n");
+const commits = git(["rev-list", "--reverse", `${baseCommit}..HEAD`]).split("\n");
 console.log(`base: local ${baseCommit.slice(0, 7)} (tree == remote ${remoteHead.slice(0, 7)}); ${commits.length} commit(s) to push`);
 
 let parentCommit = remoteHead;
 let parentTree = remoteTree;
 for (const c of commits) {
-  const msg = git(`git log -1 --format=%B ${c}`);
-  const changes = git(`git diff-tree --no-commit-id --name-status -r ${c}`).split("\n").map((l) => l.split("\t"));
+  const msg = git(["log", "-1", "--format=%B", c]);
+  const changes = git(["diff-tree", "--no-commit-id", "--name-status", "-r", c]).split("\n").map((l) => l.split("\t"));
   const entries = [];
   for (const [status, path] of changes) {
     if (status === "D") { entries.push({ path, mode: "100644", type: "blob", sha: null }); continue; }
-    const content = execSync(`git show ${c}:${JSON.stringify(path)}`, { cwd: "D:/web/StackHK13", maxBuffer: 128 * 1024 * 1024 });
+    const content = execFileSync("git", ["show", `${c}:${path}`], { cwd: GITCWD, maxBuffer: 128 * 1024 * 1024 });
     const blob = await api("/git/blobs", "POST", { content: content.toString("base64"), encoding: "base64" });
     entries.push({ path, mode: "100644", type: "blob", sha: blob.sha });
   }
