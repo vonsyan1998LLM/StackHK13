@@ -328,7 +328,7 @@ section{padding:72px 0}
 
 /* ---------- MOBILE MENU ---------- */
 .menu-btn{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--border);background:#fff;font-size:19px;line-height:1;color:var(--text);cursor:pointer;box-shadow:var(--shadow)}
-@media(max-width:900px){
+@media(max-width:1100px){
   .nav{gap:12px}
   .nav-links{display:none}
   .nav > .btn-primary{display:none}
