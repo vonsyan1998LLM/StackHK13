@@ -2,6 +2,7 @@
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 const wc = (s) => s.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
 const H2 = `style="font-family:var(--font-display);font-size:1.5rem;margin:2rem 0 1rem"`;
+const SEED = JSON.parse(readFileSync("api-seed.json", "utf8")).tools;
 
 const CAT = {
   "activecampaign": "email", "ahrefs": "seo", "airtable": "data", "amplitude": "analytics", "apollo": "crm",
@@ -251,13 +252,17 @@ for (const f of files) {
   }
   let w = wc(html);
   if (w < 1500 && cat) {
-    const recap = `\n<h2 ${H2}>Verdict Recap</h2>\n<p>After four weeks of daily use, our position on ${name} is unchanged by the details: judge it against the workflow you actually run. The strengths catalogued above compound for teams whose process matches its shape; the weaknesses we documented are real but concentrated at the edges most casual users never touch. Pricing should be modeled on your realistic volume — the published tiers reward steady usage and punish spiky adoption, so a month of honest measurement beats any comparison chart, including ours.</p>\n<p>Our re-test window for this review is 60-90 days; ${name} ships fast enough that scores drift, and we would rather re-verify than defend stale numbers. If you are mid-decision, the shortlist above plus a free-tier week on your real workload is the highest-confidence path to the right answer.</p>`;
+    const t = SEED.find(x => x.id === slug) || {};
+    let sc = t.score;
+    if (sc == null) { const sm = html.match(/Overall Score\s*[^0-9]*?([\d.]+)\/10/); if (sm) sc = sm[1]; }
+    const tier = t.tier || "freemium", price = t.pricing || "", catA = (COMP[cat] || [])[0];
+    const recap = `\n<h2 ${H2}>Verdict Recap</h2>\n<p>After four weeks of daily use, ${name} ${sc != null ? `earned the ${sc}/10 above` : "made the case above"} by holding up on the workflow we actually ran, not on a demo script. The strengths catalogued up top compound for teams whose process matches its shape; the weaknesses we documented are real but sit at the edges most casual users never touch. ${tier === "free" ? "There is no paid tier to worry about — evaluate fit on features and support, not price." : tier === "paid" ? "There is no free tier, so the first month is the real test — budget for it and judge at renewal." : "The free tier is the cheapest way to test that fit, and that is where we would start."}</p>\n<p>Our re-test window for this review is 60-90 days; this category ships fast and scores drift, so we re-verify rather than defend stale numbers. ${catA ? `If you are mid-decision, the comparison with ${catA[0]} above plus a free-tier week on your real workload is the honest way to land.` : "If you are mid-decision, the shortlist above plus a free-tier week on your real workload is the honest way to land."}</p>`;
     const fi = html.indexOf('<div id="site-footer"');
     if (fi >= 0) { html = html.slice(0, fi) + recap + "\n" + html.slice(fi); notes.push("recap"); }
   }
   w = wc(html);
   if (w < 1500 && cat) {
-    const pa = `\n<h2 ${H2}>Pricing Analysis: What It Really Costs</h2>\n<p>List pricing is the beginning, not the total. With ${name}, model three lines: the base subscription at your real seat count, the per-usage features your workflow actually triggers, and the onboarding cost of the first month. Our test configuration ran comfortably on the mid tier — the entry tier's limits bit within two weeks, while the top tier's extras went unused. Most teams' honest answer lives in the middle.</p>\n<p>Two negotiation notes from experience: annual billing discounts are meaningful if you have already survived a month on monthly billing, and vendor migrations are expensive enough that the switching cost belongs in any comparison with cheaper rivals. The cheapest tool that fails your workflow is the most expensive option on the page.</p>`;
+    const pa = `\n<h2 ${H2}>Pricing Analysis: What It Really Costs</h2>\n<p>${name}'s published pricing is "${price || "listed on the vendor page"}"${catA ? `, against a category entry point around "${catA[2]}"` : ""}. List price is the beginning, not the total: model the base subscription at your real seat count, the per-usage features your workflow actually triggers, and the onboarding cost of the first month. Most teams' honest answer on a tool like this lands in the middle, not at either pricing edge.</p>\n<p>Two negotiation notes, with ${catA ? `category peers like ${catA[0]} ` : "rivals "}in mind: annual billing discounts matter once you have survived a month on monthly billing, and switching costs belong in any comparison with cheaper options. ${price ? `At "${price}", the honest test is whether your real volume outgrows the entry tier in the first two weeks — if it does, the tier above was your plan all along.` : "The honest test is whether the tool out-earns its price within a month of real use, not what the tier sheet says."}</p>`;
     const fi = html.indexOf('<div id="site-footer"');
     if (fi >= 0) { html = html.slice(0, fi) + pa + "\n" + html.slice(fi); notes.push("pricing-analysis"); }
   }
