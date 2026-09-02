@@ -11,37 +11,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=20260828"><link rel="stylesheet" href="../css/tp.css?v=20260840">
-<style>
-.page-hero{padding:56px 0 0;background:var(--bg2);border-bottom:1px solid var(--border)}
-.page-hero .wrap{max-width:1000px}
-.review-body{max-width:860px;margin:0 auto;padding:0 2rem 4rem}
-.review-hero-panel{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin:2rem 0 0}
-.review-scorecard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem}
-.review-scorecard .big{font-size:3rem;font-weight:900;color:var(--gold);line-height:1}
-.review-scorecard .label{color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
-.score-row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.92rem}
-.score-row b{color:var(--text)}
-.dim-table{width:100%;border-collapse:collapse;font-size:.9rem;margin:1.5rem 0}
-.dim-table th{text-align:left;padding:.6rem;border-bottom:2px solid var(--border);font-size:.8rem;text-transform:uppercase;color:var(--muted)}
-.dim-table td{padding:.6rem;border-bottom:1px solid var(--border)}
-.dim-table td.winner{font-weight:700}
-.fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 2rem;margin:1.5rem 0}
-.fact-grid .f{font-size:.9rem}
-.fact-grid .f b{display:inline-block;min-width:120px;color:var(--muted);font-weight:600}
-.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.5rem 0}
-.pro-box,.con-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem}
-.pro-box h4,.con-box h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.6rem}
-.pro-box h4{color:#0B8E72}.con-box h4{color:#E83B3B}
-.pro-box ul,.con-box ul{font-size:.9rem;padding-left:1.1rem;line-height:1.8}
-.verdict-box{border-left:4px solid var(--gold);background:var(--bg2);padding:1.4rem 1.6rem;border-radius:0 var(--radius) var(--radius) 0;margin:1.75rem 0}
-.stars{color:var(--gold);letter-spacing:2px}
-.trust-note{font-size:.82rem;color:var(--muted);border-top:1px solid var(--border);margin-top:2.5rem;padding-top:1.25rem}
-.review-body h2{font-family:var(--font-display);font-size:1.7rem;font-weight:900;margin:2.5rem 0 1rem}
-.review-body h3{font-size:1.15rem;font-weight:700;margin:1.5rem 0 .75rem}
-.review-body p{font-size:.95rem;line-height:1.8;color:var(--text);margin-bottom:1.25rem}
-.review-body ul{font-size:.95rem;line-height:1.8;padding-left:1.25rem;margin-bottom:1.25rem}
-@media(max-width:768px){.review-hero-panel,.pros-cons{grid-template-columns:1fr}}
-</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Review","name":"Claude Fable 5.1 Review","reviewBody":"We tested Claude Fable 5.1 for long-horizon coding, research, and knowledge work across a month. Fable 5.1 leads on reasoning depth, agentic stamina, and root-cause fixes, with 75% cheaper cache reads.","itemReviewed":{"@type":"SoftwareApplication","name":"Claude Fable 5.1","applicationCategory":"AI Model"},"author":{"@type":"Organization","name":"StackHK","url":"https://www.airecmark.com"},"publisher":{"@type":"Organization","name":"StackHK","url":"https://www.airecmark.com"},"reviewRating":{"@type":"Rating","ratingValue":"9.2","bestRating":"10"},"datePublished":"2026-09-02","dateModified":"2026-09-02","mainEntityOfPage":"https://www.airecmark.com/reviews/fable-5-1.html"}
 </script>
@@ -61,101 +30,167 @@
 </head>
 <body>
 <div id="site-header" data-prefix="../" data-page="reviews"></div>
-<div class="page-hero">
-  <div class="wrap">
-    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../reviews.html">AI Reviews</a> › Fable 5.1</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-      <div>
-        <div class="article-eyebrow" style="font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#E83B3B;margin-bottom:.5rem">Model Review · September 2026</div>
-        <h1 style="font-family:var(--font-display);font-size:2.6rem;font-weight:900;line-height:1.2;margin:0">Claude Fable 5.1</h1>
-        <p style="font-size:1.05rem;color:var(--muted);margin:.75rem 0 0">Anthropic's frontier model for long-horizon coding, research, and knowledge work</p>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <a href="../categories/coding.html">Coding</a>
+  <span>›</span>
+  Claude Fable 5.1
+</div>
+
+<!-- AFFILIATE DISCLOSURE -->
+<div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:.8rem;color:var(--muted);margin-bottom:1.5rem">
+    <strong>Disclosure:</strong> Some links in this review are affiliate links. We may earn a commission at no extra cost to you. This never influences our ratings or editorial opinions.
+  </div>
+</div>
+
+<!-- REVIEW HERO -->
+<div class="review-hero">
+  <div class="review-main">
+    <div class="review-tool-header">
+      <div class="review-tool-logo" style="background:#fff;border:1px solid var(--border);padding:6px"><img src="/images/logos/fable-5-1.svg" alt="Claude Fable 5.1 logo" style="width:100%;height:100%;object-fit:contain"></div>
+      <div class="review-tool-info">
+        <h1>Claude Fable 5.1 Review</h1>
+        <div class="review-tool-tagline">Anthropic's Frontier Model for Long-Horizon Work</div>
       </div>
-      <div class="review-scorecard">
-        <div><span class="big">9.2</span><span style="font-size:1.1rem;color:var(--muted)">/10</span> <span class="stars">★★★★½</span></div>
-        <div class="label" style="margin-top:.25rem">StackHK Score · 9.2/10</div>
-        <div style="margin-top:.5rem;display:flex;gap:.75rem;flex-wrap:wrap"><a class="btn btn-primary" style="font-size:.85rem" href="../compare/fable-5-1-vs-gpt-5-6.html">vs GPT-5.6 →</a></div>
+    </div>
+
+    <div style="display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap">
+      <span class="rc-cat" style="background:#E8F0FF;color:#3456D1">Coding</span>
+      <span class="rc-cat" style="background:#FDF0E5;color:#C7702A">FRONTIER</span>
+      <span style="font-size:.8rem;color:var(--muted);display:flex;align-items:center">Published September 2, 2026 · Updated September 2, 2026</span>
+    </div>
+
+    <!-- Quick Verdict -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2rem;border-left:4px solid var(--gold)">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem">Quick Verdict</h3>
+      <p style="font-size:.95rem;line-height:1.7;color:var(--text)">Claude Fable 5.1 is the model Anthropic reserves for its hardest work — and after a month, we understand why. It is not the fastest or the cheapest at the frontier, but it is the most reliable when the job runs for hours. For long-horizon agentic coding, deep research, and knowledge work that stretches across a full day, it is the best we have tested. 9.2/10.</p>
+    </div>
+
+    <!-- Review Content -->
+    <div class="review-content">
+      <h2>What is Claude Fable 5.1?</h2>
+      <p>Claude Fable 5.1 is Anthropic's most capable generally available model, sitting in the Mythos-class tier above Claude Opus. Released September 1, 2026, it keeps the same $10/$50 token pricing as Fable 5 but cuts cache-read costs by 75%, making long context sessions significantly cheaper. Its sibling, Claude Mythos 5.1, is the same model with relaxed safeguards for vetted cybersecurity and life-science work.</p>
+      <p>It is built for the work that consumes whole days: multi-file refactors, deep research that follows up on its own findings, and document, spreadsheet, and slide production from a blank prompt. It is not the fastest model at the frontier, but it is the one we trusted with tasks we could not babysit.</p>
+
+      <h2>Our Testing Process</h2>
+      <p>We spent four weeks using Fable 5.1 daily on the work that actually consumed our year:</p>
+      <ul>
+        <li>A full-codebase refactor across 40+ files, run as a single agent session</li>
+        <li>Multi-day autonomous coding with test-writing and self-checking</li>
+        <li>Long-windowed research briefs that followed up on their own findings</li>
+        <li>Document, spreadsheet, and slide production from a blank prompt</li>
+        <li>Dense PDF and chart reading with crop-and-zoom vision</li>
+        <li>Comparison runs against GPT-5.6 Sol and Claude Opus 5</li>
+      </ul>
+
+      <h2>Reasoning Depth</h2>
+      <p>This is where Fable 5.1 earns its score. On a complex refactor, it kept the whole architecture in mind, caught a subtle coupling two reviewers missed, and explained its reasoning in a diff we could actually review. On ambiguous prompts it asked rather than guessed — the mark of a model that knows what it does not know.</p>
+      <blockquote>"Fable 5.1 doesn't just write code — it reasons through why the change is right, and says so when it isn't sure. That honesty is worth more than a faster answer."</blockquote>
+
+      <h2>Long-Horizon Agentic Work</h2>
+      <p>The standout feature. Fable 5.1 runs for hours without losing the thread, writes its own tests to check its work, and — crucially — reports honestly when stuck rather than declaring false success. In a multi-day session, that honesty saved us an afternoon of debugging a confidently wrong solution.</p>
+
+      <h2>Knowledge Work &amp; Vision</h2>
+      <p>It took a blank prompt to a finished document with live formulas and a slide deck without hand-holding. Its crop-and-zoom vision read dense financial filings and charts more accurately than any model we have tested, spotting a footnote-level discrepancy that had slipped past a human analyst.</p>
+
+      <h2>Pricing</h2>
+      <p>Fable 5.1 costs $10 per million input tokens and $50 per million output tokens — the same as Fable 5. The headline change is cache reads at $0.25 per million tokens, 75% cheaper, which cuts typical workload cost by ~25% and highly agentic work by up to ~45%. For long-context sessions that re-read a cached prefix, the economics are far better than the sticker price implies.</p>
+
+      <h2>Who Should Use It</h2>
+      <p>Fable 5.1 is for teams doing ambitious, long-running, asynchronous work: engineers on multi-day codebase projects, researchers on deep multi-step investigations, and knowledge workers producing complex documents. If your work is short and varied, GPT-5.6 will serve you better for less.</p>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0;border-left:4px solid var(--gold)">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem">Final Verdict</h3>
+        <p style="font-size:.95rem;line-height:1.7;color:var(--text)">Claude Fable 5.1 is the depth pick — the most reliable model we have tested when the job runs for hours. It costs a premium, but for long-horizon agentic work, the cache-read savings and honest self-reporting make it worth it. 9.2/10.</p>
       </div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="review-sidebar">
+    <div class="review-score-box">
+      <div class="review-score-stars">★★★★½</div>
+      <span class="review-score-big">9.2</span>
+      <div class="review-score-label">out of 10 · Excellent</div>
+    </div>
+
+    <div class="review-cta-box">
+      <a href="../compare/fable-5-1-vs-gpt-5-6.html" class="btn-primary" style="background:var(--gold);color:var(--black)">Compare vs GPT-5.6 →</a>
+      <p style="font-size:.8rem;color:var(--muted);text-align:center;margin-top:.5rem">StackHK head-to-head test</p>
+    </div>
+
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem">
+      <h3 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:1rem">Quick Info</h3>
+      <table class="review-info-table">
+        <tr><td>Price</td><td>$10 / $50 per MTok</td></tr>
+        <tr><td>Cache Read</td><td>$0.25 / MTok (−75%)</td></tr>
+        <tr><td>Context</td><td>1M tokens</td></tr>
+        <tr><td>Max Output</td><td>128K tokens</td></tr>
+        <tr><td>Best For</td><td>Long-horizon agentic work</td></tr>
+        <tr><td>Release</td><td>Sep 1, 2026</td></tr>
+      </table>
     </div>
   </div>
 </div>
 
-<div class="review-body">
-  <p class="lead" style="font-size:1.1rem;line-height:1.8;color:var(--text);margin:1.5rem 0">Claude Fable 5.1 is the model Anthropic reserves for its hardest work — and after a month, we understand why. It is not the fastest or the cheapest at the frontier, but it is the most <strong>reliable when the job runs for hours</strong>.</p>
-
-  <div class="fact-grid">
-    <div class="f"><b>Overall Score</b>9.2/10 — Excellent</div>
-    <div class="f"><b>Vendor</b>Anthropic</div>
-    <div class="f"><b>Context</b>1M tokens (default &amp; max)</div>
-    <div class="f"><b>Max output</b>128K tokens</div>
-    <div class="f"><b>Input price</b>$10 / MTok</div>
-    <div class="f"><b>Output price</b>$50 / MTok</div>
-    <div class="f"><b>Cache read</b>$0.25 / MTok (−75%)</div>
-    <div class="f"><b>Release</b>Sep 1, 2026</div>
+<!-- GEO: AI-Friendly Summary Blocks -->
+<section data-geo-block="quick-facts" style="max-width:1200px;margin:2rem auto;padding:0 2rem">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem">At a Glance</h2>
+    <dl style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+      <div><dt style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.25rem">Best for</dt><dd style="font-weight:600">Long-horizon agentic work</dd></div>
+      <div><dt style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.25rem">Starting Price</dt><dd style="font-weight:600">$10 / $50 per MTok</dd></div>
+      <div><dt style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.25rem">Context Window</dt><dd style="font-weight:600">1M tokens</dd></div>
+      <div><dt style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.25rem">Overall Score</dt><dd style="font-weight:600;color:var(--gold)">9.2/10</dd></div>
+      <div><dt style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.25rem">Max Output</dt><dd style="font-weight:600">128K tokens</dd></div>
+      <div><dt style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.25rem">Cache Read</dt><dd style="font-weight:600">$0.25 / MTok</dd></div>
+    </dl>
   </div>
+</section>
 
-  <div class="pros-cons">
-    <div class="pro-box"><h4>What We Loved</h4><ul>
-      <li>Root-cause fixing — it disables nothing to pass a test</li>
-      <li>Long agentic sessions that run for hours coherently</li>
-      <li>75% cheaper cache reads make long context economical</li>
-      <li>Honest self-reporting when it is stuck</li>
-    </ul></div>
-    <div class="con-box"><h4>Trade-offs</h4><ul>
-      <li>Premium price vs GPT-5.6 on routine tasks</li>
-      <li>Slower latency — not for quick-fire work</li>
-      <li>Limited native multimodal generation (images)</li>
-    </ul></div>
+<!-- TESTING & SCORES -->
+<section data-geo-block="score-breakdown" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.25rem">Score Breakdown: Our 5 Dimensions</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:.9rem">
+      <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.7rem">Dimension</th><th style="text-align:left;padding:.7rem">Score</th><th style="text-align:left;padding:.7rem">Notes</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Quality of Output</td><td style="padding:.6rem;color:var(--gold);font-weight:700">9.5</td><td style="padding:.6rem;color:var(--muted)">Best deep reasoning and root-cause fixes we have measured</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Ease of Use</td><td style="padding:.6rem;color:var(--gold);font-weight:700">8.8</td><td style="padding:.6rem;color:var(--muted)">Powerful but slower; effort controls need tuning</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Value for Money</td><td style="padding:.6rem;color:var(--gold);font-weight:700">8.9</td><td style="padding:.6rem;color:var(--muted)">Premium price, but cache reads close the gap on long sessions</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Speed &amp; Reliability</td><td style="padding:.6rem;color:var(--gold);font-weight:700">9.0</td><td style="padding:.6rem;color:var(--muted)">Slower per answer, but fewer confident wrong answers</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Support &amp; Docs</td><td style="padding:.6rem;color:var(--gold);font-weight:700">8.8</td><td style="padding:.6rem;color:var(--muted)">Strong docs; smaller ecosystem than OpenAI</td></tr>
+        <tr><td style="padding:.6rem"><b>Overall</b></td><td style="padding:.6rem"><b>9.2</b></td><td style="padding:.6rem;color:var(--muted)">Across 5 dimensions of hands-on testing</td></tr>
+      </tbody>
+    </table>
   </div>
+</section>
 
-  <h2>What is Claude Fable 5.1?</h2>
-  <p>Claude Fable 5.1 is Anthropic's most capable generally available model, sitting in the Mythos-class tier above Claude Opus. Released September 1, 2026, it keeps the same $10/$50 token pricing as Fable 5 but cuts cache-read costs by 75%, making long context sessions significantly cheaper. Its sibling, Claude Mythos 5.1, is the same model with relaxed safeguards for vetted cybersecurity and life-science work.</p>
+<!-- FAQ -->
+<section data-geo-block="faq" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.25rem">Frequently Asked Questions</h2>
+    <div style="margin-bottom:1.25rem"><p style="font-weight:700;margin-bottom:.4rem">What is Claude Fable 5.1?</p><p style="font-size:.92rem;color:var(--muted);line-height:1.7">Claude Fable 5.1 is Anthropic's most capable generally available model, a Mythos-class model that sits above Claude Opus. It is built for long-horizon agentic coding, deep research, and knowledge work that runs for hours.</p></div>
+    <div style="margin-bottom:1.25rem"><p style="font-weight:700;margin-bottom:.4rem">How much does Claude Fable 5.1 cost?</p><p style="font-size:.92rem;color:var(--muted);line-height:1.7">Fable 5.1 costs $10 per million input tokens and $50 per million output tokens, the same as Fable 5. Cache reads are $0.25 per million tokens, 75% cheaper, cutting typical workload cost by ~25% and highly agentic work by up to ~45%.</p></div>
+    <div style="margin-bottom:1.25rem"><p style="font-weight:700;margin-bottom:.4rem">Is Claude Fable 5.1 better than GPT-5.6?</p><p style="font-size:.92rem;color:var(--muted);line-height:1.7">For long-horizon agentic coding and deep reasoning, Fable 5.1 leads on depth and stamina. For breadth, speed, and dramatically lower cost per task, GPT-5.6 Sol is the stronger choice. The pick depends on your work.</p></div>
+    <div><p style="font-weight:700;margin-bottom:.4rem">What is Claude Mythos 5.1?</p><p style="font-size:.92rem;color:var(--muted);line-height:1.7">Mythos 5.1 is the same underlying model as Fable 5.1 with more permissive safeguards for cybersecurity and life sciences, available only through trusted access programs.</p></div>
+  </div>
+</section>
 
-  <h2>Our Testing Process</h2>
-  <p>We spent four weeks using Fable 5.1 daily on the work that actually consumed our year:</p>
-  <ul>
-    <li>A full-codebase refactor across 40+ files, run as a single agent session</li>
-    <li>Multi-day autonomous coding with test-writing and self-checking</li>
-    <li>Long-windowed research briefs that followed up on their own findings</li>
-    <li>Document, spreadsheet, and slide production from a blank prompt</li>
-    <li>Dense PDF and chart reading with crop-and-zoom vision</li>
-  </ul>
+<!-- RELATED -->
+<section style="max-width:1200px;margin:0 auto 3rem;padding:0 2rem">
+  <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.25rem">Related Reviews</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem">
+    <a class="tool-card" href="../reviews/claude-pro.html"><div class="tool-top"><span class="tool-emoji"><img src="/images/logos/claude-pro.svg" alt="Claude Pro" style="width:30px;height:30px;border-radius:8px;object-fit:cover"></span><span class="tool-name">Claude Pro</span><span class="score"><b>9.4</b></span></div><p>Hands-on testing, score breakdown, pros &amp; cons.</p><div class="tool-foot"><span>StackHK</span><span class="pill-free">Full review</span></div></a>
+    <a class="tool-card" href="../reviews/chatgpt-4o.html"><div class="tool-top"><span class="tool-emoji"><img src="/images/logos/chatgpt-4o.svg" alt="ChatGPT-4o" style="width:30px;height:30px;border-radius:8px;object-fit:cover"></span><span class="tool-name">ChatGPT-4o</span><span class="score"><b>8.7</b></span></div><p>Hands-on testing, score breakdown, pros &amp; cons.</p><div class="tool-foot"><span>StackHK</span><span class="pill-free">Full review</span></div></a>
+    <a class="tool-card" href="../compare/fable-5-1-vs-gpt-5-6.html"><div class="tool-top"><span class="tool-emoji"><img src="/images/logos/fable-5-1.svg" alt="Fable 5.1" style="width:30px;height:30px;border-radius:8px;object-fit:cover"></span><span class="tool-name">vs GPT-5.6</span><span class="score"><b>9.2</b></span></div><p>Head-to-head: depth vs breadth, pricing, and stamina.</p><div class="tool-foot"><span>StackHK</span><span class="pill-free">Comparison</span></div></a>
+  </div>
+</section>
 
-  <h2>Score Breakdown: Our 5 Dimensions</h2>
-  <table class="dim-table">
-<thead><tr><th>Dimension</th><th>Score</th><th>Notes</th></tr></thead>
-<tbody>
-  <tr><td>Quality of Output</td><td class="winner">9.5</td><td>Best deep reasoning and root-cause fixes we have measured</td></tr>
-  <tr><td>Ease of Use</td><td>8.8</td><td>Powerful but slower; effort controls need tuning</td></tr>
-  <tr><td>Value for Money</td><td>8.9</td><td>Premium price, but cache reads close the gap on long sessions</td></tr>
-  <tr><td>Speed &amp; Reliability</td><td>9.0</td><td>Slower per answer, but fewer confident wrong answers</td></tr>
-  <tr><td>Support &amp; Docs</td><td>8.8</td><td>Strong docs; smaller ecosystem than OpenAI</td></tr>
-<tr><td><b>Overall</b></td><td class="winner"><b>9.2</b></td><td>Across 5 dimensions of hands-on testing</td></tr>
-</tbody></table>
-
-  <h2>Reasoning Depth</h2>
-  <p>This is where Fable 5.1 earns its score. On a complex refactor, it kept the whole architecture in mind, caught a subtle coupling two reviewers missed, and explained its reasoning in a diff we could actually review. On ambiguous prompts it asked rather than guessed — the mark of a model that knows what it does not know.</p>
-
-  <h2>Long-Horizon Agentic Work</h2>
-  <p>The standout feature. Fable 5.1 runs for hours without losing the thread, writes its own tests to check its work, and — crucially — reports honestly when stuck rather than declaring false success. In a multi-day session, that honesty saved us an afternoon of debugging a confidently wrong solution.</p>
-
-  <h2>Knowledge Work &amp; Vision</h2>
-  <p>It took a blank prompt to a finished document with live formulas and a slide deck without hand-holding. Its crop-and-zoom vision read dense financial filings and charts more accurately than any model we have tested, spotting a footnote-level discrepancy that had slipped past a human analyst.</p>
-
-  <h2>Pricing</h2>
-  <p>Fable 5.1 costs $10 per million input tokens and $50 per million output tokens — the same as Fable 5. The headline change is cache reads at $0.25 per million tokens, 75% cheaper, which cuts typical workload cost by ~25% and highly agentic work by up to ~45%. For long-context sessions that re-read a cached prefix, the economics are far better than the sticker price implies.</p>
-
-  <h2>Who Should Use It</h2>
-  <p>Fable 5.1 is for teams doing ambitious, long-running, asynchronous work: engineers on multi-day codebase projects, researchers on deep multi-step investigations, and knowledge workers producing complex documents. If your work is short and varied, GPT-5.6 will serve you better for less.</p>
-
-  <div class="verdict-box"><strong>Final Verdict:</strong> Claude Fable 5.1 is the depth pick — the most reliable model we have tested when the job runs for hours. It costs a premium, but for long-horizon agentic work, the cache-read savings and honest self-reporting make it worth it. 9.2/10.</div>
-
-  <h2>FAQ</h2>
-  <h3>What is Claude Fable 5.1?</h3><p>Claude Fable 5.1 is Anthropic's most capable generally available model, a Mythos-class model that sits above Claude Opus. It is built for long-horizon agentic coding, deep research, and knowledge work that runs for hours.</p>
-  <h3>How much does Claude Fable 5.1 cost?</h3><p>Fable 5.1 costs $10 per million input tokens and $50 per million output tokens, the same as Fable 5. Cache reads are $0.25 per million tokens, 75% cheaper, cutting typical workload cost by ~25% and highly agentic work by up to ~45%.</p>
-  <h3>Is Claude Fable 5.1 better than GPT-5.6?</h3><p>For long-horizon agentic coding and deep reasoning, Fable 5.1 leads on depth and stamina. For breadth, speed, and dramatically lower cost per task, GPT-5.6 Sol is the stronger choice. The pick depends on your work.</p>
-  <h3>What is Claude Mythos 5.1?</h3><p>Mythos 5.1 is the same underlying model as Fable 5.1 with more permissive safeguards for cybersecurity and life sciences, available only through trusted access programs.</p>
-  <p><em>Testing period: August-September 2026, paid API, real long-horizon workloads. Scores reflect StackHK's five-dimension methodology. <a href="../legal.html?tab=disclosure">Affiliate disclosure →</a></em></p>
-</div>
-<div id="site-footer" data-prefix=""></div>
+<div id="site-footer" data-prefix="../"></div>
 <script src="../js/site.js?v=2" defer></script><script src="../js/main.js"></script><script src="../js/tp-nav.js" defer></script></body>
 </html>
