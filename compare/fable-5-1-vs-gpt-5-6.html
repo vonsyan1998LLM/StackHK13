@@ -99,6 +99,24 @@
   <tr><td>Support &amp; Docs</td><td>8.8</td><td>9.0</td><td class="">GPT-5.6 — larger ecosystem</td></tr>
 <tr><td><b>Overall</b></td><td><b>9.2</b></td><td><b>9.0</b></td><td class="winner"><b>Fable 5.1, on depth</b></td></tr>
 </tbody></table>
+<!-- GEO: Benchmark reference data -->
+<section data-geo-block="benchmarks" style="max-width:860px;margin:0 auto 2rem;padding:0 2rem">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.25rem">Benchmark Reference Data</h2>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.25rem">Public evaluation scores for GPT-5.6 Sol, OpenAI's flagship. Source attribution in brackets reflects where each figure was published.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:.9rem">
+      <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.7rem">Benchmark</th><th style="text-align:left;padding:.7rem">Score</th><th style="text-align:left;padding:.7rem">Source</th></tr></thead>
+      <tbody>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">SWE-bench Pro</td><td style="padding:.6rem;color:var(--gold);font-weight:700">64.6%</td><td style="padding:.6rem;color:var(--muted)">[Independent]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Terminal-Bench 2.1</td><td style="padding:.6rem;color:var(--gold);font-weight:700">88.8%</td><td style="padding:.6rem;color:var(--muted)">[Official, OpenAI]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">GPQA Diamond</td><td style="padding:.6rem;color:var(--gold);font-weight:700">94.6%</td><td style="padding:.6rem;color:var(--muted)">[Official, OpenAI]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">FrontierMath Tier 4</td><td style="padding:.6rem;color:var(--gold);font-weight:700">83.0%</td><td style="padding:.6rem;color:var(--muted)">[Independent (BenchLM)]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Artificial Analysis Index</td><td style="padding:.6rem;color:var(--gold);font-weight:700">58.9</td><td style="padding:.6rem;color:var(--muted)">[Independent (AA)]</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:1rem">Source: OpenAI model docs &amp; independent evaluators. Benchmarks are official-vendor or third-party as noted; scores reflect the publishing vendor's configuration and may not be directly comparable across setups.</p>
+  </div>
+</section>
 
     <h2 class="vs-h2">Claude Fable 5.1 wins the long-horizon deep work</h2>
 <p>On a full-codebase refactor and a multi-day agent session, Fable 5.1 stayed coherent where GPT-5.6 started to slip. It avoids the easy shortcut of disabling a failing test, fixes root causes rather than symptoms, and says so when it is stuck instead of reporting false success — the qualities that matter when a task runs for hours and you cannot babysit every step.</p>

@@ -396,6 +396,26 @@
   </div>
 </section>
 
+<!-- GEO: Benchmark reference data -->
+<section data-geo-block="benchmarks" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.25rem">Benchmark Reference Data</h2>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.25rem">Public evaluation scores for DeepSeek V4-Pro (Max), Open-weight frontier model. Source attribution in brackets reflects where each figure was published.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:.9rem">
+      <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.7rem">Benchmark</th><th style="text-align:left;padding:.7rem">Score</th><th style="text-align:left;padding:.7rem">Source</th></tr></thead>
+      <tbody>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">SWE-bench Verified</td><td style="padding:.6rem;color:var(--gold);font-weight:700">80.6%</td><td style="padding:.6rem;color:var(--muted)">[Official]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">SWE-bench Pro</td><td style="padding:.6rem;color:var(--gold);font-weight:700">55.4%</td><td style="padding:.6rem;color:var(--muted)">[Official]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">GPQA Diamond</td><td style="padding:.6rem;color:var(--gold);font-weight:700">90.1%</td><td style="padding:.6rem;color:var(--muted)">[Official]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">MMLU-Pro</td><td style="padding:.6rem;color:var(--gold);font-weight:700">87.5%</td><td style="padding:.6rem;color:var(--muted)">[Official]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">LiveCodeBench</td><td style="padding:.6rem;color:var(--gold);font-weight:700">93.5</td><td style="padding:.6rem;color:var(--muted)">[Official]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">GSM8K</td><td style="padding:.6rem;color:var(--gold);font-weight:700">92.6%</td><td style="padding:.6rem;color:var(--muted)">[Official]</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:1rem">Source: DeepSeek-V4 technical report (arXiv:2606.19348) &amp; official model card. Benchmarks are official-vendor or third-party as noted; scores reflect the publishing vendor's configuration and may not be directly comparable across setups.</p>
+  </div>
+</section>
+
 <h2>Risks We Found During Testing</h2>
 <p>Beyond the standard "AI hallucinates" caveat, here are the specific risks we encountered:</p>
 <ul>
