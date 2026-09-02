@@ -6,3 +6,8 @@ node_modules/
 Thumbs.db
 .vercel
 .playwright-mcp/
+
+AI_X_*.xlsx
+gen_xlsx.py
+news-content.json
+guide-content.json
