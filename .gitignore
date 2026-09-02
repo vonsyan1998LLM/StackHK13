@@ -11,3 +11,6 @@ AI_X_*.xlsx
 gen_xlsx.py
 news-content.json
 guide-content.json
+
+append_missing.py
+batch1.txt
