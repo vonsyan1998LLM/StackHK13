@@ -1,0 +1,85 @@
+{% extends "layouts/base.html" %}
+{% set title = "StackHK — Discover the Best AI Tools, News & Courses" %}
+{% set description = "StackHK is your trusted pulse on AI: 68+ independently tested AI tools and B2B SaaS across 6 categories, breaking AI news, expert rankings, and hands-on buying guides." %}
+{% set canonical = "" %}
+{% set page = "home" %}
+{% set prefix = "" %}
+
+{% block head_extra %}
+<style>
+  :root {
+    --brand-primary:#2563eb; --brand-primary-hover:#1d4ed8;
+    --fable-color:#d97706; --fable-bg:#fffbe3;
+    --gpt-color:#10b981; --gpt-bg:#ecfdf5;
+  }
+  .home-hero{text-align:center;padding:24px 10px 36px}
+  .hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;background:#e0f2fe;color:#0369a1;font-size:.8rem;font-weight:700;margin-bottom:16px}
+  .main-title{font-size:2.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:14px}
+  .main-title span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-subtitle{font-size:1.1rem;color:var(--muted);max-width:720px;margin:0 auto}
+  .stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:32px}
+  .stat-pill{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;box-shadow:var(--shadow)}
+  .stat-num{font-size:1.6rem;font-weight:800;color:var(--brand-primary);line-height:1.2}
+  .stat-text{font-size:.8rem;font-weight:600;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+  .section-card{background:var(--card);border-radius:16px;padding:32px;border:1px solid var(--border);box-shadow:var(--shadow-md);margin-bottom:32px}
+  .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;gap:16px;flex-wrap:wrap}
+  .section-title{font-size:1.5rem;font-weight:800;letter-spacing:-.01em}
+  .section-subtitle{font-size:.95rem;color:var(--muted);margin-top:4px}
+  .view-link{font-size:.875rem;font-weight:600;color:var(--brand-primary);text-decoration:none}
+  .featured-box{background:linear-gradient(135deg,#fff 0%,#f8fafc 100%);border:2px solid #cbd5e1;border-radius:20px;padding:32px;box-shadow:var(--shadow-lg);margin-bottom:32px;position:relative}
+  .featured-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:16px}
+  .model-col{background:var(--card);padding:24px;border-radius:14px;border:1px solid var(--border)}
+  .model-col.fable{border-top:4px solid var(--fable-color)} .model-col.gpt{border-top:4px solid var(--gpt-color)}
+  .vs-badge{width:44px;height:44px;border-radius:50%;background:#e2e8f0;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--muted);font-size:.875rem}
+  .cta-btn{display:block;margin-top:24px;text-align:center;background:var(--brand-primary);color:#fff;padding:14px 20px;border-radius:10px;font-weight:700;text-decoration:none}
+</style>
+{% endblock %}
+
+{% block content %}
+{# Hero — 来自 65660 标准 + 现首页文案 #}
+<div class="home-hero">
+  <div class="hero-badge"><span class="dot"></span> Independent · <span data-stat="tools" data-plus="1">68+</span> Tools Tested · Updated Monthly</div>
+  <h1 class="main-title">Your daily pulse on <span>AI.</span></h1>
+  <p class="hero-subtitle">StackHK blends an independent AI tool directory with breaking AI news and hands-on reviews — every tool tested 2–4 weeks by real teams, zero hype.</p>
+  <div class="hero-actions" style="margin-top:1.5rem;display:flex;gap:1rem;justify-content:center">
+    <a class="btn btn-primary" href="tools.html">Explore 68+ Tools</a>
+    <a class="btn btn-ghost" href="articles.html">Browse Buying Guides →</a>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-pill"><div class="stat-num" data-stat="tools" data-plus="1">68+</div><div class="stat-text">Tools Tested</div></div>
+  <div class="stat-pill"><div class="stat-num" data-stat="categoriesPages" data-plus="1">10+</div><div class="stat-text">Categories</div></div>
+  <div class="stat-pill"><div class="stat-num" data-stat="articles">17</div><div class="stat-text">Buying Guides</div></div>
+  <div class="stat-pill"><div class="stat-num">0</div><div class="stat-text">Sponsored Reviews</div></div>
+</div>
+
+<div class="featured-box">
+  <span class="featured-tag" style="position:absolute;top:18px;right:18px;background:#fee2e2;color:#b91c1c;font-size:.75rem;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase">Featured Matchup</span>
+  <div class="section-header" style="margin-bottom:12px;">
+    <div>
+      <h2 class="section-title">Claude Fable 5.1 vs GPT-5.6 Sol</h2>
+      <p class="section-subtitle">Deep reasoning and autonomous stamina meets broad multimodal throughput.</p>
+    </div>
+  </div>
+  <div class="featured-grid">
+    <div class="model-col fable">
+      <h3>Claude Fable 5.1</h3>
+      <div class="score" style="color:var(--fable-color);font-size:1.75rem;font-weight:800;margin-bottom:8px">9.2 <span style="font-size:.875rem;color:var(--text-muted);font-weight:400">/ 10</span></div>
+      <p style="font-size:.875rem;color:var(--text-muted);line-height:1.5">Leads in <a href="reviews/fable-5-1.html" style="color:var(--fable-color);text-decoration:underline">multi-day codebase refactors</a>, root-cause repairs, and <a href="news/sora-native-audio.html" style="color:var(--fable-color)">75% cheaper cache reads</a> — see our <a href="compare/fable-5-1-vs-gpt-5-6.html">full Fable test</a>.</p>
+    </div>
+    <div class="vs-badge">VS</div>
+    <div class="model-col gpt">
+      <h3>GPT-5.6 Sol</h3>
+      <div class="score" style="color:var(--gpt-color);font-size:1.75rem;font-weight:800;margin-bottom:8px">9.0 <span style="font-size:.875rem;color:var(--text-muted);font-weight:400">/ 10</span></div>
+      <p style="font-size:.875rem;color:var(--text-muted);line-height:1.5">Excels at <a href="reviews/chatgpt-4o.html">rapid first drafts</a>, native <a href="reviews/canva.html">multimodal generation</a> and <a href="news/veo-4k-cinematic.html">voice/vision</a> — see <a href="tools.html">68+ tools directory</a>.</p>
+    </div>
+  </div>
+  <a href="compare/fable-5-1-vs-gpt-5-6.html" class="cta-btn">Read Full Head-to-Head Comparison & 14-Parameter Breakdown →</a>
+</div>
+
+{# 保留原首页的 Editor's Picks / News / Ranking / Categories / Guides 等，均套用 section-card 统一样式 #}
+<section id="tools"><div class="wrap"><div class="section-card"><div class="section-header"><div><div class="section-title">The most-loved AI tools right now</div><p class="section-subtitle">Hand-tested and ranked by community upvotes over the last 30 days.</p></div><a class="view-link" href="tools.html">Browse all tools →</a></div><div class="tools-grid" id="tools-grid"></div></div></div></section>
+
+<section id="news" class="alt"><div class="wrap"><div class="section-card"><div class="section-header"><div><div class="section-title">Today's biggest AI headlines</div><p class="section-subtitle">The latest AI news, updated throughout the day.</p></div><a class="view-link" href="news.html">View all news →</a></div><div class="feed-layout"><div id="home-news-feed"></div><aside class="side-panel"><h3>Trending This Week</h3><ul class="side-list" id="home-scoreboard"></ul></aside></div></div></div></section>
+{% endblock %}

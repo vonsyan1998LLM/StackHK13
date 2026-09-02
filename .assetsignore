@@ -10,3 +10,6 @@ _headers
 README.md
 worker
 functions
+preview-*.html
+news-content.json
+guide-content.json

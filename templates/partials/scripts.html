@@ -1,0 +1,11 @@
+{# 按页面类型加载 JS，避免 main.js/tp-main.js 互斥与 getBasePath 缺失 #}
+{% if page in ["home","tools","categories","saas","news","ranking"] %}
+<script src="{{ prefix }}js/tp-main.js?v=2" defer></script>
+{% endif %}
+{% if page in ["articles","compare","deals","search","about","submit","legal","contact","privacy","terms","disclosure"] %}
+<script src="{{ prefix }}js/main.js?v=2"></script>
+{% endif %}
+<script src="{{ prefix }}js/tp-nav.js" defer></script>
+{% if page == "home" %}
+<script src="{{ prefix }}js/hero-type.js" defer></script>
+{% endif %}

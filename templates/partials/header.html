@@ -1,0 +1,16 @@
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="{{ prefix }}index.html"><img src="{{ prefix }}images/logo.svg" alt="StackHK" style="width:28px;height:28px"> <span class="lt">STACK<span class="lk">HK</span></span></a>
+    <nav class="nav-links">
+      <a href="{{ prefix }}tools.html" class="{% if page == 'tools' %}active{% endif %}">Reviews</a>
+      <a href="{{ prefix }}categories.html" class="{% if page == 'categories' %}active{% endif %}">Categories</a>
+      <a href="{{ prefix }}articles.html" class="{% if page == 'articles' %}active{% endif %}">Articles</a>
+      <a href="{{ prefix }}compare.html" class="{% if page == 'compare' %}active{% endif %}">Compare</a>
+      <a href="{{ prefix }}saas.html" class="{% if page == 'saas' %}active{% endif %}">SaaS</a>
+      <a href="{{ prefix }}about.html" class="{% if page == 'about' %}active{% endif %}">About</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <a class="btn btn-primary" href="{{ prefix }}submit.html">Submit a Tool</a>
+  </div>
+  <nav class="mobile-menu" hidden></nav>
+</header>

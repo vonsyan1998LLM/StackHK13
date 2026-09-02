@@ -18,3 +18,4 @@ batch1.txt
 *.png
 !images/**
 fable-*.png
+preview-*.html

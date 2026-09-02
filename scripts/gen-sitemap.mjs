@@ -33,9 +33,9 @@ while ((m = re.exec(xml)) !== null) {
   map[loc] = { cf: m[2], pr: m[3] };
 }
 
-// 2) 扫描磁盘
+// 2) 扫描磁盘（跳过预览文件）
 const files = [];
-for (const f of fs.readdirSync(ROOT).filter(f => f.endsWith('.html'))) files.push(f);
+for (const f of fs.readdirSync(ROOT).filter(f => f.endsWith('.html') && !f.startsWith('preview-'))) files.push(f);
 for (const s of SECTIONS) {
   for (const f of fs.readdirSync(path.join(ROOT, s)).filter(f => f.endsWith('.html'))) files.push(s + '/' + f);
 }

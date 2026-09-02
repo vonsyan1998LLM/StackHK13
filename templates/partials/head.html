@@ -1,0 +1,15 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} | StackHK</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="canonical" href="https://www.airecmark.com/{{ canonical }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ prefix }}css/tp.css?v=20260840">
+<link rel="icon" type="image/svg+xml" href="{{ prefix }}favicon.svg">
+<meta property="og:title" content="{{ title }}">
+{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+<meta property="og:type" content="{{ ogType | default('website') }}">
+<meta property="og:url" content="https://www.airecmark.com/{{ canonical }}">
+{% if ogImage %}<meta property="og:image" content="https://www.airecmark.com/{{ ogImage }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
