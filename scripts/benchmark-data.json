@@ -1,0 +1,46 @@
+[
+  {
+    "model": "Claude Fable 5.1",
+    "id": "fable-5-1",
+    "page": "reviews/fable-5-1.html",
+    "stylizedNote": "Anthropic's frontier model",
+    "sourceNote": "Anthropic Claude Fable 5.1 System Card (production safeguards enabled)",
+    "rows": [
+      ["SWE-bench Verified", "95.0%", "[Official System Card]"],
+      ["SWE-bench Pro", "80.0%", "[Official System Card]"],
+      ["GPQA Diamond", "92.6%", "[Official System Card]"],
+      ["LiveCodeBench", "90.52%", "[Official System Card]"],
+      ["Terminal-Bench 4.0", "55.8%", "[Official System Card]"],
+      ["Humanity's Last Exam (tools)", "65.0%", "[Official System Card]"]
+    ]
+  },
+  {
+    "model": "DeepSeek V4-Pro (Max)",
+    "id": "deepseek",
+    "page": "reviews/deepseek.html",
+    "stylizedNote": "Open-weight frontier model",
+    "sourceNote": "DeepSeek-V4 technical report (arXiv:2606.19348) & official model card",
+    "rows": [
+      ["SWE-bench Verified", "80.6%", "[Official]"],
+      ["SWE-bench Pro", "55.4%", "[Official]"],
+      ["GPQA Diamond", "90.1%", "[Official]"],
+      ["MMLU-Pro", "87.5%", "[Official]"],
+      ["LiveCodeBench", "93.5", "[Official]"],
+      ["GSM8K", "92.6%", "[Official]"]
+    ]
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "id": "gpt-5-6",
+    "page": "compare/fable-5-1-vs-gpt-5-6.html",
+    "stylizedNote": "OpenAI's flagship",
+    "sourceNote": "OpenAI model docs & independent evaluators",
+    "rows": [
+      ["SWE-bench Pro", "64.6%", "[Independent]"],
+      ["Terminal-Bench 2.1", "88.8%", "[Official, OpenAI]"],
+      ["GPQA Diamond", "94.6%", "[Official, OpenAI]"],
+      ["FrontierMath Tier 4", "83.0%", "[Independent (BenchLM)]"],
+      ["Artificial Analysis Index", "58.9", "[Independent (AA)]"]
+    ]
+  }
+]
