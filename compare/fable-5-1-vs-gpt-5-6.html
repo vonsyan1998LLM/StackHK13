@@ -100,21 +100,24 @@
 <tr><td><b>Overall</b></td><td><b>9.2</b></td><td><b>9.0</b></td><td class="winner"><b>Fable 5.1, on depth</b></td></tr>
 </tbody></table>
 <!-- GEO: Benchmark reference data -->
+<!-- GEO: Benchmark reference data (side by side) -->
 <section data-geo-block="benchmarks" style="max-width:860px;margin:0 auto 2rem;padding:0 2rem">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem">
     <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.25rem">Benchmark Reference Data</h2>
-    <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.25rem">Public evaluation scores for GPT-5.6 Sol, OpenAI's flagship. Source attribution in brackets reflects where each figure was published.</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.25rem">Public evaluation scores for both models, side by side. Source attribution in brackets reflects where each figure was published — official-vendor results are marked accordingly, and third-party scores are noted.</p>
     <table style="width:100%;border-collapse:collapse;font-size:.9rem">
-      <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.7rem">Benchmark</th><th style="text-align:left;padding:.7rem">Score</th><th style="text-align:left;padding:.7rem">Source</th></tr></thead>
+      <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:.7rem">Benchmark</th><th style="text-align:left;padding:.7rem">Fable 5.1</th><th style="text-align:left;padding:.7rem">GPT-5.6 Sol</th><th style="text-align:left;padding:.7rem">Source</th></tr></thead>
       <tbody>
-<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">SWE-bench Pro</td><td style="padding:.6rem;color:var(--gold);font-weight:700">64.6%</td><td style="padding:.6rem;color:var(--muted)">[Independent]</td></tr>
-<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Terminal-Bench 2.1</td><td style="padding:.6rem;color:var(--gold);font-weight:700">88.8%</td><td style="padding:.6rem;color:var(--muted)">[Official, OpenAI]</td></tr>
-<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">GPQA Diamond</td><td style="padding:.6rem;color:var(--gold);font-weight:700">94.6%</td><td style="padding:.6rem;color:var(--muted)">[Official, OpenAI]</td></tr>
-<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">FrontierMath Tier 4</td><td style="padding:.6rem;color:var(--gold);font-weight:700">83.0%</td><td style="padding:.6rem;color:var(--muted)">[Independent (BenchLM)]</td></tr>
-<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Artificial Analysis Index</td><td style="padding:.6rem;color:var(--gold);font-weight:700">58.9</td><td style="padding:.6rem;color:var(--muted)">[Independent (AA)]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">SWE-bench Verified</td><td style="padding:.6rem;color:var(--gold);font-weight:700">95.0%</td><td style="padding:.6rem;color:var(--muted)">n/r</td><td style="padding:.6rem;color:var(--muted)">[Official System Card, Anthropic]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">SWE-bench Pro</td><td style="padding:.6rem;color:var(--gold);font-weight:700">80.0%</td><td style="padding:.6rem;color:var(--muted)">64.6%</td><td style="padding:.6rem;color:var(--muted)">[Independent]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">GPQA Diamond</td><td style="padding:.6rem;color:var(--gold);font-weight:700">92.6%</td><td style="padding:.6rem;color:var(--muted)">94.6%</td><td style="padding:.6rem;color:var(--muted)">[Official, both vendors]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Terminal-Bench</td><td style="padding:.6rem;color:var(--muted)">55.8% (v4.0)</td><td style="padding:.6rem;color:var(--gold);font-weight:700">88.8% (v2.1)</td><td style="padding:.6rem;color:var(--muted)">[Official, both vendors]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">LiveCodeBench</td><td style="padding:.6rem;color:var(--gold);font-weight:700">90.52%</td><td style="padding:.6rem;color:var(--muted)">n/r</td><td style="padding:.6rem;color:var(--muted)">[Official System Card, Anthropic]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">FrontierMath Tier 4</td><td style="padding:.6rem;color:var(--muted)">n/r</td><td style="padding:.6rem;color:var(--gold);font-weight:700">83.0%</td><td style="padding:.6rem;color:var(--muted)">[Independent (BenchLM)]</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:.6rem">Artificial Analysis Index (max)</td><td style="padding:.6rem;color:var(--muted)">59.9</td><td style="padding:.6rem;color:var(--muted)">58.9</td><td style="padding:.6rem;color:var(--muted)">[Independent (AA)]</td></tr>
       </tbody>
     </table>
-    <p style="font-size:.8rem;color:var(--muted);margin-top:1rem">Source: OpenAI model docs &amp; independent evaluators. Benchmarks are official-vendor or third-party as noted; scores reflect the publishing vendor's configuration and may not be directly comparable across setups.</p>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:1rem">n/r = not reported on the same public leaderboard. Benchmarks are official-vendor or third-party as noted; scores reflect each vendor's configuration and may not be directly comparable across different evaluation setups (e.g. Terminal-Bench versions differ). Fable 5.1's Terminal-Bench is v4.0; GPT-5.6 Sol's is v2.1.</p>
   </div>
 </section>
 
