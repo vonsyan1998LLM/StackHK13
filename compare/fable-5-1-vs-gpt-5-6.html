@@ -33,12 +33,9 @@
 .trust-note{font-size:.82rem;color:var(--muted);border-top:1px solid var(--border);margin-top:2.5rem;padding-top:1.25rem}
 .related-list{font-size:.92rem;line-height:2;color:var(--text);padding-left:1.25rem}
 /* Benchmark reference */
-.bench-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 0;margin:2.5rem 0;background:var(--card)}
-.bench-wrap h2{font-family:var(--font-display);font-size:1.5rem;font-weight:900;margin:0 2rem 1rem}
-.bench-wrap .bench-intro{margin:0 2rem 1.25rem;font-size:.9rem;color:var(--muted)}
-.bench-wrap .bench-note{margin:1rem 2rem 0;font-size:.8rem;color:var(--muted)}
-.bench-wrap .bench-intro{font-size:.9rem;color:var(--muted);margin:0 0 1.25rem}
-.bench-note{font-size:.8rem;color:var(--muted);margin-top:1rem}
+.bench-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 0;margin:0 0 2.5rem;background:var(--card)}
+.bench-wrap .bench-intro{margin:0 2rem 1.5rem;font-size:.9rem;color:var(--muted);line-height:1.7}
+.bench-wrap .bench-note{margin:1.25rem 2rem 0;font-size:.8rem;color:var(--muted);line-height:1.6}
 .bench-bar-cell{min-width:160px}
 .bench-score-row .score-bar{height:9px;border-radius:5px;background:var(--bg2);overflow:hidden;position:relative}
 .bench-score-row .score-fill{height:100%;background:linear-gradient(90deg,#F5A623,#E8A33D);border-radius:5px;width:0;animation:benchGrow 1.1s cubic-bezier(.22,.68,.35,1.05) forwards;position:relative;overflow:hidden}
@@ -91,7 +88,7 @@
     <p><strong>Choose GPT-5.6 Sol</strong> — the fast, broad everything-model. Images, voice, cheaper per token, and faster first drafts. The pick for mixed workflows, high throughput, and anyone who wants one model for everything.</p>
     <p><strong>Our scores:</strong> Fable 5.1 9.2/10 · GPT-5.6 9.0/10 — Fable 5.1 leads on depth and reliability; GPT-5.6 leads on breadth, speed, and cost.</p>
 
-    <h3 style="font-weight:700;margin-bottom:1.5rem;text-align:center">Side-by-Side: 14 Parameters</h3>
+    <h3 style="font-weight:700;margin:2.5rem 0 1.5rem;text-align:center">Side-by-Side: 14 Parameters</h3>
     <table class="compare-table spec-table">
 <thead><tr><th>Parameter</th><th>Claude Fable 5.1</th><th>GPT-5.6 Sol</th></tr></thead>
 <tbody>
@@ -124,8 +121,8 @@
 </tbody></table>
 
     <!-- BENCHMARK -->
+    <h2 class="vs-h2">Benchmark Reference Data</h2>
     <section class="bench-wrap" data-geo-block="benchmarks">
-      <h2>Benchmark Reference Data</h2>
       <p class="bench-intro">Public evaluation scores for both models, side by side, with source attribution. Scores are shown as bars relative to 100; n/r = not reported on the same public leaderboard.</p>
       <table class="compare-table" style="width:100%">
         <thead><tr><th>Benchmark</th><th>Fable 5.1</th><th>GPT-5.6 Sol</th><th>Source</th></tr></thead>
