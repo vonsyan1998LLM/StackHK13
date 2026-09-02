@@ -14,3 +14,7 @@ guide-content.json
 
 append_missing.py
 batch1.txt
+
+*.png
+!images/**
+fable-*.png
